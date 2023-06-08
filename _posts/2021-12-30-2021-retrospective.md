@@ -1,7 +1,7 @@
 ---
 title: 2021년 회고
 tags: [retrospective, notes]
-category: 잡담
+category: smalltalk
 aside:
   toc: true
 show_category: true
