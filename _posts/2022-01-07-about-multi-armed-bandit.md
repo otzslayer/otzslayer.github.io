@@ -1,7 +1,7 @@
 ---
 title: Multi-armed Bandit
 tags: [recsys, multi-armed-bandit, mab, ab-test]
-category: 통계
+category: ML
 aside:
   toc: true
 show_category: true
