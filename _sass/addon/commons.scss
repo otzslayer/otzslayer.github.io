@@ -157,7 +157,7 @@ blockquote {
 }
 
 kbd {
-  font-family: inherit;
+  font-family: Pretendard, inherit;
   display: inline-block;
   vertical-align: middle;
   line-height: 1.3rem;
@@ -372,6 +372,15 @@ i {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700; 
+}
+
 .post {
   h1 {
     margin-top: 2rem;
@@ -403,7 +412,7 @@ i {
 }
 
 .post-content {
-  font-size: 1.08rem;
+  font-size: 1rem;
   margin-top: 2rem;
   overflow-wrap: break-word;
 
@@ -694,6 +703,7 @@ $btn-mb: 0.5rem;
   width: $sidebar-width;
   z-index: 99;
   background: var(--sidebar-bg);
+  font-family: $font-family-base;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -1063,7 +1073,7 @@ $btn-mb: 0.5rem;
   display: none;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: Pretendard, sans-serif;
   color: var(--topbar-text-color);
   text-align: center;
   width: 70%;
@@ -1169,7 +1179,7 @@ $btn-mb: 0.5rem;
   }
 
   .toast-body {
-    font-family: Lato, sans-serif;
+    font-family: Pretendard, Lato, sans-serif;
     line-height: 1.25rem;
 
     button {
