@@ -155,7 +155,7 @@ defaults:
       type: tabs # see `site.collections`
     values:
       layout: page
-      permalink: /:categories/:year/:month/:day/:title.html
+      permalink: /:title/
   - scope:
       path: assets/img/favicons
     values:
