@@ -113,9 +113,9 @@ assets:
     env: # [development|production]
 
 pwa:
-  enabled: true # the option for PWA feature
+  enabled: false # the option for PWA feature
 
-paginate: 10
+paginate: 7
 
 # ------------ The following options are not recommended to be modified ------------------
 
