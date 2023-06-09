@@ -41,12 +41,10 @@ $$
 
 랜덤 서치는 이름에서 알 수 있듯이 정해진 횟수만큼 하이퍼 파라미터 환경 공간 내의 하이퍼 파라미터를 샘플링하여 탐색하는 방법입니다. 이 방법은 몇몇 하이퍼 파라미터가 다른 하이퍼 파라미터에 비해 더 중요한 경우 좋은 성능을 보인다고 합니다.
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/comparison-grid-random.png"
-      alt="" style="zoom:50%;" loading="lazy"/>
-  </figure>
-</center>
+
+![Grid Search vs RS](/assets/images/2022-12-03-bayesian-optimization/comparison-grid-random.pngg){: w="400" }
+_Comparison between Grid Search and Random Search_
+
 
 또한 그리드 서치에 비해 병렬화가 쉽고 자원 할당이 보다 유연하다는 장점을 갖고 있습니다. 랜덤 서치는 머신러닝 알고리즘에 대한 가정을 하지 않은 채로 최적화하고, 충분한 자원이 주어진다면 최적 성능에 근접한 성능을 보인다는 점에서 유용한 베이스라인이 됩니다.
 
@@ -56,12 +54,8 @@ $$
 
 베이지안 최적화를 의사 코드 (Pseudo-code)로 나타내면 다음과 같습니다.
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/bo-pseudocode.png"
-      alt="Bayesian Optimization Pseudocode" style="zoom:33%;" loading="lazy"/>
-  </figure>
-</center>
+![Bayesian Optimization Pseudocode](/assets/images/2022-12-03-bayesian-optimization/bo-pseudocode.png){: w="500"}
+_Bayesian Optimization Pseudocode_
 
 앞으로 자세히 설명할 내용을 배제하고 설명을 해보겠습니다. 우선 블랙박스 함수 $f$는 모델에서 사용하는 손실 함수로 생각하면 편합니다.  우선 하이퍼 파라미터와 그 하이퍼 파라미터로 얻을 모델에 대한 $f$의 값을 저장할 집합 $\mathcal{H}$를 초기화합니다. 그리고 어떤 값을 탐색해야 할지 계산하는 함수인 **획득 함수**를 통해 하이퍼 파라미터 후보를 찾습니다. 그 후보값을 이용해 $f$ 의 값을 계산하여 $\mathcal{H}$ 에 저장합니다. 그리고 지금까지 얻은 관측 결과를 복잡한 함수 $f$ 대신 계산할 **대체 모델**에 적합시킵니다. 그리고 이 과정을 계속 반복합니다.
 
@@ -89,13 +83,8 @@ $$
 
 물론 파라미터 $\varepsilon \geq 0$ 를 따로 설정해야 하는 점이 단점이 되기도 합니다. $\varepsilon$의 값이 너무 크거나 너무 작아도 문제가 되는데요. 만약 $\varepsilon$이 0에 가까울만큼 작다면 기존의 PI와 차이가 없는 착취에 초점을 맞춘 결과를 얻게 됩니다. 하지만 $\varepsilon$이 너무 크다면 어떤 하이퍼 파라미터라도 PI가 높게 나올 수 있기 때문에 탐색만 수행하는 결과를 얻을 수도 있습니다. [Agnihotri & Batra, "Exploring Bayesian Optimization", Distill, 2020.](https://distill.pub/2020/bayesian-optimization/)에서 $\varepsilon$의 변화에 따른 PI가 어떻게 변하는지 확인할 수 있습니다.
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/probability_of_improvement.png"
-      alt="TITLE" style="zoom:33%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Probability of Improvement Function</figcaption>
-  </figure>
-</center>
+![Probability of Improvement Function](/assets/images/2022-12-03-bayesian-optimization/probability_of_improvement.png){: w="700" }
+_Probability of Improvement Function_
 
 #### Expected Improvement (EI)
 
@@ -133,14 +122,8 @@ $$
 
 여기서 $\mathbf{k}_\ast$는 $\boldsymbol{\lambda}$와 지금까지의 관측값 사이의 공분산 벡터를 의미하며, $\mathbf{K}$는 지금까지 계산된 하이퍼 파라미터 설정들의 공분산 행렬, $\mathbf{y}$는 관측된 함수값입니다. 가우시안 프로세스는 **공분산 함수**가 성능의 대부분을 결정 짓는데요. 일반적으로는 Mátern 5/2 Kernel을 사용합니다. Squared Exponential Kernel 같은 함수도 존재하지만 복잡한 함수를 표현하기엔 너무 평탄(smooth)한 함수여서 실제 함수를 제대로 표현하기 어렵다는 문제가 있습니다.
 
-
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/gp-kernels.png"
-      alt="GP Kernels" style="zoom:50%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Kernels for Gaussian</figcaption>
-  </figure>
-</center>
+![GP Kernels](/assets/images/2022-12-03-bayesian-optimization/gp-kernels.png){: w="500"}
+_GP Kernels_
 
 Mátern 5/2 Kernel은 조금 복잡하지만 다음과 같습니다.
 
@@ -176,12 +159,8 @@ $$
 
 일반적으로 $\gamma$는 0.15나 0.2 정도의 값으로 설정합니다. 만약 $\gamma$를 0.2로 설정하고 최초 열 번의 시행을 통해 알고리즘을 초기화했다면 $\ell(\boldsymbol{\lambda})$는 두 개의 결과로 분포가 생성이 됩니다. $g(\boldsymbol{\lambda})$는 여덟 개의 값으로 분포가 생성 되겠죠. 아래 이미지는 어떤 함수에 대해서 위 설정대로 초기화를 한 결과입니다. 노란색 X는 $g(\boldsymbol{\lambda})$에 포함되는 포인트이며 초록색 점은 $\ell(\boldsymbol{\lambda})$에 포함되는 포인트입니다. 각각의 분포는 위에서 언급한 것과 같이 Gaussian KDE를 통해 생성하였습니다. 그럼 여기서 다음 탐색을 위한 하이퍼 파라미터 후보는 어떻게 찾을 수 있을까요? 위에서 계속 다루어 왔듯이 베이지안 최적화에서는 이럴 때 획득 함수를 이용합니다. $p(y \mid \boldsymbol{\lambda})$에 대해 Expected Improvement를 계산하면 됩니다.
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/frame0.png"
-      alt="" style="zoom:33%;" loading="lazy"/>
-  </figure>
-</center>
+![Expected Improvement](/assets/images/2022-12-03-bayesian-optimization/frame0.png){: w="600"}
+_Expected Improvement_
 
 ##### TPE 알고리즘에서 EI 최적화하기
 
@@ -238,12 +217,8 @@ $$
 
 마지막 식을 통해 TPE에서 최대의 EI를 갖는 하이퍼 파라미터 $\boldsymbol{\lambda}$는 $\ell(\boldsymbol{\lambda})$ 분포에서 높은 확률을 가지면서 동시에 $g(\boldsymbol{\lambda})$에선 낮은 확률을 가져야 함을 알 수 있습니다. 쉽게 설명하자면 성능이 낮은 그룹의 분포의 확률 대비 성능이 높은 그룹의 분포의 확률이 높은 하이퍼 파라미터가 다음 후보가 됩니다. 실제 구현에서는 간단하게 $\frac{\ell}{g}$가 가장 큰 하이퍼 파라미터를 반환하도록 합니다. 아래 이미지는 위 과정을 애니메이션으로 나타낸 것입니다. 몇 번의 시행이 지나면 특정 포인트로 수렴하는 것을 볼 수 있습니다.
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-03-bayesian-optimization/TPE.gif"
-      alt="TPE" style="zoom:33%;" loading="lazy"/>
-  </figure>
-</center>
+![TPE](/assets/images/2022-12-03-bayesian-optimization/TPE.gif){: w="600"}
+_TPE_
 
 ## 레퍼런스
 

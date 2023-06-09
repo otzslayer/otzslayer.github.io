@@ -21,49 +21,24 @@ Git을 사용하다보면 브랜치를 분기하여 다시 병합하는 일이 �
 
 ### Fast-Forward 일 때
 
-<center>
-  <figure>
-    <img src='/assets/images/2021-12-05-git-merge-fast-forward/fast-forward.png'
-    loading="lazy" 
-    style="zoom:25%;">
-    <figcaption style="text-align: center;">Fast-Forward인 경우</figcaption>
-  </figure>
-</center>
+
+![Fast-Forward인 경우](/assets/images/2021-12-05-git-merge-fast-forward/fast-forward.png){: w="400"}
+_Fast-Forward인 경우_
 
 브랜치 B는 브랜치 A에서 분기하였습니다. 브랜치 B의 커밋 히스토리는 $A \to B \to X \to Y$로, 브랜치 A의 커밋 히스토리인 $A \to B$ 를 포함하고 있습니다. 이 경우에 **Fast Forward 관계**라고 합니다. Fast Forward 관계일 때는 별다른 옵션을 주지 않고 병합을 하게 되면 Merge commit은 만들어지지 않고 `HEAD`의 위치만 변하게 됩니다. 병합은 단순하게 `git merge {병합할 브랜치명}` 으로 수행합니다.
 
-<center>
-  <figure>
-    <img src='/assets/images/2021-12-05-git-merge-fast-forward/ff-merge.png'
-    loading="lazy" 
-    style="zoom:25%;">
-    <figcaption style="text-align: center;">병합하면 브랜치를 따라가게 됩니다.</figcaption>
-  </figure>
-</center>
-
+![병합하면 브랜치를 따라가게 됩니다.](/assets/images/2021-12-05-git-merge-fast-forward/ff-merge.png){: w="400"}
+_병합하면 브랜치를 따라가게 됩니다._
 
 ### Fast-Forward 관계가 아닐 때
 
-<center>
-  <figure>
-    <img src='/assets/images/2021-12-05-git-merge-fast-forward/non-fast-forward.png'
-    loading="lazy" 
-    style="zoom:25%;">
-    <figcaption style="text-align: center;">Fast-Forward가 아닌 경우</figcaption>
-  </figure>
-</center>
-
+![Fast-Forward가 아닌 경우](/assets/images/2021-12-05-git-merge-fast-forward/non-fast-forward.png){: w="400"}
+_Fast-Forward가 아닌 경우_
 
 이번에도 브랜치 B는 브랜치 A에서 분기하였습니다. 하지만 브랜치 A의 커밋 히스토리는 $A \to B \to C$ 로 브랜치 B의 커밋 히스토리가 이를 포함하지 못하고 있습니다. 이 경우엔 Fast Forward 관계가 아니며, `git merge`를 하는 경우 충돌(conflict)이 발생하게 됩니다. 이 경우에 병합하게 되면 반드시 Merge commit이 생성됩니다. 또한 `HEAD` 를 따라가는 것이 아니라 브랜치가 실제로 병합됩니다. 병합은 `git merge --no-ff {병합할 브랜치명}` 을 통해 수행합니다.
 
-<center>
-  <figure>
-    <img src='/assets/images/2021-12-05-git-merge-fast-forward/no-ff-merge.png'
-    loading="lazy" 
-    style="zoom:25%;">
-    <figcaption style="text-align: center;">Merge commit을 생성하며 병합됩니다.</figcaption>
-  </figure>
-</center>
+![Merge commit을 생성하며 병합됩니다.](/assets/images/2021-12-05-git-merge-fast-forward/no-ff-merge.png){: w="400"}
+_Merge commit을 생성하며 병합됩니다._
 
 ## 마무리
 
