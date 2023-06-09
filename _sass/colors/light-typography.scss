@@ -12,8 +12,10 @@
   --text-color: #34343c;
   --text-muted-color: #8e8e8e;
   --heading-color: black;
-  --blockquote-border-color: #eeeeee;
-  --blockquote-text-color: #9a9a9a;
+  // --blockquote-border-color: #eeeeee;
+  --blockquote-border-color: #D9685F;
+  --blockquote-text-color: var(--text-color);
+  --blockquote-background-color: #FBEFEE;
   --link-color: #0153ab;
   --link-underline-color: #dee2e6;
   --button-bg: #ffffff;
