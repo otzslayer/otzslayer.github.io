@@ -2,9 +2,6 @@
 title: 옵시디언 사용기
 tags: [obsidian, note-taking, para, productivity]
 category: smalltalk
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

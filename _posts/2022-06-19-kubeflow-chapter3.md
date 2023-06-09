@@ -2,9 +2,6 @@
 title: Kubeflow for ML - Chapter 3
 tags: [kubeflow, mlops]
 category: Kubeflow
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

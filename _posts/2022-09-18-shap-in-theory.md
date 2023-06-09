@@ -2,9 +2,6 @@
 title: SHAP (SHapley Additive exPlanations) In Theory
 tags: [xai, shap]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

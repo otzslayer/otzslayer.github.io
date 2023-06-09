@@ -2,9 +2,6 @@
 title: Python 로깅 멋지게 하기
 tags: [python, logging]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

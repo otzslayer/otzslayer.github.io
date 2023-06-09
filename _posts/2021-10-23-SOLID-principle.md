@@ -2,9 +2,6 @@
 title: SOLID한 코드를 작성하기 위한 다섯 가지 원칙
 tags: [solid, clean-code]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

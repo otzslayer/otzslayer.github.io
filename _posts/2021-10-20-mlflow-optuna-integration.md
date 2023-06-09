@@ -2,9 +2,6 @@
 title: MLflow와 Optuna 이용하여 모델 튜닝하고 관리하기
 tags: [mlflow, optuna, hpo, mlops]
 category: MLOps
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: ML 프로젝트에서 YAML 파일을 설정 파일로 사용하기
 tags: [yaml, configuration]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

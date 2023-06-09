@@ -2,9 +2,6 @@
 title: M1 Mac (Apple Silicon)에서 Conda 환경 설정하기
 tags: [conda, mac, setting-environment]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Git Hook을 이용해 코드 포맷팅 체크와 커밋 메시지 검증하기
 tags: [git, hook, black, pre-commit, clean-code, code-formatting]
 category: Git
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

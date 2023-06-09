@@ -2,9 +2,6 @@
 title: Hyperband
 tags: [hpo, hyperband, sha, multi-fidelity]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

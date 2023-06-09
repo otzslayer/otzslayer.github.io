@@ -2,9 +2,6 @@
 title: GitLab 설치와 트러블슈팅
 tags: [gitlab, setting-environment]
 category: Git
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

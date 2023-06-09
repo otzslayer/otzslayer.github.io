@@ -2,9 +2,6 @@
 title: 블로그를 다시 시작하는 이유
 tags: [notes]
 category: smalltalk
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

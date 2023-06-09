@@ -2,9 +2,6 @@
 title: 여러 개의 커밋을 하나로 묶기
 tags: [git, rebase, squash]
 category: Git
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

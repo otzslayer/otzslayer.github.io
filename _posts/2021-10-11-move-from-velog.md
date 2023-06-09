@@ -2,9 +2,6 @@
 title: Velog에서 이사 옵니다.
 tags: notes
 category: smalltalk
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

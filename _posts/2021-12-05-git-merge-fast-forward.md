@@ -2,9 +2,6 @@
 title: Git Merge에서 Fast Forward 관계 이해하기
 tags: [git, fast-forward]
 category: Git
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

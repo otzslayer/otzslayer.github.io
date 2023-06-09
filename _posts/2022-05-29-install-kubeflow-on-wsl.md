@@ -2,9 +2,6 @@
 title: WSL에서 Kubeflow 설치하기
 tags: [wsl, kubeflow, mlops, setting-environment]
 category: Kubeflow
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

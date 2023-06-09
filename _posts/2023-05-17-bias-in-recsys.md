@@ -2,9 +2,6 @@
 title: Biases in Recommender Systems
 tags: [bias, recsys]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Neural Collaborative Filtering vs. Matrix Factorization
 tags: [recsys, ncf, matrix-factorization]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

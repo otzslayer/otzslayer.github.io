@@ -2,9 +2,6 @@
 title: Jekyll 블로그 포스트 생성 스크립트
 tags: [notes]
 category: etc
-aside:
-  toc: true
-show_category: true
 layout: post
 mathjax: false
 ---

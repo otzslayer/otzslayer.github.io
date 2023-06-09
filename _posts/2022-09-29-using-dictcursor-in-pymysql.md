@@ -2,9 +2,6 @@
 title: Python에서 MySQL 쿼리 결과에 컬럼 자동으로 붙이기
 tags: [pymysql, sqlalchemy, mysql]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: VS Code를 Git 기본 에디터로 설정하기
 tags: [git, vs-code, setting-environment]
 category: Git
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

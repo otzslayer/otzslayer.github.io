@@ -2,9 +2,6 @@
 title: Multi-armed Bandit
 tags: [recsys, multi-armed-bandit, mab, ab-test]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

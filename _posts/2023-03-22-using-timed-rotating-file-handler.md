@@ -2,9 +2,6 @@
 title: Python에서 TimedRotatingFileHandler 활용하기
 tags: [python, logging, time-rotating]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

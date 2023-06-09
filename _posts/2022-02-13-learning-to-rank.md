@@ -2,9 +2,6 @@
 title: Learning to Rank
 tags: [ltr, learning-to-rank, recsys, map, ndcg]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Great Expectation 결과 MS Teams로 보내기
 tags: [great-expectations, mlops, ms-teams]
 category: MLOps
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

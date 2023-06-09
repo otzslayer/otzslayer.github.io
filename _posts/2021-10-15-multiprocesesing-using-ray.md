@@ -2,9 +2,6 @@
 title: Ray를 이용해 Python 병렬 처리 쉽게 하기
 tags: [ray, multiprocessing, python]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

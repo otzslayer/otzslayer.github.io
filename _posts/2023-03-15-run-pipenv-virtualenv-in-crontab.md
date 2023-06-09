@@ -2,9 +2,6 @@
 title: Crontab에서 Pyenv + Pipenv 가상환경 통해서 실행하도록 하기
 tags: [crontab, pyenv, pipenv]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

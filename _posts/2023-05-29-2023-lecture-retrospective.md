@@ -2,9 +2,6 @@
 title: 사내 강의 회고
 tags: [retrospective]
 category: smalltalk
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

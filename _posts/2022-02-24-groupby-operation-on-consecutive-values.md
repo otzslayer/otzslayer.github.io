@@ -2,9 +2,6 @@
 title: 연속적인 값에 대해 Group-by operation 수행하기
 tags: [pandas, groupby]
 category: Pandas
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

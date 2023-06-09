@@ -2,9 +2,6 @@
 title: BentoML에서 Input에 다양한 타입이 필요한 경우 (Pydantic 활용)
 tags: [bentoml, serving, pydantic]
 category: MLOps
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Neural Collaborative Filtering
 tags: [ncf, recsys]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

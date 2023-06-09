@@ -2,9 +2,6 @@
 title: Deep Neural Networks for YouTube Recommendations
 tags: [recsys, youtube, two-stage-model]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Kubeflow에서 Notebook 생성 시 Could not find CSRF cookie XSRF-TOKEN in the request 에러 발생할 때
 tags: [csrf, xsrf-token, kubeflow, mlops]
 category: Kubeflow
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

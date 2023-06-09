@@ -2,9 +2,6 @@
 title: 'Parquet에서 Unhandled type for Arrow to Parquet schema conversion - halffloat 이 발생할 때'
 tags: [parquet, halffloat]
 category: Pandas
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

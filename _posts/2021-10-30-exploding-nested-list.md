@@ -2,9 +2,6 @@
 title: 데이터 프레임 내에 nested된 리스트를 확장하기
 tags: [nested-list, explode, pandas]
 category: Pandas
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

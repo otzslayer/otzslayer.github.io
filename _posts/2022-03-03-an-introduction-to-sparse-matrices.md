@@ -2,9 +2,6 @@
 title: An Introduction to Sparse Matrices
 tags: [scipy, sparse-matrix, python, coo, csr, csc]
 category: Python
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

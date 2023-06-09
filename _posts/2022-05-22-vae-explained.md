@@ -2,9 +2,6 @@
 title: Variational Autoencoder
 tags: [vae, autoencoder]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

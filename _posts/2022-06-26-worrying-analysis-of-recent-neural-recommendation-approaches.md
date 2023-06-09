@@ -2,9 +2,6 @@
 title: A worrying Analysis of Recent Neural Recommendation Approaches
 tags: [recsys, model-evaluation]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

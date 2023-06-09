@@ -2,9 +2,6 @@
 title: Bayesian Personalized Ranking (BPR)
 tags: [bayesian, bpr, recsys, implicit]
 category: ML
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 

@@ -2,9 +2,6 @@
 title: Cron으로 Great Expectations 데이터 검증 스케줄링하기
 tags: [great-expectations, mlops, scheduling, cron]
 category: MLOps
-aside:
-  toc: true
-show_category: true
 layout: post
 ---
 
