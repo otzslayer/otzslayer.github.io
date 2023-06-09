@@ -91,7 +91,7 @@ comments:
     shortname: "otzslayer-github-io" # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: otzslayer/otzslayer.github.io # <gh-username>/<repo>
+    repo: otzslayer/archived_blog_text_theme
     issue_term: title # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
