@@ -22,7 +22,7 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   />
 
-  {% include adsense.html %} {% capture seo_tags %} {% seo title=false %} {%
+  {% capture seo_tags %} {% seo title=false %} {%
   endcapture %} {% if page.image %} {% assign img = page.image.path | default:
   page.image %} {% unless img contains '://' %} {% assign img_path =
   page.img_path | append: '/' | append: img | replace: '//', '/' %} {% capture
@@ -110,10 +110,4 @@
   {% unless site.theme_mode %} {% include mode-toggle.html %} {% endunless %} {%
   include metadata-hook.html %}
 
-  <!-- Google AdSense -->
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4445781280689625"
-    crossorigin="anonymous"
-  ></script>
 </head>
