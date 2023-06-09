@@ -115,7 +115,7 @@ assets:
 pwa:
   enabled: false # the option for PWA feature
 
-paginate: 7
+paginate: 10
 
 # ------------ The following options are not recommended to be modified ------------------
 
