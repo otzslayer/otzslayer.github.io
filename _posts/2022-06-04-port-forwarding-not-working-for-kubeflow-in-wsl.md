@@ -5,6 +5,7 @@ category: Kubeflow
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 로컬에서 쓰는 Kubeflow는 쉽지 않네요. :(

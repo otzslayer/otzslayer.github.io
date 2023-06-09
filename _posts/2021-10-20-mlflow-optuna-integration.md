@@ -5,6 +5,7 @@ category: MLOps
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 ML 실험을 보다 빠르고 보기 좋게 관리해봅시다.

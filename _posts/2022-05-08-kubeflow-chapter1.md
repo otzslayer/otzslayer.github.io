@@ -5,6 +5,7 @@ category: Kubeflow
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Chapter 1: Kubeflow, What It Is and Who It Is For

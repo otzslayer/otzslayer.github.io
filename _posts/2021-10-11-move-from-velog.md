@@ -5,6 +5,7 @@ category: smalltalk
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 긴 방황을 끝내고 돌고 돌아 GitHub 블로그로 돌아왔습니다.

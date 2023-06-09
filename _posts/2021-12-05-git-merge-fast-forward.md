@@ -5,6 +5,7 @@ category: Git
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Git Merge에서 항상 헷갈리는 Fast Forward 관계에 대해 정리해보았습니다. 🙌

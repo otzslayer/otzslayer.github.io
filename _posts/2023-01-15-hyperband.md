@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 📄 Li, Lisha, et al. "Hyperband: A novel bandit-based approach to hyperparameter optimization." *The Journal of Machine Learning Research* 18.1 (2017): 6765-6816.

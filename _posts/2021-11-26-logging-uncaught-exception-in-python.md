@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Python에서 예기치 않은 예외가 발생했을 때 어떻게 로깅할까요? 🕸

@@ -5,6 +5,7 @@ category: smalltalk
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 요즘 느꼈던 것들에 대해서 조금만 이야기해보려 합니다.

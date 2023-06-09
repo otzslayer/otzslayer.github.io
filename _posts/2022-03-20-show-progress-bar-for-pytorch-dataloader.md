@@ -5,6 +5,7 @@ category: PyTorch
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 

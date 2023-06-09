@@ -5,6 +5,7 @@ category: Pandas
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Timestamp를 Rolling Aggregation하는 방법은 생각보다 쉽습니다.

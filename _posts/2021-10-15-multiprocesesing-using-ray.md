@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Ray를 이용한 Python 병렬 처리 방법을 알아보도록 하겠습니다. 😄

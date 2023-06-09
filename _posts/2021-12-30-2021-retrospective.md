@@ -5,6 +5,7 @@ category: smalltalk
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 2021년은 어떤 한 해였을까요?

@@ -5,6 +5,7 @@ category: Git
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 너무 많은, 자잘한 커밋도 독이 될 수 있습니다.

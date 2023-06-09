@@ -5,6 +5,7 @@ category: Pandas
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Pandas에서 Nested list를 펼치려면 폭파시켜버리면 됩니다. 💣

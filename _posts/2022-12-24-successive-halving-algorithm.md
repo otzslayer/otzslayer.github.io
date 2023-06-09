@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 📄 Jamieson, Kevin, and Ameet Talwalkar. "Non-stochastic best arm identification and hyperparameter optimization." *Artificial intelligence and statistics*. PMLR, 2016.

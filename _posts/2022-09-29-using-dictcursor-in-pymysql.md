@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 

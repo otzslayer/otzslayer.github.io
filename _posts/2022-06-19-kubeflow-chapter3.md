@@ -5,6 +5,7 @@ category: Kubeflow
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Chapter 3: Kubeflow Design: Beyond the Basics

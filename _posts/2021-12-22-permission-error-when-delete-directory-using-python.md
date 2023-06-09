@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 사실 터미널을 켜서 지우면 되긴 하는데... 😅

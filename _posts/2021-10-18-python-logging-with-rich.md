@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Python으로 `print()`로 로깅하는 것보다 멋진 방법이 있습니다.

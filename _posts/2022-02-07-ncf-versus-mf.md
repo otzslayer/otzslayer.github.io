@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Rendle, Steffen, et al. "Neural collaborative filtering vs. matrix factorization revisited." *Fourteenth ACM conference on recommender systems*. 2020.

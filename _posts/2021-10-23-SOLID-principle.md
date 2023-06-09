@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 SOLID 원칙이란 '클린 코드'의 저자인 로버트 마틴이 명명한 객체 지향 프로그래밍의 다섯 가지 기본 원칙입니다.

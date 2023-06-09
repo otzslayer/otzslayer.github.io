@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 대부분 0으로 이루어진 행렬을 굳이 다 쓸 필요는 없는데 말이죠.

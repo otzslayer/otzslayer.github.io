@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Covington, Paul, Jay Adams, and Emre Sargin. "Deep neural networks for youtube recommendations." Proceedings of the 10th ACM conference on recommender systems. 2016.

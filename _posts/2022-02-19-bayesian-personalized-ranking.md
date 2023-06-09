@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Rendle, Steffen, et al. "BPR: Bayesian personalized ranking from implicit feedback." arXiv preprint arXiv:1205.2618 (2012).

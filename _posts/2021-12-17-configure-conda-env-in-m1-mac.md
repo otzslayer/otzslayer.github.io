@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 무언가 다르다는 M1 맥북에서의 Conda 환경 설정에 대해 알아봅시다. 👓

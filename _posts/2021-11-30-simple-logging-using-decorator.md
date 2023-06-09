@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 데코레이터를 이용해서 테스트를 대체할 간단한 로깅을 해보겠습니다. 🪵

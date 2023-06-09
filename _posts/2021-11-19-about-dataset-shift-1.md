@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Dataset Shift는 무엇인지, 어떤 것들이 있는지 알아봅시다. 👀

@@ -5,6 +5,7 @@ category: Pandas
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 🤬 Unhandled type for Arrow to Parquet schema conversion: halffloat

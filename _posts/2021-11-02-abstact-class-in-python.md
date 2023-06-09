@@ -5,6 +5,7 @@ category: Python
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Python에도 추상 클래스는 있지만 다른 언어들하고는 조금 다릅니다.

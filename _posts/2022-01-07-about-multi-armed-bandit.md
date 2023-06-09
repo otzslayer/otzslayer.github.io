@@ -5,6 +5,7 @@ category: ML
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 A/B 테스트를 대체할 수 있는 Multi-armed Bandit에 대해서 알아봅시다. 🎰

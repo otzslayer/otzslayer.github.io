@@ -5,6 +5,7 @@ category: smalltalk
 aside:
   toc: true
 show_category: true
+layout: post
 ---
 
 Jupyter Notebook이 참 좋은데 참 별로란 말이죠?
