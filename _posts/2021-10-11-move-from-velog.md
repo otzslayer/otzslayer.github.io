@@ -1,7 +1,7 @@
 ---
 title: Velog에서 이사 옵니다.
 tags: notes
-category: smalltalk
+category: 잡담
 layout: post
 ---
 

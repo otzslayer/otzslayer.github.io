@@ -1,7 +1,7 @@
 ---
 title: 블로그를 다시 시작하는 이유
 tags: [notes]
-category: smalltalk
+category: 잡담
 layout: post
 ---
 

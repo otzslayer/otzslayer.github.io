@@ -1,7 +1,7 @@
 ---
 title: Jupyter Notebook을 쓰지 않게 되는 몇 가지 이유에 대해서
 tags: [jupyter]
-category: smalltalk
+category: 잡담
 layout: post
 ---
 

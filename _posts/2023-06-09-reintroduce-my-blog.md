@@ -1,7 +1,7 @@
 ---
 title: 블로그를 새로 바꿔봤습니다
 tags: [blog]
-category: smalltalk
+category: 잡담
 layout: post
 ---
 

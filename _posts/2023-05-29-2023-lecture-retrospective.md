@@ -1,7 +1,7 @@
 ---
 title: 사내 강의 회고
 tags: [retrospective]
-category: smalltalk
+category: 잡담
 layout: post
 ---
 

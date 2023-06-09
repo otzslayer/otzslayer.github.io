@@ -1,7 +1,7 @@
 ---
 title: 단상 (2021/01/20)
 tags: [notes, organizational-culture]
-category: smalltalk
+category: 잡담
 layout: post
 ---
 
