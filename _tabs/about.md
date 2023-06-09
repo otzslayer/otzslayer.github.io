@@ -4,9 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-<p align="center">
-	<img src="/assets/psyduck.png" alt="Psyduck" style="zoom:33%;" />
-</p>
+<img src="/assets/psyduck.png" style="width: 240px;">
 
 ---
 
