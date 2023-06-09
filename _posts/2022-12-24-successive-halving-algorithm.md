@@ -86,13 +86,8 @@ $$
 
 ## Successive Halving Algorithm
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-24-successive-halving-algorithm/sha_algorithm.png"
-      alt="SHA Algorithm" style="zoom:33%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Pseudo-code for SHA</figcaption>
-  </figure>
-</center>
+![Pseudo-code for SHA](/assets/images/2022-12-24-successive-halving-algorithm/sha_algorithm.png){: w="600"}
+_Pseudo-code for SHA_
 
 Successive Halving Algorithm은 다음 순서로 작동합니다.
 
@@ -107,13 +102,8 @@ Successive Halving Algorithm은 다음 순서로 작동합니다.
 
 ### 실제 예시
 
-<center>
-  <figure>
-    <img src="/assets/images/2022-12-24-successive-halving-algorithm/sha_example.png"
-      alt="Example for SHA" style="zoom:50%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Figure from [1]</figcaption>
-  </figure>
-</center>
+![Figure from [1]](/assets/images/2022-12-24-successive-halving-algorithm/sha_example.png){: w="500"}
+_Figure from [1]_
 
 이해를 위해서 직접 값을 대입하여 알고리즘이 어떻게 작동하는지 알아보도록 하겠습니다. 우선 예산 $B$ 를 32로, 하이퍼파라미터 설정값 개수 $n$ 은 8로 가정하겠습니다. 그러면 최초 하이퍼파라미터 설정 집합 $S_0$ 의 크기는 당연히 8이고, 알고리즘의 반복은 $k=0$ 부터 $k = \lfloor \log_2(n) \rfloor -1 = 2$ 까지 진행합니다.
 

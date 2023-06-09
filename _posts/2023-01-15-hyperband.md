@@ -39,9 +39,8 @@ SHA에서 발생 가능한 문제는 고정된 예산 $B$ 에 대해서 **하이
 
 ## Hyperband
 
-<center>
-<img src="https://i.ibb.co/V3cNRDv/hyperband-algorithm.png" alt="image-20221124151137247" style="zoom:50%;" />
-</center>
+![Pseudocode for Hyperband](https://i.ibb.co/V3cNRDv/hyperband-algorithm.png){: w="500"}
+_Pseudocode for Hyperband_
 
 Hyperband는 다음 순서대로 작동합니다.
 
@@ -74,21 +73,15 @@ Hyperband는 다음 순서대로 작동합니다.
 
 이 방법으로 모든 Bracket에 대해 SHA를 수행하면 됩니다. 다음 표는 모든 Bracket에 대해 각 단계마다 몇 개의 설정이 남고 몇 번의 학습을 수행했는지를 보여줍니다.
 
-<center>
-<img src="https://i.ibb.co/QF0dL7F/hyperband-brackets.png" alt="image-20221204223413473" style="zoom:33%;" />
-</center>
+![Bracket examples for Hyperband](https://i.ibb.co/QF0dL7F/hyperband-brackets.png){: w="400"}
+_Bracket examples for Hyperband_
 
 ## 나가며
 
 Hyperband는 최근 [BOHB](https://arxiv.org/abs/1807.01774)가 많이 쓰이는 추세에서 그 기반이 되는 중요한 알고리즘입니다. Hyperband의 특징으로는 이론적 근거가 확실한 Successive Halving Algorithm을 고도화하였으며, 튜닝 초반에 매우 빠르게 ML 모델을 수렴시킬 수 있다는 점입니다. 또한 사용하는 입력값을 최소화하여 하이퍼파라미터 공간을 탐색하는 데에 있어 Exploration-Exploitation Trade-off를 줄였다는 점입니다.
 
-
-<center>
-<figure>
-<img src="https://i.ibb.co/b1K74SC/hyperband-converges.png" alt="hyperband" style="zoom:50%;" />
-<figcaption style="text-align: center;">Figure from [1]<br>학습 초기에는 랜덤 서치 대비 20배 빠르지만 충분한 시간이 주어졌을 때 그 차이가 크지 않게 됨.</figcaption>
-</figure>
-</center>
+![Figure from [1]](https://i.ibb.co/b1K74SC/hyperband-converges.png){: w="600"}
+_Figure from [1]<br>학습 초기에는 랜덤 서치 대비 20배 빠르지만 충분한 시간이 주어졌을 때 그 차이가 크지 않게 됨._
 
 다만 이 알고리즘의 아쉬운 점으로는 **이미 특정 Bracket에서 탐색한 결과를 다른 Bracket에서 그대로 다시 탐색할 수도 있다는 점**입니다. 매 Bracket마다 하이퍼파라미터 설정을 새로 샘플링하여 가져오기 때문에 발생하는 문제입니다. 또한 튜닝 초반에 빠르게 수렴하는데에 비해 시간이 충분히 흐른 후에는 기존 방법들에 비해 큰 개선이 없다는 것도 문제가 됩니다. 추후에 다룰 BOHB에서는 이 문제를 어느 정도 해결하는 것을 볼 수 있습니다. 다음 포스트에서는 BOHB에 대해서 알아보도록 하겠습니다.
 

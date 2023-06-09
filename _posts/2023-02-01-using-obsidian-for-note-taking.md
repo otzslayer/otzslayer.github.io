@@ -8,12 +8,9 @@ layout: post
 
 <!--more-->
 
-<center>
-  <figure>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Person_taking_notes.jpg" style="zoom:25%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Image from Wikipedia</figcaption>
-  </figure>
-</center>
+
+![Image from Wikipedia](https://upload.wikimedia.org/wikipedia/commons/8/8e/Person_taking_notes.jpg){: w="1024"}
+_Image from Wikipedia_
 
 ## 노션에서 옵시디언으로
 
@@ -25,12 +22,8 @@ layout: post
 
 ## 첫 인상
 
-<center>
-  <figure>
-    <img src="https://obsidian.md/images/screenshot-1.0-hero-combo.png" style="zoom:25%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Obsidian</figcaption>
-  </figure>
-</center>
+![Obsidian](https://obsidian.md/images/screenshot-1.0-hero-combo.png){: w="800"}
+_Obsidian_
 
 순수 마크다운에 기반을 둔 노트 앱이어서 그런지 **가볍고 빨랐습니다.** 많은 리뷰에서 마크다운을 써본 적 없다면 처음에 적응하기 어려울 수 있다고 했지만 애초에 모든 문서를 마크다운으로 작성하는 저에겐 오히려 매우 편했습니다. UI도 제법 깔끔한데다 이것저것 눌러보면서 금방 익힐 수 있어서 '이거다!' 라고 결정하기까지 오랜 시간이 걸리지는 않았습니다.
 
