@@ -3,19 +3,13 @@ title: BentoML에서 Input에 다양한 타입이 필요한 경우 (Pydantic 활
 tags: [bentoml, serving, pydantic]
 category: MLOps
 layout: post
+image:
+    path: https://i.imgur.com/A7dwPi7.png
+    alt: Photo from [Here](https://realpython.com/python-data-types/)
 ---
 
 
-<!--more-->
-
 ## 들어가며
-
-<center>
-  <figure>
-    <img src="https://i.imgur.com/A7dwPi7.png" style="zoom:50%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Photo from <a href="https://realpython.com/python-data-types/">Here</a></figcaption>
-  </figure>
-</center>
 
 개인적으로 ML 모델을 서빙할 때 [BentoML](https://docs.bentoml.org/)을 많이 사용합니다. 빠르고 다양한 모델을 지원하고 간단한 서빙이 가능하기 때문입니다. 보통 이미지나 텍스트를 모델의 인풋으로 하는 경우 BentoML에서는 각각 `bentoml.io.Image`나 `bentoml.io.Text`를 활용하여 데이터를 받습니다. 하지만 일반적인 ML 모델은 tabular data 형태의 데이터를 받게 됩니다. 이 경우 보통 하나의 데이터 행을 받게 되는데 데이터 타입이 모두 같은 경우엔 간단하게`bentoml.io.NumpyNdarray`로 받으면 됩니다. 그러나 보통은 여러 데이터 타입이 공존하는 경우가 많습니다. 수치형 변수뿐만 아니라 범주형 변수도 필요한 경우가 생기니까요. 이번 포스트에서는 이 경우에 Pydantic으로 데이터 타입 클래스를 정의하여 문제를 해결하는 방법에 대해 알아보도록 하겠습니다.
 
@@ -25,12 +19,8 @@ layout: post
 
 ### Pydantic
 
-<center>
-  <figure>
-    <img src="https://i.imgur.com/S5UEZl2.png" style="zoom:50%;" loading="lazy"/>
-    <figcaption style="text-align: center;">Pydantic</figcaption>
-  </figure>
-</center>
+![Pydantic](https://i.imgur.com/S5UEZl2.png){: w="600"}
+_Pydantic_
 
 **Pydantic**은 파이썬 타입 어노테이션을 사용한 데이터 유효성 검사와 설정 관리를 제공합니다. 많은 분들이 비슷한 기능으로 데이터 클래스를 알고 계시지만 데이터 클래스는 타입 어노테이션만 할 뿐 유효성 검사를 하지 않습니다. 따라서 이런 문제가 발생할 수 있습니다.
 
