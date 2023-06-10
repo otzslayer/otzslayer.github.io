@@ -26,3 +26,10 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
+
+# Customize
+gem "liquid-c"
+gem "jekyll-include-cache"
+
+gem "jekyll", :git => "https://github.com/jekyll/jekyll.git", :branch => "master"
+
