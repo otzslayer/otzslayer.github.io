@@ -3,20 +3,12 @@ title: 잡담 (2023/02/19)
 tags: [notes]
 category: 잡담
 layout: post
+image:
+    path: /assets/images/2023-02-19-short-post/businessman-having-headache.jpg
+    alt: Busy!
 ---
 
-절대 바빠서 짧은 글을 올리는거 맞습니다. (...)
-
-<!--more-->
-
 ## 근황
-
-<center>
-  <figure>
-    <img src="/assets/images/2023-02-19-short-post/businessman-having-headache.jpg"
-      alt="Busy!" style="zoom:12%;" loading="lazy"/>
-  </figure>
-</center>
 
 요즘 너무 바빠서 2주 넘게 블로그에 글 하나 올리지 않았단 사실을 잊어버렸습니다.
 많은 분이 찾아와주시는 블로그가 아니더라도 되도록 블로그를 풍성하게 유지하고 싶은데 생각보다 쉽지 않네요.

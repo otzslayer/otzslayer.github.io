@@ -3,17 +3,10 @@ title: 사내 강의 회고
 tags: [retrospective]
 category: 잡담
 layout: post
+image:
+    path: https://i.imgur.com/eeGzIuu.png
+    alt: Photo by [Kenny Eliason](https://unsplash.com/es/@neonbrand) on [Unsplash](https://unsplash.com)
 ---
-
-
-<!--more-->
-
-<center>
-  <figure>
-    <img src="https://i.imgur.com/eeGzIuu.png" style="zoom:50%;" loading="lazy"/>
-    <figcaption style="text-align: center;"><a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/1-aA2Fadydc">Photo</a> by <a href="https://unsplash.com/es/@neonbrand">Kenny Eliason</a> on <a href="https://unsplash.com/ko">Unsplash</a></figcaption>
-  </figure>
-</center>
 
 ## 들어가며
 

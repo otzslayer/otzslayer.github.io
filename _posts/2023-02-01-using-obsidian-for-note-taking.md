@@ -3,14 +3,10 @@ title: 옵시디언 사용기
 tags: [obsidian, note-taking, para, productivity]
 category: 잡담
 layout: post
+image:
+    path: https://upload.wikimedia.org/wikipedia/commons/8/8e/Person_taking_notes.jpg
+    alt: Note taking
 ---
-
-
-<!--more-->
-
-
-![Image from Wikipedia](https://upload.wikimedia.org/wikipedia/commons/8/8e/Person_taking_notes.jpg){: w="1024"}
-_Image from Wikipedia_
 
 ## 노션에서 옵시디언으로
 

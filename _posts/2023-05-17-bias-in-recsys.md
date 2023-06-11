@@ -3,21 +3,14 @@ title: Biases in Recommender Systems
 tags: [bias, recsys]
 category: ML
 layout: post
+image:
+    path: https://files.realpython.com/media/Build-a-Recommendation-Engine-With-Collaborative-Filtering_Watermarked.451abc4ecb9f.jpg
+    alt: Photo from [Here](https://realpython.com/build-recommendation-engine-collaborative-filtering)
 ---
-
-
-<!--more-->
 
 본 포스트는 [Towards Data Science](https://towardsdatascience.com/biases-in-recommender-systems-top-challenges-and-recent-breakthroughs-edcda59d30bf)에 기고된 글을 요약하였습니다.
 
 ## 들어가며
-
-<center>
-	<figure>
-		<img src="https://files.realpython.com/media/Build-a-Recommendation-Engine-With-Collaborative-Filtering_Watermarked.451abc4ecb9f.jpg" alt="TITLE" style="zoom:50%;" loading="lazy"/>
-	<figcaption style="text-align: center;">Image from <a href="https://realpython.com/build-recommendation-engine-collaborative-filtering/">here</a></figcaption>
-	</figure>
-</center>
 
 추천 시스템은 오늘날 여러 플랫폼에서 사용하는 성공적인 ML 서비스입니다. 추천 시스템은 사용자가 새로운 콘텐츠나 제품을 발견하는 데 큰 도움을 줍니다. 하지만 다양한 형태의 **편향**으로 인해 잘못된 추천을 제공할 수도 있고, 이에 따라 사용자 경험을 저하시킬 수 있습니다. 그래서 최근 추천 시스템에 관한 주요한 연구 주제 중 하나가 이 편향을 제거하는 방법입니다.
 
