@@ -116,6 +116,7 @@ pwa:
   enabled: false # the option for PWA feature
 
 paginate: 5
+paginate_path: "/page/:num"
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -134,6 +135,7 @@ collections:
   tabs:
     output: true
     sort_by: order
+
 
 defaults:
   - scope:
@@ -164,6 +166,27 @@ defaults:
       path: assets/js/dist
     values:
       swcache: true
+  - scope:
+      path: tags/**
+    values:
+      sitemap: false
+  - scope:
+      path: categories/**
+    values:
+      sitemap: false
+  - scope:
+      path: archives/**
+    values:
+      sitemap: false
+  - scope:
+      path: about/**
+    values:
+      sitemap: false
+  - scope:
+      path: page/**
+    values:
+      sitemap: false
+
 
 sass:
   style: compressed
