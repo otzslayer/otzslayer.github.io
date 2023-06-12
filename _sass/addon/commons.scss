@@ -1046,6 +1046,7 @@ $btn-mb: 0.5rem;
 
     font-size: 1.4rem;
     line-height: 2.5rem;
+    font-weight: 700;
   }
 
   > div {
@@ -1590,3 +1591,7 @@ $btn-mb: 0.5rem;
     }
   }
 } /* min-width: 1650px */
+
+.px-md-3 {
+  font-size: 0.9rem;
+}
