@@ -4,18 +4,18 @@ layout: page
 ---
 
 <div id="tags" class="d-flex flex-wrap mx-xl-2">
-  {% assign tags = '' | split: '' %}
-  {% for t in site.tags %}
-    {% assign tags = tags | push: t[0] %}
-  {% endfor %}
-
-  {% assign sorted_tags = tags | sort_natural %}
-
-  {% for t in sorted_tags %}
+  {% capture tags %}
+    {% for tag in site.tags %}
+      {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+    {% endfor %}
+  {% endcapture %}
+  {% assign
+   sortedtags = tags | split: ' ' | sort %}
+  {% for tag in sortedtags reversed %}
+    {% assign tagitems = tag | split: '#' %}
     <div>
-      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
-        {{ t -}}
-        <span class="text-muted">{{ site.tags[t].size }}</span>
+      <a class="tag" href="{{ tagitems[1] | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">{{ tagitems[1] }}
+        <span class="text-muted">{{ tagitems[2] }}</span>
       </a>
     </div>
   {% endfor %}
