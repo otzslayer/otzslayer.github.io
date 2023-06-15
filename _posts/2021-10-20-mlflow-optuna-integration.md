@@ -52,7 +52,7 @@ $ kaggle competitions download -c house-prices-advanced-regression-techniques
 
 데이터 전처리는 간단하게 진행합니다. 수치형 변수는 최빈값으로 결측값을 메꾸고 `MinMaxScaler()`를 적용합니다. 범주형 변수는 결측 범주를 `"None"`으로 채워줍니다.
 
-{% highlight python linenos %}
+```python
 from typing import List
 
 import numpy as np
@@ -102,13 +102,13 @@ preprocessor = make_preprocess_pipeline(num_cols, cat_cols)
 
 X_ = pd.DataFrame(preprocessor.fit_transform(X, y),
                   columns=num_cols+cat_cols)
-{% endhighlight %}
+```
 
 ### **모델링 (CatBoost + Optuna)**
 
 모델링을 위한 알고리즘은 범주형 변수가 많기 때문에 CatBoost를 사용합니다. 튜닝할 하이퍼파라미터는 `max_depth`, `learning_rate`, `subsample`, `l2_leaf_reg` 입니다. 각각에 대한 설명은 [공식 문서](https://catboost.ai/docs/concepts/python-reference_parameters-list.html)에서 확인하시기 바랍니다. 하이퍼파라미터 튜닝을 위해 5-fold Cross Validation을 수행하여 가장 낮은 RMSLE (Root Mean Squared Logarithmic Error)를 갖는 모델을 탐색합니다. Optuna를 이용하여 모델을 튜닝하고, Optuna Optimizer에 사용할 Pruner는 `HyperbandPruner` 를 사용합니다. 다른 Pruner를 사용해도 무방합니다.
 
-{% highlight python linenos %}
+```python
 import catboost
 import optuna
 
@@ -149,13 +149,13 @@ study = optuna.create_study(
     direction="minimize",
     pruner=optuna.pruners.HyperbandPruner(max_resource="auto")
     )
-{% endhighlight %}
+```
 
 ### **MLflow 콜백(Callback) 적용**
 
 이제 여기에 MLflow를 위한 콜백을 적용합니다. 해당 콜백을 적용하면 코드가 위치한 폴더에 모델의 학습 정보가 저장되고 추후에 Web UI를 통해서 결과를 확인할 수 있습니다. Optuna에 MLflow를 위한 콜백을 위한 클래스인 `MLflowCallback`이 있고, 여기에 저장될 폴더명인 `tracking_uri`와 확인할 모델 메트릭명을 `metric_name` 으로 설정하여 Optuna Study에 사용하면 됩니다. 50번의 Trial을 수행하는 동안 모델 학습 정보는 `./mlruns` 에 저장됩니다.
 
-{% highlight python linenos %}
+```python
 from optuna.integration.mlflow import MLflowCallback
 
 def make_mlflow_callback():
@@ -167,7 +167,7 @@ def make_mlflow_callback():
 
 mlflow_cb = make_mlflow_callback()
 study.optimize(objective, n_trials=50, callbacks=[mlflow_cb])
-{% endhighlight %}
+```
 
 ### **Web UI 확인**
 

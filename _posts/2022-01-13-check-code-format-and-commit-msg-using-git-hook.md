@@ -166,7 +166,7 @@ $ git config --local commit.template .git/.gitmessage
 
 우선 제가 작성한 커밋 메시지 검증 코드는 아래와 같습니다.
 
-{% highlight python linenos %}
+```python
 #!/usr/bin/python3
 
 import re
@@ -262,7 +262,7 @@ def verify_commit_message():
 
 if __name__ == "__main__":
     verify_commit_message()
-{% endhighlight %}
+```
 
 파일명은 `verify_commit_msg.py`로 해당 파일은 `.git/hooks` 폴더에 위치합니다.
 

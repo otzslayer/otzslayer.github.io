@@ -100,7 +100,7 @@ python -m rich
 
 위 순서대로 로거 인스턴스를 정의하는 함수를 작성해 보겠습니다. 로거의 로깅 기본 수준은  `NOTSET` 으로 설정하겠습니다.
 
-{% highlight python linenos %}
+```python
 import logging
 import logging.handlers
 
@@ -122,7 +122,7 @@ def set_logger(log_path) -> logging.Logger:
     logger.addHandler(file_handler)
 
     return logger
-{% endhighlight %}
+```
 
 - Line 6 : `RichHandler`를 위한 포맷
 - Line 7 : `FileHandler`를 위한 포맷
@@ -161,7 +161,7 @@ $ cat log.log
 
 발생한 오류에 대한 메시지가 저장이 되지 않았습니다. 사실 터미널을 보아도 `rich` 모듈을 통해서 오류 메시지가 출력되지 않았습니다. 실제 `logging` 모듈을 사용할 때 자주 겪게 되는 현상입니다. 예외처리를 할 때 `logger.error()`를 통해 별도로 로깅 메시지를 저장/출력해야지만 원하는 결과를 얻을 수 있습니다. 문제는 전체 코드 중 어디에서 오류가 발생할 지 모르기 때문에 `try except` 구문을 전체 코드에 걸어야 한다는 점입니다. 이런 문제를 해결하기 위해서는 아래 트릭을 사용해야 합니다.
 
-{% highlight python linenos %}
+```python
 import sys
 
 def handle_exception(exc_type, exc_value, exc_traceback):
@@ -180,7 +180,7 @@ if __name__ == "__main__":
         except:
             raise ZeroDivisionError()
         logger.info(f"1/{i} = {num}")
-{% endhighlight %}
+```
 
 오류가 발생했을 때 그 내용을 `RichHandler`에서 가져갈 수 있도록 설정하는 것 (Line 3 ~ 7)입니다. 해당 함수를 `sys.excepthook`에 설정하고 메인 함수를 실행시키면 아까와 다른 결과를 얻을 수 있습니다.
 

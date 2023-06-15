@@ -20,7 +20,7 @@ Pandas를 이용해서 데이터를 처리하다보면 어떻게든 한 번은 �
 
 다음과 같은 데이터 프레임이 있다고 가정해보겠습니다.
 
-{% highlight python linenos %}
+```python
 import numpy as np
 import pandas as pd
 
@@ -29,7 +29,7 @@ name = np.random.choice(["A", "B", "C"], size=10, replace=True)
 value = np.random.choice(10, size=10, replace=True)
 
 df = pd.DataFrame({"name": name, "value": value})
-{% endhighlight %}
+```
 
 ```python
   name  value
@@ -142,7 +142,7 @@ df.groupby("group").max()[["name", "value"]].reset_index(drop=True)
 
 지금까지의 복잡한 과정을 조금 더 단순하게 하면 아래 코드가 됩니다.
 
-{% highlight python linenos %}
+```python
 df["group"] = (df["name"] != df["name"].shift()).cumsum()
 df.groupby(["group"]).max().reset_index(drop=True)
-{% endhighlight %}
+```

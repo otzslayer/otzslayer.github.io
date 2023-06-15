@@ -198,7 +198,7 @@ $$
 
 우선 파일을 불러오겠습니다.
 
-{% highlight python linenos %}
+```python
 import os
 
 import lightgbm as lgb
@@ -210,14 +210,14 @@ valid_file = os.path.join(data_path, "rank.test")
 train_data = lgb.Dataset(train_file)
 valid_data = lgb.Dataset(valid_file)
 
-{% endhighlight %}
+```
 
 하이퍼파라미터에서 신경써야 할 것은 `objective` `metric`, `ndcg_eval_at` 입니다.
 LambdaRank를 사용하기 위해 `objective`는 `"lambdarank"`로 두고 `metric`은 `"ndcg"`로 설정합니다.
 마지막으로 검증 데이터에 대해서 검증 메트릭을 계산할 때의 기준 설정을 `ndcg_eval_at`으로 해줍니다.
 저는 $NDCG@1$, $NDCG@3$, $NDCG@5$를 보기 위해서 `[1, 3, 5]`로 설정했습니다.
 
-{% highlight python linenos %}
+```python
 
 param = {
     "task": "train",
@@ -232,11 +232,11 @@ param = {
     "learning_rate": 0.01,
     "num_threads": 8,
 }
-{% endhighlight %}
+```
 
 학습은 다른 경우와 동일하게 LightGBM의 `train` 메서드를 사용합니다.
 
-{% highlight python linenos %}
+```python
 bst = lgb.train(
     param,
     train_data,
@@ -246,7 +246,7 @@ bst = lgb.train(
     verbose_eval=1,
     early_stopping_rounds=5,
 )
-{% endhighlight %}
+```
 
 ```
 [LightGBM] [Info] Total Bins 6179
@@ -269,13 +269,13 @@ Early stopping, best iteration is:
 
 마지막으로 예측을 할 때는 다른 LightGBM 사용법과 다르게 데이터를 인자로 받지 않고 데이터의 경로를 인자로 받습니다.
 
-{% highlight python linenos %}
+```python
 bst.predict(valid_file)
 
 # array([-1.29437752e-02,  4.64725214e-02, -3.56203999e-02, -7.87157477e-03,
 #       ...,
 #       -6.64313516e-02, -6.41849090e-02, -5.12166041e-02,  1.77082568e-02])
-{% endhighlight %}
+```
 
 ## References
 

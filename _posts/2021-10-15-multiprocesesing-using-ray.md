@@ -28,7 +28,7 @@ Ray를 이용한 Python 병렬 처리 방법을 알아보도록 하겠습니다.
 
 풀을 이용한 간단한 예제를 살펴보겠습니다. 100만 개의 숫자로 이루어진 배열에 10을 곱하는 예제입니다. 프로세스의 수는 16개로 설정하였습니다. 일반적인 파이썬의 List Comprehension과 비교해보도록 하겠습니다. 동일한 순서로 값을 반환하기 위해 `map()` 메서드를 사용하였습니다.
 
-{% highlight python linenos %}
+```python
  import numpy as np
  from multiprocessing import Pool
  
@@ -44,7 +44,7 @@ Ray를 이용한 Python 병렬 처리 방법을 알아보도록 하겠습니다.
  with Pool(processes=16) as p:
    result = p.map(mul, arr)
  >> Wall time: 3.82 s ± 53.1 ms per loop
-{% endhighlight %}
+```
 
 우선 코드를 보면 프로세스 풀을 `Pool()` 로 선언하고 그 안에 프로세스 수를 입력합니다. 그다음 해당 프로세스 풀에  `map()` 메서드로 병렬 처리된 연산 결과를 얻을 수 있습니다. 그런데 결과가 생각과는 완전 다릅니다. List Comprehension을 사용하였을 때 660 ms가 소요되었는데, 오히려 `multiprocessing.Pool`을 사용했을 때 6배 넘는 시간이 소요되었습니다. 원인이 무엇일까요?
 
@@ -68,7 +68,7 @@ _덧) 사실 이 예제는  `result = arr * 10` 이 가장 빠르게 결과를 �
 
 위에서 다루었던 예제를 Ray에서는 어떻게 할 수 있는지 아래 코드로 살펴보겠습니다.
 
-{% highlight python linenos %}
+```python
  import ray
  
  ray.init(num_cpus=16)
@@ -80,7 +80,7 @@ _덧) 사실 이 예제는  `result = arr * 10` 이 가장 빠르게 결과를 �
  arr = ray.put(arr)
  result = ray.get(mul.remote(arr))
  >> 34.6 ms ± 12.3 ms per loop
-{% endhighlight %}
+```
 
 우선 코드가 매우 간결합니다. 기존 함수에 데코레이터(Decorator)를 추가하고, 함수를 호출할 때 `remote()` 메서드를 이용하는 것 말고는 큰 차이가 없습니다. 게다가 수행 시간은 기본 파이썬보다 매우 빠른 것을 알 수 있습니다. Ray가 이렇게 빠를 수 있는 이유는 아래와 같습니다.
 
@@ -136,21 +136,21 @@ Ray의 목표 중 하나는 병렬 처리를 위한 간단하지만 범용적인
 
 우선 Ray를 임포트합니다.
 
-{% highlight python linenos %}
+```python
  import ray
-{% endhighlight %}
+```
 
 그 후에 반드시 Ray를 실행해줘야 합니다.
 
-{% highlight python linenos %}
+```python
  ray.init()
-{% endhighlight %}
+```
 
 실행 후에는 많은 메시지가 출력되는데 그 중에서 `View the Ray dashboard at http://127.0.0.1:8265` 와 같은 내용이 있습니다. 일반적인 환경에서 8265 포트가 열려 있다면 위 주소에서 대시보드를 확인할 수 있습니다. 대시보드에서는 자원 사용량, 현재 설정 등 다양한 정보를 확인할 수 있습니다.
 
 여기까지 문제가 없었다면 병렬 처리하여 실행할 함수에 **데코레이터를 추가**합니다. 예를 들어 큰 행렬 두 개를 만들어 Dot Product를 수행한다고 할 때, 다음의 함수들을 작성하게 됩니다.
 
-{% highlight python linenos %}
+```python
  import numpy as np
  
  def create_matrix(size):
@@ -158,11 +158,11 @@ Ray의 목표 중 하나는 병렬 처리를 위한 간단하지만 범용적인
  
  def multiply_matrices(x, y):
    return np.dot(x, y)
-{% endhighlight %}
+```
 
 위 두 함수를 각각 데코레이터를 추가하여 병렬처리 한다면 아래 코드가 되겠죠.
 
-{% highlight python linenos %}
+```python
  import numpy as np
  
  @ray.remote
@@ -172,33 +172,33 @@ Ray의 목표 중 하나는 병렬 처리를 위한 간단하지만 범용적인
  @ray.remote
  def multiply_matrices(x, y):
    return np.dot(x, y)
-{% endhighlight %}
+```
 
 이제 각각의 함수는 Remote Function이 되었습니다. 결과만 얻으면 하고자 하는 일은 마무리됩니다. Remote Function들에 `remote()` 메서드를 사용하여 호출합니다.
 
-{% highlight python linenos %}
+```python
  x_id = create_matrix.remote([1000, 1000])
  y_id = create_matrix.remote([1000, 1000])
  z_id = multiply_matrices.remote(x_id, y_id)
-{% endhighlight %}
+```
 
 여기까지 하셨다면 마지막으로 Task를 실행해서 값을 반환 받을 수 있습니다. `ray.get()` 을 사용하면 됩니다.
 
-{% highlight python linenos %}
+```python
  z = ray.get(z_id)
-{% endhighlight %}
+```
 
 Ray의 사용이 끝났다면 프로세스를 종료해야 합니다.
 
-{% highlight python linenos %}
+```python
  ray.shutdown()
-{% endhighlight %}
+```
 
 **Tips**
 
 - **큰 데이터를 반복적으로 사용하게 된다면 `ray.put()` 을 사용해 메모리 사용을 줄일 수 있습니다.** `ray.put()`은 데이터를 공유 메모리에 저장하여 복사본을 만들지 않고 모든 프로세스에서 접근할 수 있습니다. 사실은 첫 예제에서 이미 사용을 하고 있었습니다.
 
-{% highlight python linenos %}
+```python
  import numpy as np
  import ray
  
@@ -212,7 +212,7 @@ Ray의 사용이 끝났다면 프로세스를 종료해야 합니다.
  
  arr = ray.put(arr)
  result = ray.get(mul.remote(arr))
-{% endhighlight %}
+```
 
 - **크기가 작은 작업들을 모두 Ray의 Task로 만들지 않도록 합니다.** 오히려 스케줄링이나 내부 커뮤니케이션으로 인해 불필요한 오버헤드가 생길 수 있습니다. Ray가 아무리 빠르더라도 많이 호출하여 사용할 필요는 없습니다. 큰 Task를 생성해서 작은 함수를 여러 번 실행하도록 하는 것이 성능에 도움을 줄 수 있습니다.
 - Ray와 TensorFlow를 함께 사용할 때 Pickling 이슈가 발생하는 것으로 알려져 있습니다. 공식 문서에서도 찾을 수 있지만, 이 경우에는 `import tensorflow as tf`를 Remote Function 안에서 호출하여 해결할 수 있다고 알려져 있습니다.

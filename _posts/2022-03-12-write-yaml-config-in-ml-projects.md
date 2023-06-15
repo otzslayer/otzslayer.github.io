@@ -51,7 +51,7 @@ Learning to Rank 포스트에서 LightGBM를 이용해 LambdaRank를 간단하�
 
 이걸 그대로 YAML 파일에 다시 적으면 유효한 설정 파일이 됩니다.
 
-{% highlight yaml linenos %}
+```yaml
 # config.yaml
 
 path:
@@ -69,7 +69,7 @@ params:
   ndcg_eval_at: [1,3,5]
   learning_rate: 0.01
   num_threads: 8
-{% endhighlight %}
+```
 
 이렇게 작성한 파일을 Python에서 불러오기 위해서는 `PyYAML`을 설치해야 합니다.
 설치는 간단하게 `pip`를 이용하면 됩니다.
@@ -80,7 +80,7 @@ $ pip install pyyaml
 
 그리고 다음과 같은 함수를 통해서 YAML 파일을 불러올 수 있습니다.
 
-{% highlight python linenos %}
+```python
 import yaml
 
 def load_config(config_file):
@@ -90,7 +90,7 @@ def load_config(config_file):
     return config
 
 cfg = load_config("config.yaml")
-{% endhighlight %}
+```
 
 불러온 설정 파일은 다음과 같이 딕셔너리 형태로 저장이 됩니다.
 

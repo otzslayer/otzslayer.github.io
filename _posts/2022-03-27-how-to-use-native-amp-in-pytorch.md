@@ -68,7 +68,7 @@ for epoch in epochs:
 
 전체 코드는 다음과 같습니다. 아래 코드는 [PyTorch 문서](https://pytorch.org/docs/stable/notes/amp_examples.html)에서 가져왔습니다.
 
-{% highlight python linenos %}
+```python
 import torch.optim as optim
 from torch.cuda.amp import GradScaler, autocast
 
@@ -100,4 +100,4 @@ for epoch in epochs:
 
         # Updates the scale for next iteration.
         scaler.update()
-{% endhighlight %}
+```
