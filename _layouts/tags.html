@@ -3,7 +3,7 @@ layout: page
 # All the Tags of posts.
 ---
 
-<div id="tags" class="d-flex flex-wrap mx-xl-2">
+<div id="tags" class="d-flex flex-wrap mx-xl-2 mb-5">
   {% capture tags %}
     {% for tag in site.tags %}
       {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
