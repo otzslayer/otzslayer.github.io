@@ -148,6 +148,7 @@ defaults:
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /:categories/:year/:month/:day/:title.html
+      applause_button: true
   - scope:
       path: _drafts
     values:

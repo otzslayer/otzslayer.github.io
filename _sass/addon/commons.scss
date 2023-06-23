@@ -1595,3 +1595,14 @@ $btn-mb: 0.5rem;
 .px-md-3 {
   font-size: 0.9rem;
 }
+
+// Applause button
+applause-button {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+
+  .count-container {
+    color: inherit;
+  }
+}

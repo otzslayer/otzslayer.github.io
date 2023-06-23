@@ -13,6 +13,11 @@ tail_includes:
 
 {% include lang.html %}
 
+{% if page.applause_button %}
+  <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
+  <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+{% endif %}
+
 <h1 data-toc-skip>{{ page.title }}</h1>
 
 <div class="post-meta text-muted">
@@ -85,7 +90,17 @@ tail_includes:
   {{ content }}
 </div>
 
+
 <div class="post-tail-wrapper text-muted">
+
+  {% if page.applause_button %}
+    <div class="applause-button">
+      <applause-button class="mb6"
+          color={{ site.accent_color | default:'rgb(79,177,186)' }}
+          url={{ page.url | absolute_url }} >
+      </applause-button>
+      </div> 
+    {% endif %}
 
   <!-- categories -->
   {% if page.categories.size > 0 %}
