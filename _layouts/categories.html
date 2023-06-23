@@ -69,6 +69,7 @@ layout: page
         {% for post in items %}
           <li class="d-flex justify-content-between px-md-3">
             <a href="{{ post.url | relative_url }}" class="mx-2"><i class="far fa-file"></i>&nbsp;&nbsp;{{ post.title }}</a>
+            <span class="clap-count-cat" data-url="{{ post.url | absolute_url }}"></span>
             <span class="dash flex-grow-1"></span>
             {% include datetime.html date=post.date wrap='span' class='text-muted small' lang=lang %} 
           </li>

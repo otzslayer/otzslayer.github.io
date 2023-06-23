@@ -4,3 +4,4 @@ export { imgLazy } from './components/img-lazyload';
 export { imgPopup } from './components/img-popup';
 export { initLocaleDatetime } from './components/locale-datetime';
 export { toc } from './components/toc';
+export { getClapCounts, getClapCountsForCats } from './components/clap-counts';
