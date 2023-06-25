@@ -27,6 +27,7 @@ layout: page
       {{ post.date | date: df_strftime_m }}
     </span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="clap-count-cat" data-url="{{ post.url | absolute_url }}"></span>
   </li>
 
   {% if forloop.last %}</ul>{% endif %}

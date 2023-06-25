@@ -15,6 +15,7 @@ layout: page
     {% for post in page.posts %}
       <li class="d-flex justify-content-between px-md-3">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="clap-count-cat" data-url="{{ post.url | absolute_url }}"></span>
         <span class="dash flex-grow-1"></span>
         {% include datetime.html date=post.date wrap='span' class='text-muted small' lang=lang %}
       </li>
