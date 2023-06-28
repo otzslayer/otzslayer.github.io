@@ -10,7 +10,7 @@
 #page-category,
 #page-tag {
   ul > li {
-    line-height: 1.5rem;
+    line-height: 1.2rem;
     padding: 0.6rem 0;
 
     /* dot */
@@ -30,7 +30,7 @@
     > a {
       @extend %no-bottom-border;
 
-      font-size: 1.1rem;
+      font-size: 1.0rem;
     }
 
     /* post's date */
