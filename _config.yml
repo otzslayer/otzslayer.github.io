@@ -41,11 +41,10 @@ social:
   email: otzslayer@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/otzslayer # change to your github homepage
+    # - https://github.com/otzslayer # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/jaeyoon-han-41a431112/
 
 google_site_verification: CEgbaMkaCCclR5P1DOp89-vGMNjahV3bpaZNKdS6qSY # fill in to your verification string
 # ↑ --------------------------
