@@ -19,12 +19,12 @@ layout: compress
 <html lang="{{ site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
   {% include mathjax_support.html %}
+  <!-- Adsense AMP -->
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-4445781280689625">
+  </amp-auto-ads>
 
   <body>
-    <!-- Adsense AMP -->
-    <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-4445781280689625">
-    </amp-auto-ads>
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
