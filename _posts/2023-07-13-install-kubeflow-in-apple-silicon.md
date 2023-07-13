@@ -1,8 +1,8 @@
 ---
 created: 2023-07-13
-title: Apple Sillicon (M1, M2)에 Kubeflow 설치하기
+title: Apple Silicon (M1, M2)에 Kubeflow 설치하기
 layout: post
-tags: [kubeflow, apple-sillicon, minikube, docker, kubernetes]
+tags: [kubeflow, apple-Silicon, minikube, docker, kubernetes]
 category: MLOps
 image:
   path: https://i.imgur.com/MwNRWQh.png
@@ -13,7 +13,7 @@ image:
 
 Kubeflow는 보통 퍼블릭 클라우드 환경에 설치해서 쓰게 됩니다. 아무래도 쿠버네티스를 활용하고 로컬에 설치하기 어렵기 때문인데요. 그래도 로컬 리눅스 환경에서는 설치가 크게 어렵지 않습니다. 심지어 윈도우에서 WSL에도 Kubeflow를 설치하는 것은 순서만 잘 따라가면 쉽습니다. [[참고]](https://otzslayer.github.io/kubeflow/2022/05/29/install-kubeflow-on-wsl.html) Mac도 Intel Mac이라면 어렵지 않게 설치가 가능합니다.
 
-문제는 ARM 환경에서의 설치입니다. M1, M2 Mac은 ARM 프로세서를 사용하기 때문에 AMD64 환경만 지원하는 Kubeflow의 대부분 Pod들을 설치할 수 없습니다. 과거에 M1이 나오고 얼마 되지 않은 시기에 설치를 시도했다가 절대 해결되지 않는 문제 때문에 포기를 했었습니다. 이는 Apple Sillicon만의 문제가 아니라 모든 ARM 프로세서에서 발생하는 문제입니다.
+문제는 ARM 환경에서의 설치입니다. M1, M2 Mac은 ARM 프로세서를 사용하기 때문에 AMD64 환경만 지원하는 Kubeflow의 대부분 Pod들을 설치할 수 없습니다. 과거에 M1이 나오고 얼마 되지 않은 시기에 설치를 시도했다가 절대 해결되지 않는 문제 때문에 포기를 했었습니다. 이는 Apple Silicon만의 문제가 아니라 모든 ARM 프로세서에서 발생하는 문제입니다.
 
 본 포스트는 위에서 언급한 문제를 모두 해결한 설치 방법을 자세하게 제공합니다. 실제 설치 후 올바르게 작동하는 것도 확인을 마쳤습니다.
 
@@ -36,7 +36,7 @@ Kubeflow는 보통 퍼블릭 클라우드 환경에 설치해서 쓰게 됩니�
 
 ![](https://i.imgur.com/yDNJBMz.png){: w="800"}
 
-Docker는 [공식 홈페이지](https://docs.docker.com/desktop/install/mac-install/)에서 Apple Sillicon 버전을 다운로드할 수 있습니다.
+Docker는 [공식 홈페이지](https://docs.docker.com/desktop/install/mac-install/)에서 Apple Silicon 버전을 다운로드할 수 있습니다.
 
 ### kustomize
 
