@@ -134,6 +134,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  problem-solving:
+    output: true
+    permalink: /problem-solving
 
 
 defaults:
@@ -147,6 +150,17 @@ defaults:
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /:categories/:year/:month/:day/:title.html
+      applause_button: true
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: problem-solving
+    values:
+      layout: pspost
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
+      permalink: /problem-solving/:categories/:title.html
       applause_button: true
   - scope:
       path: _drafts
@@ -184,6 +198,10 @@ defaults:
       sitemap: false
   - scope:
       path: page/**
+    values:
+      sitemap: false
+  - scope:
+      path: problem-solving/categories/**
     values:
       sitemap: false
 
