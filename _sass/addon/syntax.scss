@@ -263,9 +263,9 @@ div {
         width: $dot-size;
         height: $dot-size;
         border-radius: 50%;
-        background-color: var(--code-header-muted-color);
-        box-shadow: ($dot-size + $dot-margin) 0 0 var(--code-header-muted-color),
-          ($dot-size + $dot-margin) * 2 0 0 var(--code-header-muted-color);
+        background-color: #EB6150;
+        box-shadow: ($dot-size + $dot-margin) 0 0 #F3B63B,
+          ($dot-size + $dot-margin) * 2 0 0 #54BB44;
       }
     }
   }
