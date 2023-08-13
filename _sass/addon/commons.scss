@@ -380,7 +380,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 .post {
@@ -779,7 +779,7 @@ $btn-mb: 0.5rem;
   }
 
   ul {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
 
     li.nav-item {
       opacity: 0.9;
@@ -1629,7 +1629,7 @@ applause-button {
 .clap-count-cat {
   color: var(--text-muted-color);
   display: none;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 
   svg {
     height: 1em;
@@ -1651,21 +1651,21 @@ applause-button {
   .easy {
     border-radius: 50px;
     padding: 5px 10px;
-    text-align: center; 
+    text-align: center;
     color: white;
     background-color: rgb(0, 175, 155);
   }
   .medium {
     border-radius: 50px;
     padding: 5px 10px;
-    text-align: center; 
+    text-align: center;
     color: white;
     background-color: rgb(255, 184, 0);
   }
   .hard {
     border-radius: 50px;
     padding: 5px 10px;
-    text-align: center; 
+    text-align: center;
     color: white;
     background-color: rgb(255, 45, 85);
   }
