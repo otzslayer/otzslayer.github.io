@@ -65,7 +65,7 @@ layout: page
 
     <!-- Sub-categories -->
     <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse" aria-expanded="true">
-      <ul class="post-content ps-0">
+      <ul class="content ps-0">
         {% for post in items %}
           <li class="d-flex justify-content-between px-md-3">
             <a href="{{ post.url | relative_url }}" class="mx-2"><i class="far fa-file"></i>&nbsp;&nbsp;{{ post.title | truncate: 70}}</a>
