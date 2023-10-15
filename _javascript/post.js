@@ -1,6 +1,6 @@
 import { basic, initSidebar, initTopbar } from './modules/layouts';
 import {
-  imgLazy,
+  loadImg,
   imgPopup,
   initLocaleDatetime,
   initClipboard,
@@ -8,12 +8,12 @@ import {
   getClapCounts
 } from './modules/plugins';
 
-basic();
 initSidebar();
 initTopbar();
-imgLazy();
+loadImg();
 imgPopup();
 initLocaleDatetime();
 initClipboard();
-toc(); 
+toc();
+basic();
 getClapCounts();

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 refactor: true
 panel_includes:
 - toc
@@ -13,121 +13,120 @@ tail_includes:
 
 {% include lang.html %}
 
-
 {% if page.applause_button %}
-<link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
-<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
+  <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
 {% endif %}
 
-<header>
-  <h1 data-toc-skip>{{ page.title }}</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>{{ page.title }}</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      {{ site.data.locales[lang].post.posted }}
-      {% include datetime.html date=page.date tooltip=true lang=lang %}
-    </span>
-
-    <!-- lastmod date -->
-    {% if page.last_modified_at and page.last_modified_at != page.date %}
+    <div class="post-meta text-muted">
+      <!-- published date -->
       <span>
-        {{ site.data.locales[lang].post.updated }}
-        {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+        {{ site.data.locales[lang].post.posted }}
+        {% include datetime.html date=page.date tooltip=true lang=lang %}
       </span>
-    {% endif %}
 
-    {% if page.image %}
-      {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
-      {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
-      {% capture alt %}alt="{{ page.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
-
-      {% capture lqip %}
-      {% if page.image.lqip %}
-        lqip="{{ page.image.lqip }}"
+      <!-- lastmod date -->
+      {% if page.last_modified_at and page.last_modified_at != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+        </span>
       {% endif %}
-    {% endcapture %}
 
-      <div class="mt-3 mb-3">
-        <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip | strip }}>
-        {%- if page.image.alt -%}
-          <figcaption class="text-center pt-2 pb-2">{{ page.image.alt | markdownify}}</figcaption>
-        {%- endif -%}
-      </div>
-    {% endif %}
+      {% if page.image %}
+        {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
+        {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
+        {% capture alt %}alt="{{ page.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
 
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        {% if page.author %}
-          {% assign authors = page.author %}
-        {% elsif page.authors %}
-          {% assign authors = page.authors %}
+        {% if page.image.lqip %}
+          {%- capture lqip -%}lqip="{{ page.image.lqip }}"{%- endcapture -%}
         {% endif %}
 
-        {{ site.data.locales[lang].post.written_by }}
+        <div class="mt-3 mb-3">
+          <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip | strip }}>
+          {%- if page.image.alt -%}
+            <figcaption class="text-center pt-2 pb-2">{{ page.image.alt | markdownify }}</figcaption>
+          {%- endif -%}
+        </div>
+      {% endif %}
 
-        <em>
-          {% if authors %}
-            {% for author in authors %}
-              <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-              {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
-            {% endfor %}
-          {% else %}
-            <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          {% if page.author %}
+            {% assign authors = page.author %}
+          {% elsif page.authors %}
+            {% assign authors = page.authors %}
           {% endif %}
-        </em>
-      </span>
 
-      <!-- read time -->
-      {% include read-time.html content=content prompt=true lang=lang %}
+          {{ site.data.locales[lang].post.written_by }}
+
+          <em>
+            {% if authors %}
+              {% for author in authors %}
+                <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
+                {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
+              {% endfor %}
+            {% else %}
+              <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+            {% endif %}
+          </em>
+        </span>
+
+        <!-- read time -->
+        {% include read-time.html content=content prompt=true lang=lang %}
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
+    <!-- .post-meta -->
+  </header>
+
+  <br><br>
+  {% include inarticle_ads.html %}
+  
+  <br><br>
+  <!-- View counts -->
+  {% capture url %} https://{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}
+  {% endcapture %}
+  {% capture view_img_url %}
+  https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{url}}&count_bg=%233A3A3A&title_bg=%23111111&icon=myspace.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false
+  {% endcapture %}
+  {% assign view_img_url = view_img_url | remove: " " %}
+  
+  <div class="align-items-center w-100" style="text-align: center; margin-bottom: 1rem;">
+    <img src="{{view_img_url}}" />
   </div>
-  <!-- .post-meta -->
-</header>
-
-<br><br>
-{% include inarticle_ads.html %}
-
-<br><br>
-<!-- View counts -->
-{% capture url %} https://{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}
-{% endcapture %}
-{% capture view_img_url %}
-https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{url}}&count_bg=%233A3A3A&title_bg=%23111111&icon=myspace.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false
-{% endcapture %}
-{% assign view_img_url = view_img_url | remove: " " %}
-
-<div class="align-items-center w-100" style="text-align: center; margin-bottom: 1rem;">
-  <img src="{{view_img_url}}" />
-</div>
-
-
-<div class="content">
-  {{ content }}
-</div>
-
-
-<div class="post-tail-wrapper text-muted">
-  {% if page.applause_button %}
-  <div class="applause-button">
-    <applause-button class="mb6" color={{ site.accent_color | default:'rgb(79,177,186)' }} url={{ page.url |
-      absolute_url }}>
-    </applause-button>
+  
+  
+  <div class="content">
+    {{ content }}
   </div>
-  {% endif %}
-
-  <!-- categories -->
-  {% if page.categories.size > 0 %}
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
-        {%- unless forloop.last -%},{%- endunless -%}
-      {% endfor %}
+  
+  
+  <div class="post-tail-wrapper text-muted">
+    {% if page.applause_button %}
+    <div class="applause-button">
+      <applause-button class="mb6" color={{ site.accent_color | default:'rgb(79,177,186)' }} url={{ page.url |
+        absolute_url }}>
+      </applause-button>
     </div>
-  {% endif %}
+    {% endif %}  
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    {% if page.categories.size > 0 %}
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        {% for category in page.categories %}
+          <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
+          {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %}
+      </div>
+    {% endif %}
 
   <!-- tags -->
   {% if page.tags.size > 0 %}
@@ -145,21 +144,22 @@ https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{url}}&count_bg=%233A3
   {% include inarticle_ads.html %}
 
   <div class="post-tail-bottom
-    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    d-flex justify-content-between align-items-center mt-5 pb-2">
     <div class="license-wrapper">
       {% if site.data.locales[lang].copyright.license.template %}
         {% capture _replacement %}
-        <a href="{{ site.data.locales[lang].copyright.license.link }}">
-          {{ site.data.locales[lang].copyright.license.name }}
-        </a>
+          <a href="{{ site.data.locales[lang].copyright.license.link }}">
+            {{ site.data.locales[lang].copyright.license.name }}
+          </a>
         {% endcapture %}
-
         {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
-      {% endif %}
-    </div>
+        {% endif %}
+      </div>
 
-    {% include post-sharing.html lang=lang %}
+      {% include post-sharing.html lang=lang %}
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
+  <!-- div.post-tail-wrapper -->
+</article>
+
