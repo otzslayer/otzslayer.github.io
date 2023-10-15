@@ -1,11 +1,9 @@
 ---
-aliases: 
 created: 2023-10-15
-edited: <%+ tp.file.last_modified_date("YYYY-MM-DD") %>
 title: 웹 싱글 패턴
 layout: post
 tags: [inference-system, mlops]
-category: CS224W
+category: ML System Design Pattern
 image:
   path: https://i.imgur.com/9APrFxF.png
   alt: 
