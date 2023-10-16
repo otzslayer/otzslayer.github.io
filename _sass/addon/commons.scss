@@ -327,6 +327,10 @@ sup {
     object-fit: cover;
 
     @extend %rounded;
+
+    @at-root #post-list & {
+      width: 100%;
+    }
   }
 }
 
