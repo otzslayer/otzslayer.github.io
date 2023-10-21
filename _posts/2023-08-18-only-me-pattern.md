@@ -1,5 +1,5 @@
 ---
-title: Only Me 패턴
+title: 모델 생성 - Only Me 패턴
 layout: post
 tags: [only-me-pattern, ml-system-design-pattern, pipenv, poetry, pdm]
 category: ML System Design Pattern

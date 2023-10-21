@@ -1,5 +1,5 @@
 ---
-title: 모델 로드 패턴
+title: 모델 배포 - 모델 로드 패턴
 layout: post
 tags: [inference, model-deployment, mlops]
 category: ML System Design Pattern

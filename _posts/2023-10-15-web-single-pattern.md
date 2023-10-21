@@ -1,6 +1,6 @@
 ---
 created: 2023-10-15
-title: 웹 싱글 패턴
+title: 추론 시스템 생성 - 웹 싱글 패턴
 layout: post
 tags: [inference-system, mlops]
 category: ML System Design Pattern

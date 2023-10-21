@@ -1,5 +1,5 @@
 ---
-title: 배치 학습 패턴
+title: 모델 배포 - 배치 학습 패턴
 layout: post
 tags: [batch-training-pattern, ml-system-design-pattern, ml-pipeline, crontab]
 category: ML System Design Pattern
