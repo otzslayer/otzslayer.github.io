@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-<img src="/assets/psyduck.png" style="width: 240px;">
+<img src="https://otzslayer.github.io/assets/psyduck.png" style="width: 240px;">
 
 ---
 
