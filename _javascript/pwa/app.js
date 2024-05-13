@@ -1,41 +1,34 @@
-/* PWA loader */
+import { pwa, baseurl } from '../../_config.yml';
+import Toast from 'bootstrap/js/src/toast';
 
 if ('serviceWorker' in navigator) {
-  const meta = document.querySelector('meta[name="pwa-cache"]');
-  const isEnabled = meta.content === 'true';
-
-  if (isEnabled) {
-    let swUrl = '/sw.min.js';
-    const baseUrl = meta.getAttribute('data-baseurl');
-
-    if (baseUrl !== null) {
-      swUrl = `${baseUrl}${swUrl}?baseurl=${encodeURIComponent(baseUrl)}`;
-    }
-
-    const $notification = $('#notification');
-    const $btnRefresh = $('#notification .toast-body>button');
+  if (pwa.enabled) {
+    const swUrl = `${baseurl}/sw.min.js`;
+    const notification = document.getElementById('notification');
+    const btnRefresh = notification.querySelector('.toast-body>button');
+    const popupWindow = Toast.getOrCreateInstance(notification);
 
     navigator.serviceWorker.register(swUrl).then((registration) => {
       // In case the user ignores the notification
       if (registration.waiting) {
-        $notification.toast('show');
+        popupWindow.show();
       }
 
       registration.addEventListener('updatefound', () => {
         registration.installing.addEventListener('statechange', () => {
           if (registration.waiting) {
             if (navigator.serviceWorker.controller) {
-              $notification.toast('show');
+              popupWindow.show();
             }
           }
         });
       });
 
-      $btnRefresh.on('click', () => {
+      btnRefresh.addEventListener('click', () => {
         if (registration.waiting) {
           registration.waiting.postMessage('SKIP_WAITING');
         }
-        $notification.toast('hide');
+        popupWindow.hide();
       });
     });
 

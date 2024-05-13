@@ -5,6 +5,7 @@ Gemfile.lock
 
 # Jekyll cache
 .jekyll-cache
+.jekyll-metadata
 _site
 
 # RubyGems
@@ -22,4 +23,9 @@ package-lock.json
 *.old
 *.map
 sw.min.js
+.vscode
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Misc
 assets/js/dist
