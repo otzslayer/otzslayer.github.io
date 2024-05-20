@@ -169,8 +169,6 @@ main() {
     exit 0
   fi
 
-  echo -e "> Build the gem package for v$_version\n"
-
   build_gem
   $opt_pkg && exit 0
   push_gem

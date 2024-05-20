@@ -28,4 +28,5 @@ sw.min.js
 !.vscode/extensions.json
 
 # Misc
+_sass/dist
 assets/js/dist

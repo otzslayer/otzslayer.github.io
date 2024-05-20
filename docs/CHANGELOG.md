@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v7.0.0...v7.0.1) (2024-05-18)
+
+### Bug Fixes
+
+* **analytics:** goatcounter pv greater than 1K cannot be converted to numbers ([#1762](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1762)) ([33a1fa7](https://github.com/cotes2020/jekyll-theme-chirpy/commit/33a1fa7cae2181625e2f335708d59de4dd20ee7d))
+* audio/video path apply variable `media_subpath` ([#1745](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1745)) ([00a27a1](https://github.com/cotes2020/jekyll-theme-chirpy/commit/00a27a1b85f665d0642b77babd54c6903fbdeb22))
+
 ## [7.0.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.5.5...v7.0.0) (2024-05-11)
 
 ### ⚠ BREAKING CHANGES
@@ -139,6 +146,7 @@
 
 * **home:** crop the preview image that doesn't match 1.91:1 ([#1325](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1325)) ([5810bcd](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5810bcd1d7b83e111017831fa82c368a6b15c7cd))
 * resume lazy loading for Twitch videos ([#1326](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1326)) ([9f174d9](https://github.com/cotes2020/jekyll-theme-chirpy/commit/9f174d9088e5c83a5e0c4630336cea65e199c553)), closes [#1267](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1267)
+<<<<<<< HEAD
 
 ## [6.4.2](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.4.1...v6.4.2) (2024-01-13)
 
@@ -184,6 +192,8 @@
 
 * **home:** crop the preview image that doesn't match 1.91:1 ([#1325](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1325)) ([5810bcd](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5810bcd1d7b83e111017831fa82c368a6b15c7cd))
 * resume lazy loading for Twitch videos ([#1326](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1326)) ([9f174d9](https://github.com/cotes2020/jekyll-theme-chirpy/commit/9f174d9088e5c83a5e0c4630336cea65e199c553)), closes [#1267](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1267)
+=======
+>>>>>>> 20987f2afe033cf9af8d6b534079b5bd06f6a30f
 
 ## [6.2.3](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.2.2...v6.2.3) (2023-10-10)
 
