@@ -1,5 +1,26 @@
 # Changelog
 
+## [7.1.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v7.0.1...v7.1.0) (2024-08-27)
+
+### Features
+
+* add Bluesky social links ([#1759](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1759)) ([0102aba](https://github.com/cotes2020/jekyll-theme-chirpy/commit/0102abae062be24ec289fb7facb11950aca79e3f))
+* add Reddit social option ([#1836](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1836)) ([8673e13](https://github.com/cotes2020/jekyll-theme-chirpy/commit/8673e1335f0771eac364d0a2866f27476d61a58b))
+* add Threads social links ([#1837](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1837)) ([e3a78b6](https://github.com/cotes2020/jekyll-theme-chirpy/commit/e3a78b6243f7056105d72185bb6e94b436834e5b))
+* **analytics:** add fathom analytics ([#1913](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1913)) ([befc4ce](https://github.com/cotes2020/jekyll-theme-chirpy/commit/befc4ce9c5026f67f99bce66e223d056229f0bdb))
+* **dev:** add vscode tasks ([#1843](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1843)) ([e4db1a1](https://github.com/cotes2020/jekyll-theme-chirpy/commit/e4db1a176f3f69f676cbc0bf27b1d5a657ece05e))
+* **dev:** support vscode dev-container ([#1781](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1781)) ([1e3d4a6](https://github.com/cotes2020/jekyll-theme-chirpy/commit/1e3d4a6323ba3eed06a57f8bf1b2edefd890b127))
+* **ui:** improve block quote layout ([80bd792](https://github.com/cotes2020/jekyll-theme-chirpy/commit/80bd7928a02c75c843a550bd377d11b574e8bfda))
+* **ui:** improve visibility of inline code ([#1831](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1831)) ([c876731](https://github.com/cotes2020/jekyll-theme-chirpy/commit/c876731901784a72ef9d2e9e2936df65ddff5f61))
+* **ui:** make `info-prompt` icon looks like the letter "i" ([#1835](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1835)) ([a07a57e](https://github.com/cotes2020/jekyll-theme-chirpy/commit/a07a57ec922249d3a22da56fbcb30d83eadef728))
+* **ui:** set `<kbd>` font to 'Lato' ([64c7262](https://github.com/cotes2020/jekyll-theme-chirpy/commit/64c7262245e878534971a2e3a2630b614daf72f3))
+
+### Bug Fixes
+
+* adapt the giscus localization parameter ([#1810](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1810)) ([0709854](https://github.com/cotes2020/jekyll-theme-chirpy/commit/0709854dc8f6099d38c2578967a02f73b4be0dc8))
+* avoid caching pageviews data ([#1849](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1849)) ([979f86c](https://github.com/cotes2020/jekyll-theme-chirpy/commit/979f86cf64e1fcace4231fb070c7e6398fd4e5ec))
+* remove extra dual-mode images from lightbox ([#1883](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1883)) ([5c5910f](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5c5910f1fc661ec3dce203ac961c7f64f1991895))
+
 ## [7.0.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v7.0.0...v7.0.1) (2024-05-18)
 
 ### Bug Fixes
@@ -146,54 +167,6 @@
 
 * **home:** crop the preview image that doesn't match 1.91:1 ([#1325](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1325)) ([5810bcd](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5810bcd1d7b83e111017831fa82c368a6b15c7cd))
 * resume lazy loading for Twitch videos ([#1326](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1326)) ([9f174d9](https://github.com/cotes2020/jekyll-theme-chirpy/commit/9f174d9088e5c83a5e0c4630336cea65e199c553)), closes [#1267](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1267)
-<<<<<<< HEAD
-
-## [6.4.2](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.4.1...v6.4.2) (2024-01-13)
-
-### Bug Fixes
-
-* resume the `blockquote` display type ([#1480](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1480)) ([c7cfde0](https://github.com/cotes2020/jekyll-theme-chirpy/commit/c7cfde093020c73ca9a1b83437eb600379e05918)), closes [#1449](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1449)
-
-## [6.4.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.4.0...v6.4.1) (2024-01-10)
-
-### Bug Fixes
-
-* `og:image` URL is incorrect ([#1468](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1468)) ([b2d1cb6](https://github.com/cotes2020/jekyll-theme-chirpy/commit/b2d1cb68db659270aac537d2aa8d4b806fa6991d)), closes [#1463](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1463)
-
-## [6.4.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.3.1...v6.4.0) (2024-01-10)
-
-### Features
-
-* add bilibili embed video support ([#1406](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1406)) ([4a2b89d](https://github.com/cotes2020/jekyll-theme-chirpy/commit/4a2b89d0b698d672486349131a89025fa47afcb6))
-* add site-wide social preview image settings ([#1463](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1463)) ([241bb4d](https://github.com/cotes2020/jekyll-theme-chirpy/commit/241bb4df7878cff7f82014df660874a1dcddba76))
-
-### Bug Fixes
-
-*  image float breaks quotes and prompts ([#1449](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1449)) ([ea2d238](https://github.com/cotes2020/jekyll-theme-chirpy/commit/ea2d238bd8adc018256862e05a5092311c87a671)), closes [#1441](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1441)
-* url-less authors should not have empty links ([#1410](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1410)) ([2a4fbf6](https://github.com/cotes2020/jekyll-theme-chirpy/commit/2a4fbf6a7925da610a75c498116da7cf9ba857d7)), closes [#1403](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1403)
-
-### Improvements
-
-* include the latest posts in the "Recently Updated" list ([#1456](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1456)) ([82d8f2d](https://github.com/cotes2020/jekyll-theme-chirpy/commit/82d8f2db984711f334f55b6af5098ec16770e824))
-
-## [6.3.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.3.0...v6.3.1) (2023-11-12)
-
-### Bug Fixes
-
-* **home:** responsive gap at the bottom of preview image ([1a977a8](https://github.com/cotes2020/jekyll-theme-chirpy/commit/1a977a87a0da1cff35d0896cf9265c31034841a6))
-
-## [6.3.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.2.3...v6.3.0) (2023-11-10)
-
-### Features
-
-* add Mastodon sharing link ([#1344](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1344)) ([2bf87e0](https://github.com/cotes2020/jekyll-theme-chirpy/commit/2bf87e0de7928f325811e1bb96cfcaefdf6cf66a)), closes [#1324](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1324)
-
-### Bug Fixes
-
-* **home:** crop the preview image that doesn't match 1.91:1 ([#1325](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1325)) ([5810bcd](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5810bcd1d7b83e111017831fa82c368a6b15c7cd))
-* resume lazy loading for Twitch videos ([#1326](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1326)) ([9f174d9](https://github.com/cotes2020/jekyll-theme-chirpy/commit/9f174d9088e5c83a5e0c4630336cea65e199c553)), closes [#1267](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1267)
-=======
->>>>>>> 20987f2afe033cf9af8d6b534079b5bd06f6a30f
 
 ## [6.2.3](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v6.2.2...v6.2.3) (2023-10-10)
 

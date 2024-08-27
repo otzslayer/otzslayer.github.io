@@ -8,6 +8,7 @@
     "esbenp.prettier-vscode",
     "foxundermoon.shell-format",
     "stylelint.vscode-stylelint",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-vscode-remote.remote-containers"
   ]
 }

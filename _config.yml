@@ -28,7 +28,7 @@ github:
   username: otzslayer # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -68,8 +68,10 @@ analytics:
     domain: # fill in your Matomo domain
   cloudflare:
     id: # fill in your Cloudflare Web Analytics token
+  fathom:
+    id: # fill in your Fathom Site ID
 
-# Pageviews settings
+# Page views settings
 pageviews:
   provider: goatcounter # now only supports 'goatcounter'
 
@@ -81,8 +83,8 @@ pageviews:
 #
 # Available options:
 #
-#     light  - Use the light color scheme
-#     dark   - Use the dark color scheme
+#     light — Use the light color scheme
+#     dark — Use the dark color scheme
 #
 theme_mode: # [light | dark]
 
