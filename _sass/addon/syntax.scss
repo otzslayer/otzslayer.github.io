@@ -62,6 +62,7 @@ html {
     margin-bottom: 0;
     font-size: $code-font-size;
     font-family: $code-font-family;
+    font-feature-settings: 'calt' 1, 'liga' 1, 'ss01' 1, 'cv02' 1, 'cv04' 1, 'cv18' 1;
     line-height: 1.4rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
   }
@@ -101,6 +102,7 @@ code {
   -ms-hyphens: none;
   hyphens: none;
   font-family: $code-font-family;
+  font-feature-settings: 'calt' 1, 'liga' 1, 'ss01' 1, 'cv02' 1, 'cv04' 1, 'cv18' 1;
   color: var(--code-color);
 
   &.highlighter-rouge {
@@ -279,11 +281,9 @@ div {
         width: $code-dot-size;
         height: $code-dot-size;
         border-radius: 50%;
-        background-color: #EB6150;
-        box-shadow: ($code-dot-size + $code-dot-gap) 0 0
-        #F3B63B,
-          ($code-dot-size + $code-dot-gap) * 2 0 0
-          #54BB44;
+        background-color: #eb6150;
+        box-shadow: ($code-dot-size + $code-dot-gap) 0 0 #f3b63b,
+          ($code-dot-size + $code-dot-gap) * 2 0 0 #54bb44;
       }
 
       span {
