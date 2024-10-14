@@ -6,5 +6,4 @@ imgPopup();
 initSidebar();
 initTopbar();
 initClipboard();
-getClapCounts();
 basic();

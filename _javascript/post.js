@@ -5,7 +5,6 @@ import {
   initLocaleDatetime,
   initClipboard,
   toc,
-  getClapCounts
 } from './modules/plugins';
 
 loadImg();
@@ -16,4 +15,3 @@ initLocaleDatetime();
 initClipboard();
 initTopbar();
 basic();
-getClapCounts();
