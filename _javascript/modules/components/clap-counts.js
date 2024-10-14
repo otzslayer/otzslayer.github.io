@@ -1,5 +1,5 @@
 export function getClapCounts() {
-  var elements = Array.from(document.getElementsByClassName('clap-count'));
+  var elements = Array.from(document.getElementsByClassName('clap-count-home'));
   var urls = elements.map(function (el) {
     return el.getAttribute('data-url');
   });
