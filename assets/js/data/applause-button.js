@@ -627,7 +627,7 @@
         this._updateRootColor();
     }
     get api() {
-      return this.getAttribute('api') || 'https://3j5c5yiny0.execute-api.us-east-1.amazonaws.com/dev';
+      return this.getAttribute('api') || `${apiUrl}`;
     }
     set api(t) {
       t ? this.setAttribute('api', t) : this.removeAttribute('api');

@@ -10,7 +10,7 @@ export function getClapCounts() {
   }
   if (urls.length) {
     var request = new XMLHttpRequest();
-    request.open('POST', 'https://3j5c5yiny0.execute-api.us-east-1.amazonaws.com/dev/get-multiple', true);
+    request.open('POST', `${apiUrl}/get-multiple`, true);
     request.setRequestHeader('Content-Type', 'text/plain');
     request.responseType = 'json';
     request.addEventListener('load', function () {
@@ -48,7 +48,7 @@ export function getClapCounts() {
           break;
         default:
           console.log(
-            'POST to https://3j5c5yiny0.execute-api.us-east-1.amazonaws.com/dev/get-multiple failed'
+            'POST to /get-multiple failed'
           );
           break;
       }
@@ -69,7 +69,7 @@ export function getClapCountsForCats() {
   }
   if (urls.length) {
     var request = new XMLHttpRequest();
-    request.open('POST', 'https://3j5c5yiny0.execute-api.us-east-1.amazonaws.com/dev/get-multiple', true);
+    request.open('POST', `${apiUrl}/get-multiple`, true);
     request.setRequestHeader('Content-Type', 'text/plain');
     request.responseType = 'json';
     request.addEventListener('load', function () {
@@ -107,7 +107,7 @@ export function getClapCountsForCats() {
           break;
         default:
           console.log(
-            'POST to https://3j5c5yiny0.execute-api.us-east-1.amazonaws.com/dev/get-multiple failed'
+            'POST to /get-multiple failed'
           );
           break;
       }

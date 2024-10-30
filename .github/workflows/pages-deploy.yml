@@ -49,6 +49,7 @@ jobs:
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" --incremental
         env:
           JEKYLL_ENV: "production"
+          API_URL: ${{ secrets.API_URL }}
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
