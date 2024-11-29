@@ -1,5 +1,5 @@
 import { basic, initSidebar, initTopbar } from './modules/layouts';
-import { initLocaleDatetime, getClapCountsForCats } from './modules/plugins';
+import { initLocaleDatetime, getClapCountsForCats } from './modules/components';
 
 initSidebar();
 initTopbar();
