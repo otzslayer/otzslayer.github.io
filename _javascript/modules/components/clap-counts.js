@@ -5,8 +5,8 @@ export function getClapCounts() {
   });
   for (var i in urls) {
     urls[i] = urls[i]
-      .replace('%EC%9E%A1%EB%8B%B4', '잡담')
-      .replace('ml%20system%20design%20pattern', 'ml system design pattern');
+      .replace(/%EC%9E%A1%EB%8B%B4/g, '잡담')
+      .replace(/ml%20system%20design%20pattern/g, 'ml system design pattern');
   }
   if (urls.length) {
     var request = new XMLHttpRequest();
@@ -20,9 +20,9 @@ export function getClapCounts() {
             var url = element
               .getAttribute('data-url')
               .replace(/^https?:\/\//, '')
-              .replace('%EC%9E%A1%EB%8B%B4', '잡담')
+              .replace(/%EC%9E%A1%EB%8B%B4/g, '잡담')
               .replace(
-                'ml%20system%20design%20pattern',
+                /ml%20system%20design%20pattern/g,
                 'ml system design pattern'
               );
             var clapCount = request.response.find(function (e) {
@@ -64,8 +64,8 @@ export function getClapCountsForCats() {
   });
   for (var i in urls) {
     urls[i] = urls[i]
-      .replace('%EC%9E%A1%EB%8B%B4', '잡담')
-      .replace('ml%20system%20design%20pattern', 'ml system design pattern');
+      .replace(/%EC%9E%A1%EB%8B%B4/g, '잡담')
+      .replace(/ml%20system%20design%20pattern/g, 'ml system design pattern');
   }
   if (urls.length) {
     var request = new XMLHttpRequest();
@@ -79,9 +79,9 @@ export function getClapCountsForCats() {
             var url = element
               .getAttribute('data-url')
               .replace(/^https?:\/\//, '')
-              .replace('%EC%9E%A1%EB%8B%B4', '잡담')
+              .replace(/%EC%9E%A1%EB%8B%B4/g, '잡담')
               .replace(
-                'ml%20system%20design%20pattern',
+                /ml%20system%20design%20pattern/g,
                 'ml system design pattern'
               );
             var clapCount = request.response.find(function (e) {
