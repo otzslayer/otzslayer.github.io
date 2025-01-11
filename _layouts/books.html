@@ -1,0 +1,48 @@
+---
+layout: page
+# The Archives of posts.
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/book-review.css" | relative_url }}">
+  </head>
+  <body>
+    <p>본 페이지에는 지금까지 읽어왔던 책에 대한 짧은 리뷰를 남깁니다.</p>
+    <hr>
+    <div class="book-review">
+      {% for book in page.books %}
+        <div class="book-entry">
+          <div class="thumbnail">
+            <img src="{{ book.thumbnail | relative_url }}" alt="{{ book.title }}">
+          </div>
+          <div class="description">
+            <h2>
+              <a href="{{ book.link | relative_url }}" target="_blank">{{ book.title }}</a>
+            </h2>
+            <div class="author">
+              <p>{{ book.author }}</p>
+            </div>
+            <div class="reviewed_at">
+              <p>{{ book.reviewed_at }}</p>
+            </div>
+            <div class="rating">
+              {% for i in (1..5) %}
+                {% if i <= book.rating %}
+                  ⭐
+                {% endif %}
+              {% endfor %}
+            </div>
+            <ul>
+              {% for item in book.description %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

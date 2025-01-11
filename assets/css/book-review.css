@@ -1,0 +1,43 @@
+.book-review {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .book-entry {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    .thumbnail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumbnail img {
+      max-width: 120px;
+      height: auto;
+    }
+
+    .description {
+      flex-grow: 1;
+    }
+  }
+}
+
+.author {
+  font-weight: bold;
+}
+
+.rating {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.book-review .book-entry .description h2 {
+  margin: 0 0 5px;
+}
+
+.content a:not(.img-link) {
+  border-bottom: none !important;
+}
