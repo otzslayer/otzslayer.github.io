@@ -1,28 +1,53 @@
 .book-review {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+}
 
-  .book-entry {
-    display: flex;
-    align-items: center;
-    gap: 2em;
+.book-entry-wrapper {
+  margin-bottom: 15px;
+}
 
-    .thumbnail {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.book-entry {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.5rem;
+  padding-bottom: 15px;
+  position: relative;
+}
 
-    .thumbnail img {
-      max-width: 120px;
-      height: auto;
-    }
+.thumbnail {
+  width: 120px;
+  height: auto;
+  margin: 0.5rem 0 0.25rem 1rem;
+}
 
-    .description {
-      flex-grow: 1;
-    }
-  }
+.title-rating {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+main h2 {
+  margin: 0.5rem 0 0.25rem !important;
+}
+
+.description {
+  margin: 0.25rem 0 1rem;
+  width: 100%;
+}
+
+/* 구분선 */
+.book-entry-wrapper:not(:last-child) .description::after {
+  content: '• • •'; /* 점 세 개 표시 */
+  display: block;
+  text-align: center;
+  font-size: 30px; /* 점 크기 */
+  color: rgba(255, 255, 255, 0.3); /* 불투명한 색 */
+  line-height: 0.8; /* 점 간격 조정 */
+}
+
+.book-entry-wrapper:last-child .description::after {
+  content: ''; /* 마지막 항목에는 점을 표시하지 않음 */
 }
 
 .author {
@@ -30,7 +55,6 @@
 }
 
 .rating {
-  margin-bottom: 10px;
   font-size: 1em;
 }
 
@@ -50,12 +74,13 @@
   }
 
   .thumbnail {
-    width: 100%; /* 이미지 크기를 컨테이너에 맞춤 */
-    max-width: 300px; /* 최대 크기 제한 */
-    margin-bottom: 10px; /* 하단 여백 추가 */
+    width: 120px;
+    height: auto;
+    margin: 0.5rem 0 0.25rem 1rem;
   }
 
   .description {
-    width: 100%; /* 설명 부분도 전체 너비 사용 */
+    margin: 0.25rem 0 1rem;
+    width: 100%;
   }
 }

@@ -14,27 +14,31 @@ layout: page
     <hr>
     <div class="book-review">
       {% for book in page.books %}
-        <div class="book-entry">
-          <div class="thumbnail">
-            <img src="{{ book.thumbnail | relative_url }}" alt="{{ book.title }}">
+        <div class="book-entry-wrapper">
+          <div class="book-entry">
+            <div class="thumbnail">
+              <img src="{{ book.thumbnail | relative_url }}" alt="{{ book.title }}">
+            </div>
+            <div class="title-rating">
+              <h2>
+                <a href="{{ book.link | relative_url }}" target="_blank">{{ book.title }}</a>
+              </h2>
+              <div class="author">
+                <p>{{ book.author }}</p>
+              </div>
+              <div class="reviewed_at">
+                <p>{{ book.reviewed_at }}</p>
+              </div>
+              <div class="rating">
+                {% for i in (1..5) %}
+                  {% if i <= book.rating %}
+                    ⭐
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
           </div>
           <div class="description">
-            <h2>
-              <a href="{{ book.link | relative_url }}" target="_blank">{{ book.title }}</a>
-            </h2>
-            <div class="author">
-              <p>{{ book.author }}</p>
-            </div>
-            <div class="reviewed_at">
-              <p>{{ book.reviewed_at }}</p>
-            </div>
-            <div class="rating">
-              {% for i in (1..5) %}
-                {% if i <= book.rating %}
-                  ⭐
-                {% endif %}
-              {% endfor %}
-            </div>
             <ul>
               {% for item in book.description %}
                 <li>{{ item }}</li>
