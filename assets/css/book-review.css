@@ -42,8 +42,9 @@ main h2 {
   display: block;
   text-align: center;
   font-size: 30px; /* 점 크기 */
-  color: rgba(255, 255, 255, 0.3); /* 불투명한 색 */
   line-height: 0.8; /* 점 간격 조정 */
+  color: rgb(175, 176, 177);
+  margin-top: 5px;
 }
 
 .book-entry-wrapper:last-child .description::after {
