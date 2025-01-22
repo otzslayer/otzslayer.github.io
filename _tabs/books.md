@@ -43,5 +43,18 @@ books:
       - 기본적으로 Docker, airflow 등을 사용할 줄 알면 쉽게 읽을 수 있지만 아닌 경우엔 읽다가 멈칫하는 부분이 많을 수 있음.
       - MLOps 단계를 구분하여 구현하는 부분이 있는데 처음부터 모델을 학습하지 않고 기존에 있는 파일을 활용하기 때문에 MLOps 0단계와 1단계의 차이를 크게 느끼지 못할 수 있음.
       - 예제가 매우 잘 구성되어 있는 것도 좋은데 예제 이외의 볼거리가 참 많은 책임. 부록 내용도 꼭 읽어보길 권장함.
+  - title: "테스트 주도 개발 입문"
+    author: 살림 시디퀴
+    link: "https://product.kyobobook.co.kr/detail/S000213558059"
+    thumbnail: "https://i.imgur.com/AbBRJOK.png"
+    reviewed_at: Jan 22, 2025 
+    rating: 4
+    description:
+      - TDD를 Python 코드로 배울 수 있는 아주 귀중한 책
+      - TDD에 대해서 아무 것도 모르고 보면 조금 당황할 수 있음. 본인도 TDD가 무엇인지 잘 모르고 보았는데, 색다른 접근 방법이라고 느꼈음.
+      - 아무래도 요즘 <code>pytest</code>를 사용하는 경우가 많다보니 책에 있는 Python 테스트 코드가 모두 <code>unittest</code>로 작성되어 있어서 아쉬움. 직접 수정하여 예제 코드를 활용함. <code>pytest</code>를 쓰는 사람이라면 반드시 직접 바꿔보길 권장함.
+      - 위 내용의 연장선으로 변수나 함수, 메서드명이 모두 <code>snake_case</code>가 아닌 <code>camelCase</code>로 되어 있어서 아쉬움.
+      - 아무래도 폴리글랏을 표방하는 책이다보니 책 페이지 수 대비 내용이 방대하지 않음.
+      - 다른 관련 책과 함께 공부하면 더 도움이 될 것 같음.
       
 ---
