@@ -60,11 +60,22 @@ books:
     author: 게르겔리 오로스
     link: https://product.kyobobook.co.kr/detail/S000214576874
     thumbnail: "https://i.imgur.com/yg2v9KF.png"
-    reviewed_at: Feb, 8, 2025
+    reviewed_at: Feb 8, 2025
     rating: 5
     description:
       - 어떤 직무든, 어떤 회사든 본인이 개발과 관련이 있다면 반드시 읽어야 하는 책
       - 신입 사원일 때, 주니어일 때, 시니어일 때, 리더십 위치일 때, 모든 상황에 따라 다르게 읽히고 새로운 인사이트를 제공하기 때문에 언제든지 본인의 상황이 바뀌었거나, 누군가의 조언이 필요할 때 한 번씩 꺼내서 읽어볼 만함.
       - 번역 품질도 훌륭해서 읽다가 걸리는 경우가 거의 없었음
+  - title: "파이썬 비동기 라이브러리 Asyncio"
+    author: 케일럽 해팅
+    link: https://product.kyobobook.co.kr/detail/S000001810381
+    thumbnail: "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791162244197.jpg"
+    reviewed_at: Apr 25, 2025
+    rating: 4
+    description:
+      - 국내에 출판되어 있는 Asyncio 관련 책 중에서는 가장 읽기 편하고 쉽게 쓰여진 책
+      - 첫 챕터에 비동기에 대한 개념을 설명해주기 위한 비유가 가장 기억에 남음. 하지만 그 뒤의 내용은 그렇게 쉽지 않음.
+      - 본인이 CS에 대한 지식이 조금 부족한 경우, 책에서 다루는 용어 하나하나를 깊게 공부하면서 읽어야 이 책을 제대로 활용할 수 있음.
+      - Asyncio를 아주 낮은 레벨부터 설명하지만 이해가 쉽지 않았음. 이해가 되었을 때는 실제 Asyncio를 사용할 때 필요한 여러 가지 툴(Lock, Semaphore, Event)에 대한 설명이 거의 없어서 실제 사용하기 전에 더 많은 공부가 필요했음.
       
 ---

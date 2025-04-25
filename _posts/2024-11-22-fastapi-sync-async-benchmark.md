@@ -4,7 +4,7 @@ created: 2024-11-21
 title: FastAPI에서 동기/비동기 처리에 대한 벤치마크 살펴보기
 layout: post
 tags: [python, fastapi, asynchronous]
-category: CS
+category: FastAPI
 image:
   path: https://i.imgur.com/ieScU6c.png
   alt: Image from [here](https://www.techtarget.com/whatis/definition/synchronous-asynchronous-API)
