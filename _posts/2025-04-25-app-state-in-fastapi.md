@@ -6,14 +6,14 @@ tags: [fastapi, starlette, application-state, startup-events]
 category: FastAPI
 image:
   path: https://i.imgur.com/5e25iz6.png
-  alt: Image from [Unsplash](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/macbook-pro-%EC%BC%9C%EA%B8%B0-LKsHwgzyk7c)
+  alt: Image from [Unsplash](https://i.imgur.com/P0s60SA.png)
 ---
 
 FastAPI로 서비스를 구축하다 보면 애플리케이션 기동 시 한 번 불러온 결과를 전역 변수처럼 재사용하고 싶을 때가 많습니다. 이때 일반적인 전역 변수보다 안전하고, FastAPI의 의존성 주입과도 잘 어울리는 방법이 바로 `app.state`입니다. 이 포스트에서는 `app.state`의 개념과 구현 패턴, 그리고 예시를 정리합니다.
 
 ## `app.state`란 무엇인가
 
-`FastAPI` 는  `Starlette` 의 서브클래스로 구현되어 있습니다. [[출처]](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/macbook-pro-%EC%BC%9C%EA%B8%B0-LKsHwgzyk7c) 따라서 Starlette가 제공하는 `app.state`(임의의 속성을 자유롭게 저장, 공유할 수 있는 네임스페이스)를 그대로 이용할 수 있습니다. 
+`FastAPI` 는  `Starlette` 의 서브클래스로 구현되어 있습니다. [[출처]](https://fastapi.tiangolo.com/features/#starlette-features) 따라서 Starlette가 제공하는 `app.state`(임의의 속성을 자유롭게 저장, 공유할 수 있는 네임스페이스)를 그대로 이용할 수 있습니다. 
 
 - **저장 위치**: `FastAPI` 인스턴스 자체
 - **생애 주기**: 프로세스가 살아 있는 동안 유지
