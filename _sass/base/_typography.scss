@@ -273,3 +273,14 @@ main {
     } /* tbody */
   } /* table */
 }
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
