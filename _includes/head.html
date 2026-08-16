@@ -62,15 +62,6 @@
 
   {{ seo_tags }}
 
-  <!-- PWA cache settings -->
-  <meta
-    name="pwa-cache"
-    content="{{ site.pwa.cache.enabled | default: 'false' }}"
-    {%- if site.baseurl and site.baseurl != empty -%}
-      data-baseurl="{{ site.baseurl }}"
-    {%- endif -%}
-  >
-
   {%- if site.social.fediverse_handle %}
     <!-- Fediverse handle/creator -->
     <meta name="fediverse:creator" content="{{ site.social.fediverse_handle }}">
