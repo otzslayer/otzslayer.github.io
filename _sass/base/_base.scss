@@ -504,7 +504,7 @@ applause-button {
 }
 
 applause-button .style-root {
-  gap: 0rem !important;
+  gap: 0 !important;
 }
 
 .clap-count {
@@ -517,7 +517,7 @@ applause-button .style-root {
   }
 
   .flat {
-    fill: rgb(79, 177, 186, 0);
+    fill: rgb(79 177 186 / 0%);
   }
 
   .outline {
@@ -538,7 +538,7 @@ applause-button .style-root {
   }
 
   .flat {
-    fill: rgb(79, 177, 186, 0);
+    fill: rgb(79 177 186 / 0%);
   }
 
   .outline {
@@ -558,7 +558,7 @@ applause-button .style-root {
   }
 
   .flat {
-    fill: rgb(79, 177, 186, 0);
+    fill: rgb(79 177 186 / 0%);
   }
 
   .outline {
@@ -580,6 +580,10 @@ applause-button .style-root {
   padding: unset !important;
   margin: unset !important;
   overflow: unset !important;
+
+  /* 부트스트랩 계열이 거는 clip: rect(...)를 되돌리는 자리라
+     후속 속성인 clip-path로는 대체되지 않는다. */
+  /* stylelint-disable-next-line property-no-deprecated */
   clip: unset !important;
   white-space: unset !important;
   border: unset !important;
