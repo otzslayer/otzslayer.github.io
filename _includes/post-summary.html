@@ -21,8 +21,45 @@
     {%- assign content = content | replace: '</td><td class="rouge-code">', '</td> --><td class="rouge-code">' -%}
   {%- endif -%}
 
+  {%- assign content = content | markdownify -%}
+
+  {%- unless include.full_text -%}
+    {%- comment -%}
+      미리보기에서는 헤딩 텍스트를 제외한 본문만 남긴다.
+      닫는 태그를 마커로 바꾼 뒤 여는 태그를 기준으로 잘라낸다.
+    {%- endcomment -%}
+
+    {%- assign heading_end = '<!--heading-end-->' -%}
+    {%- assign content = content
+      | replace: '</h1>', heading_end
+      | replace: '</h2>', heading_end
+      | replace: '</h3>', heading_end
+      | replace: '</h4>', heading_end
+      | replace: '</h5>', heading_end
+      | replace: '</h6>', heading_end
+      | split: '<h'
+    -%}
+
+    {%- assign body = content[0] -%}
+
+    {%- for block in content offset: 1 -%}
+      {%- assign level = block | slice: 0 -%}
+
+      {%- if level == '1' or level == '2' or level == '3' or level == '4' or level == '5' or level == '6' -%}
+        {%- assign parts = block | split: heading_end -%}
+        {%- if parts.size > 1 -%}
+          {%- assign body = body | append: ' ' | append: parts[1] -%}
+        {%- endif -%}
+      {%- else -%}
+        {%- comment -%} <hr>, <header> 처럼 헤딩이 아닌 태그는 그대로 둔다. {%- endcomment -%}
+        {%- assign body = body | append: '<h' | append: block -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- assign content = body -%}
+  {%- endunless -%}
+
   {%- assign content = content
-    | markdownify
     | strip_html
     | newline_to_br
     | replace: '<br />', ' '
