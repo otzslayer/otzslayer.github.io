@@ -100,3 +100,9 @@ $code-icon-width: 1.75rem !default;
 $font-family-base: 'Pretendard', 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
 $font-family-heading: 'Pretendard', Lato, 'Microsoft Yahei', sans-serif;
 $code-font-family: 'JetBrains Mono', 'JetBrainsMono Nerd Font', monospace;
+
+/* Theme mode settings */
+
+$theme-attr: 'data-bs-theme'; /* the attribute used to indicate the resolved theme */
+$theme-options: light, dark;
+$theme: null !default; /* set by Jekyll site configuration */
