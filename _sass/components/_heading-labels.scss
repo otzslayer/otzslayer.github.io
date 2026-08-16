@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+/* ==========================================================================
+   헤딩 레벨 라벨 (Obsidian Baseline 스킴 이식)
+
+   목적: 포스트 본문 헤딩 앞에 작은 monospace 칩으로 h1~h6 레벨을 표시한다.
+   - 칩 폰트 크기는 절대 단위(rem)라 헤딩 레벨과 무관하게 항상 동일.
+   - 색은 Obsidian 기본 팔레트를 그대로 옮겼다. 인접 레벨끼리 색상환에서
+     멀리 두어 구분을 극대화한다 (h2 파랑 ↔ h3 주황은 보색).
+   - 적용 범위: 포스트 본문(.content). 끄려면 components/_index.scss의
+     @forward 'heading-labels' 한 줄을 지운다.
+   ========================================================================== */
+
+@mixin label-colors-light {
+  --heading-label-h1: #e93147; /* red */
+  --heading-label-h2: #086ddd; /* blue */
+  --heading-label-h3: #ec7500; /* orange */
+  --heading-label-h4: #08b94e; /* green */
+  --heading-label-h5: #7852ee; /* purple */
+  --heading-label-h6: #00bfbc; /* cyan */
+}
+
+@mixin label-colors-dark {
+  --heading-label-h1: #fb464c;
+  --heading-label-h2: #4a9eff;
+  --heading-label-h3: #e9973f;
+  --heading-label-h4: #44cf6e;
+  --heading-label-h5: #a882ff;
+  --heading-label-h6: #53dfdd;
+}
+
+:root[#{v.$theme-attr}='light'] {
+  @include label-colors-light;
+}
+
+:root[#{v.$theme-attr}='dark'] {
+  @include label-colors-dark;
+}
+
+:root:not([#{v.$theme-attr}]) {
+  @include mx.color-scheme(light) {
+    @include label-colors-light;
+  }
+
+  @include mx.color-scheme(dark) {
+    @include label-colors-dark;
+  }
+}
+
+.content {
+  :is(h1, h2, h3, h4, h5, h6)::before {
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline-end: 0.5em;
+    font-family: v.$code-font-family;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    border-radius: 3px;
+    padding: 0.18em 0.4em;
+  }
+
+  @for $level from 1 through 6 {
+    h#{$level}::before {
+      content: 'h#{$level}';
+      color: var(--heading-label-h#{$level});
+      background-color: color-mix(
+        in srgb,
+        var(--heading-label-h#{$level}) 20%,
+        transparent
+      );
+    }
+  }
+}
