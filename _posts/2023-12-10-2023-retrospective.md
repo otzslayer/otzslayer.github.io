@@ -3,8 +3,8 @@ aliases:
 created: 2023-12-11
 title: 조금 빠른 2023 회고
 layout: post
-tags: [notes, retrospective]
-category: 잡담
+tags: [essay, retrospective]
+category: Essay
 image:
   path: https://images.pexels.com/photos/15874765/pexels-photo-15874765/free-photo-of-black-and-white-picture-of-a-side-view-mirror-in-a-car.jpeg
   alt: 

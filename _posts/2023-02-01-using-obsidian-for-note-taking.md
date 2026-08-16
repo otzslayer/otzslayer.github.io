@@ -1,7 +1,7 @@
 ---
 title: 옵시디언 사용기
 tags: [obsidian, note-taking, para, productivity]
-category: 잡담
+category: Essay
 layout: post
 image:
     path: https://upload.wikimedia.org/wikipedia/commons/8/8e/Person_taking_notes.jpg

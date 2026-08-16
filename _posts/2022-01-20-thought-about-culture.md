@@ -1,7 +1,7 @@
 ---
 title: 단상 (2021/01/20)
-tags: [notes, organizational-culture]
-category: 잡담
+tags: [essay, organizational-culture]
+category: Essay
 layout: post
 ---
 
@@ -12,7 +12,7 @@ layout: post
 ## 요즘
 
 조금 바쁘게 지내고 있습니다.
-이전 [2021년 회고](https://otzslayer.github.io/잡담/2021/12/30/2021-retrospective.html) 포스트에서 말씀드렸듯 U+ 아이들나라 추천 서비스 개발/운영 프로젝트를 수행하고 있습니다.
+이전 [2021년 회고](https://otzslayer.github.io/Essay/2021/12/30/2021-retrospective.html) 포스트에서 말씀드렸듯 U+ 아이들나라 추천 서비스 개발/운영 프로젝트를 수행하고 있습니다.
 역할이 PM이다보니 기존에 개발만 하던 것에 더하여 추가적인 업무들이 조금 생겼습니다.
 
 투입 인원에 대한 관리, 계약 관리, 프로젝트 검수 등 일반적인 자체 서비스 회사들에선 생소할 수 있는 업무들인데요.

@@ -1,7 +1,7 @@
 ---
 title: 한 달의 공백에 대하여
-tags: [notes]
-category: 잡담
+tags: [essay]
+category: Essay
 layout: post
 ---
 

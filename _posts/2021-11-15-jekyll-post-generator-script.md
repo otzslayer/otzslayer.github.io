@@ -1,6 +1,6 @@
 ---
 title: Jekyll 블로그 포스트 생성 스크립트
-tags: [notes]
+tags: [essay]
 category: etc
 layout: post
 mathjax: false

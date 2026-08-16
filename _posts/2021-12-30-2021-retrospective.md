@@ -1,7 +1,7 @@
 ---
 title: 2021년 회고
-tags: [retrospective, notes]
-category: 잡담
+tags: [retrospective, essay]
+category: Essay
 layout: post
 ---
 

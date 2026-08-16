@@ -3,7 +3,7 @@ created: 2025-01-16
 title: 새로운 탭 추가 (책 리뷰)
 layout: post
 tags: [blog]
-category: 잡담
+category: Essay
 image:
   path: https://i.imgur.com/rbIZOsh.jpeg
   alt: Image from [Here](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B0%88%EC%83%89-%EC%B1%85-%EA%B7%BC%EC%A0%91-%EC%B4%AC%EC%98%81-%EC%82%AC%EC%A7%84-_nm_mZ4Cs2I)

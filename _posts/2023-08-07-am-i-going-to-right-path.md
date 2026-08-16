@@ -2,7 +2,7 @@
 title: 어떤 길을 걸어야 할까?
 layout: post
 tags: [career]
-category: 잡담
+category: Essay
 image:
   path: https://i.imgur.com/Ry6ZWWh.png
   alt: Image from [Here](https://www.insperity.com/blog/employee-career-path/)

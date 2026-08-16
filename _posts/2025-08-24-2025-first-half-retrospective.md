@@ -2,8 +2,8 @@
 created: 2025-08-24
 title: 2025년 상반기 회고
 layout: post
-tags: [notes, retrospective]
-category: 잡담
+tags: [essay, retrospective]
+category: Essay
 image:
   path: https://i.imgur.com/2XNuKoD.png
   alt: 

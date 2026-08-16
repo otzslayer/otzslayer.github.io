@@ -2,8 +2,8 @@
 created: 2024-12-31
 title: 2024 회고
 layout: post
-tags: [notes, retrospective]
-category: 잡담
+tags: [essay, retrospective]
+category: Essay
 image:
   path: https://i.imgur.com/rzI6jRI.png
   alt: 

@@ -1,7 +1,7 @@
 ---
 title: 사내 강의 회고
 tags: [retrospective]
-category: 잡담
+category: Essay
 layout: post
 image:
     path: https://i.imgur.com/eeGzIuu.png

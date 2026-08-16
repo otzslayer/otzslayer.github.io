@@ -1,7 +1,7 @@
 ---
 title: 잡담 (2023/02/19)
-tags: [notes]
-category: 잡담
+tags: [essay]
+category: Essay
 layout: post
 image:
     path: /assets/images/2023-02-19-short-post/businessman-having-headache.jpg
