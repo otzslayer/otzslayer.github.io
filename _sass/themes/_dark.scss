@@ -1,82 +1,84 @@
+/* 다크도 라이트와 같은 웜 뉴트럴 축을 따르되, 밝기 관계는 건드리지 않았다.
+   본문 8.4:1, 헤딩 11.2:1, 보조 텍스트 4.7:1이다. */
 @mixin styles {
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: rgb(27 27 30);
-  --mask-bg: rgb(68 69 70);
-  --main-border-color: rgb(44 45 45);
+  --main-bg: #1c1a17;
+  --mask-bg: #454340;
+  --main-border-color: #2c2a26;
 
   /* Common color */
-  --text-color: rgb(175 176 177);
-  --text-muted-color: #868686;
-  --text-muted-highlight-color: #aeaeae;
-  --heading-color: #cccccc;
-  --label-color: #a7a7a7;
-  --blockquote-border-color: rgb(66 66 66);
-  --blockquote-text-color: #868686;
-  --link-color: rgb(138 180 248);
-  --link-underline-color: rgb(82 108 150);
-  --button-bg: #1e1e1e;
-  --btn-border-color: #2e2f31;
+  --text-color: #b8b4ac;
+  --text-muted-color: #8a857c;
+  --text-muted-highlight-color: #b0aba2;
+  --heading-color: #d4cfc6;
+  --label-color: #a9a49b;
+  --blockquote-border-color: #423f3a;
+  --blockquote-text-color: #8a857c;
+  --link-color: #8fb3e6;
+  --link-underline-color: #52678f;
+  --button-bg: #211f1c;
+  --btn-border-color: #302d29;
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #212122;
-  --card-header-bg: #292929;
-  --checkbox-color: rgb(118 120 121);
+  --card-header-bg: #2a2724;
+  --checkbox-color: #77736c;
   --checkbox-checked-color: var(--link-color);
-  --img-bg: radial-gradient(circle, rgb(22 22 24) 0%, rgb(32 32 32) 100%);
+  --img-bg: radial-gradient(circle, rgb(24 22 19) 0%, rgb(35 32 28) 100%);
   --shimmer-bg: linear-gradient(
     90deg,
     rgb(255 255 255 / 0%) 0%,
     rgb(58 55 55 / 40%) 50%,
     rgb(255 255 255 / 0%) 100%
   );
-  --menu-bg: rgb(30 30 30);
-  --menu-border-color: rgb(77 77 77 / 60%);
-  --menu-shadow-color: rgb(4 4 4 / 42%);
-  --menu-active-color: rgb(240 248 255 / 63%);
-  --menu-highlight-bg: rgb(90 91 92 / 12%);
+  --menu-bg: #211f1c;
+  --menu-border-color: rgb(120 114 104 / 55%);
+  --menu-shadow-color: rgb(6 5 4 / 45%);
+  --menu-active-color: rgb(250 246 238 / 63%);
+  --menu-highlight-bg: rgb(140 132 118 / 12%);
 
   /* Sidebar */
-  --site-title-color: #717070;
-  --site-subtitle-color: #868686;
-  --sidebar-bg: #1e1e1e;
-  --sidebar-border-color: #292929;
-  --sidebar-muted-color: #868686;
-  --sidebar-active-color: rgb(255 255 255 / 95%);
-  --sidebar-hover-bg: #262626;
-  --sidebar-btn-bg: #232328;
-  --sidebar-btn-color: #787878;
-  --avatar-border-color: rgb(206 206 206 / 90%);
+  --site-title-color: #75706a;
+  --site-subtitle-color: #8a857c;
+  --sidebar-bg: #201e1b;
+  --sidebar-border-color: #2a2724;
+  --sidebar-muted-color: #8a857c;
+  --sidebar-active-color: rgb(250 246 238 / 95%);
+  --sidebar-hover-bg: #282521;
+  --sidebar-btn-bg: #26231f;
+  --sidebar-btn-color: #7c776f;
+  --avatar-border-color: rgb(206 200 190 / 90%);
 
   /* Topbar */
-  --topbar-bg: rgb(27 27 30 / 64%);
+  --topbar-bg: rgb(28 26 23 / 64%);
   --topbar-text-color: var(--text-color);
-  --search-border-color: rgb(55 55 55);
-  --search-icon-color: rgb(100 102 105);
-  --input-focus-border-color: rgb(112 114 115);
+  --search-border-color: #38352f;
+  --search-icon-color: #6a655d;
+  --input-focus-border-color: #75706a;
 
   /* Home page */
-  --post-list-text-color: rgb(175 176 177);
+  --post-list-text-color: #b8b4ac;
   --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #2e2e2e;
+  --btn-paginator-hover-color: #302d29;
 
   /* Posts */
   --toc-highlight: rgb(116 178 243);
-  --toc-popup-border-color: #373737;
-  --tag-hover: rgb(43 56 62);
-  --tb-odd-bg: #252526; /* odd rows of the posts' table */
-  --tb-even-bg: rgb(31 31 34); /* even rows of the posts' table */
+  --toc-popup-border-color: #3a372f;
+  --tag-hover: #3a352d;
+  --tb-odd-bg: #262320; /* odd rows of the posts' table */
+  --tb-even-bg: #201e1b; /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: rgb(63 81 181);
-  --btn-share-color: #6c757d;
-  --btn-share-hover-color: #bfc1ca;
-  --card-bg: #1e1e1e;
-  --card-hover-bg: #464d51;
+  --footnote-target-bg: #4a4326;
+  --btn-share-color: #767068;
+  --btn-share-hover-color: #c4bfb6;
+  --card-bg: #211f1c;
+  --card-hover-bg: #4a453d;
   --card-shadow:
-    rgb(21 21 21 / 72%) 0 6px 18px 0, rgb(137 135 135 / 24%) 0 0 0 1px;
-  --kbd-wrap-color: #6a6a6a;
-  --kbd-text-color: #d3d3d3;
-  --kbd-bg-color: #242424;
+    rgb(18 16 13 / 72%) 0 6px 18px 0, rgb(140 133 122 / 24%) 0 0 0 1px;
+  --kbd-wrap-color: #6d685f;
+  --kbd-text-color: #d4cfc6;
+  --kbd-bg-color: #26231f;
   --prompt-text-color: rgb(216 212 212 / 75%);
   --prompt-tip-bg: rgb(22 60 36 / 64%);
   --prompt-tip-icon-color: rgb(15 164 15 / 81%);
@@ -88,33 +90,33 @@
   --prompt-danger-icon-color: #cd0202;
 
   /* Tags */
-  --tag-border: rgb(59 79 88);
-  --tag-shadow: rgb(32 33 33);
-  --dash-color: rgb(63 65 68);
-  --search-tag-bg: #292828;
+  --tag-border: #4a453c;
+  --tag-shadow: #232019;
+  --dash-color: #44403a;
+  --search-tag-bg: #2a2724;
 
   /* Categories */
-  --categories-border: rgb(64 66 69 / 50%);
-  --categories-hover-bg: rgb(73 75 76);
-  --categories-icon-hover-color: white;
+  --categories-border: rgb(70 66 60 / 50%);
+  --categories-hover-bg: #4a453e;
+  --categories-icon-hover-color: #faf6ee;
 
   /* Archive */
-  --timeline-node-bg: rgb(150 152 156);
-  --timeline-color: rgb(63 65 68);
+  --timeline-node-bg: #97928a;
+  --timeline-color: #44403a;
   --timeline-year-dot-color: var(--timeline-color);
 
   /* Code highlight colors */
-  --language-border-color: #2d2d2d;
-  --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #c9def1;
-  --highlight-lineno-color: #808080;
-  --inline-code-bg: rgb(255 255 255 / 5%);
-  --code-color: #b0b0b0;
-  --code-header-text-color: #6a6a6a;
-  --code-header-muted-color: #353535;
-  --code-header-icon-color: #565656;
-  --clipboard-checked-color: #2bcc2b;
-  --filepath-text-color: #cacaca;
+  --language-border-color: #2d2a26;
+  --highlight-bg-color: #161411;
+  --highlighter-rouge-color: #d3ddea;
+  --highlight-lineno-color: #7e796f;
+  --inline-code-bg: rgb(245 240 230 / 6%);
+  --code-color: #b3aea6;
+  --code-header-text-color: #6d685f;
+  --code-header-muted-color: #35322d;
+  --code-header-icon-color: #57534c;
+  --clipboard-checked-color: #58c46a;
+  --filepath-text-color: #cbc6bd;
 
   .light {
     display: none;
@@ -146,11 +148,11 @@
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      rgb(26 26 30),
-      rgb(39 39 45),
-      rgb(39 39 45),
-      rgb(39 39 45),
-      rgb(26 26 30)
+      rgb(28 26 23),
+      rgb(42 39 35),
+      rgb(42 39 35),
+      rgb(42 39 35),
+      rgb(28 26 23)
     );
   }
 
@@ -175,12 +177,12 @@
 
   .highlight,
   .highlight .w {
-    color: #d0d0d0;
-    background-color: #151515;
+    color: #cdc8bf;
+    background-color: #161411;
   }
 
   .highlight .err {
-    color: #151515;
+    color: #161411;
     background-color: #ac4142;
   }
 
@@ -204,12 +206,12 @@
 
   .highlight .o,
   .highlight .ow {
-    color: #d0d0d0;
+    color: #cdc8bf;
   }
 
   .highlight .p,
   .highlight .pi {
-    color: #d0d0d0;
+    color: #cdc8bf;
   }
 
   .highlight .gi {
@@ -223,7 +225,7 @@
 
   .highlight .gh {
     color: #6a9fb5;
-    background-color: #151515;
+    background-color: #161411;
     font-weight: bold;
   }
 

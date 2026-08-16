@@ -135,12 +135,14 @@ main {
 }
 
 .content {
-  font-size: 1.08rem;
+  /* xl에서 오히려 작아지던 예전 규칙은 컨테이너가 넓어지는 방향과
+     어긋나 있어 하나로 합쳤다. */
+  font-size: 1rem;
   margin-top: 2rem;
   overflow-wrap: break-word;
 
-  @include bp.xl {
-    font-size: 1.03rem;
+  p {
+    margin-bottom: 1.25rem;
   }
 
   a {

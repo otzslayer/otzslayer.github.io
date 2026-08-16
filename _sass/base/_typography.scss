@@ -1,34 +1,37 @@
+@use 'sass:map';
 @use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-@for $i from 1 through 5 {
+/* 본문 1rem에 맞춘 헤딩 스케일. 인접 단계 비율은 1.06~1.25로,
+   상위 단계일수록 폭을 넓게 잡았다. 하위 단계는 크기 차이가 좁은 대신
+   굵기 800과 레벨 라벨 칩이 구분을 맡는다. */
+$heading-sizes: (
+  1: 2rem,
+  2: 1.6rem,
+  3: 1.35rem,
+  4: 1.15rem,
+  5: 1.0625rem,
+  6: 1rem,
+);
+
+@for $i from 1 through 6 {
   h#{$i} {
     @extend %heading;
 
+    font-size: map.get($heading-sizes, $i);
+
     @if $i > 1 {
       @extend %anchor;
-    }
 
-    @if $i < 5 {
-      $size-factor: 0.25rem;
-
-      @if $i > 1 {
-        $size-factor: 0.18rem;
-
-        main & {
-          @if $i == 2 {
-            margin: 2.5rem 0 1.25rem;
-          } @else {
-            margin: 2rem 0 1rem;
-          }
+      main & {
+        @if $i == 2 {
+          margin: 3rem 0 1.25rem;
+        } @else {
+          margin: 2.25rem 0 1rem;
         }
       }
-
-      font-size: 1rem + (5 - $i) * $size-factor;
-    } @else {
-      font-size: 1.05rem;
     }
   }
 }

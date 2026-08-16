@@ -12,13 +12,16 @@
      @forward 'heading-labels' 한 줄을 지운다.
    ========================================================================== */
 
+/* 라이트 값은 Obsidian 기본 팔레트의 색상만 가져오고 명도를 낮췄다.
+   원래 값은 종이 배경에서 2.1~4.6:1이라 0.7rem 칩 글자로는 읽히지 않는다.
+   지금은 모두 5:1 안팎이다. */
 @mixin label-colors-light {
-  --heading-label-h1: #e93147; /* red */
-  --heading-label-h2: #086ddd; /* blue */
-  --heading-label-h3: #ec7500; /* orange */
-  --heading-label-h4: #08b94e; /* green */
-  --heading-label-h5: #7852ee; /* purple */
-  --heading-label-h6: #00bfbc; /* cyan */
+  --heading-label-h1: #b62a3c; /* red */
+  --heading-label-h2: #1059a8; /* blue */
+  --heading-label-h3: #9c5300; /* orange */
+  --heading-label-h4: #0d7a3c; /* green */
+  --heading-label-h5: #6741cc; /* purple */
+  --heading-label-h6: #0a706e; /* cyan */
 }
 
 @mixin label-colors-dark {
