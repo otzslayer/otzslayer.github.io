@@ -19,7 +19,7 @@ timezone: Asia/Seoul
 
 title: Jay's Blog # the main title
 
-tagline: Blog for ML Engineer # it will display as the sub-title
+tagline: AI Engineering # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   "짧은 지식들을 긴 기억으로 남기기 위한 곳입니다."
@@ -220,10 +220,6 @@ defaults:
       sitemap: false
   - scope:
       path: archives/**
-    values:
-      sitemap: false
-  - scope:
-      path: books/**
     values:
       sitemap: false
   - scope:
