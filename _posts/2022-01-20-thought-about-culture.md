@@ -2,6 +2,8 @@
 title: 단상 (2021/01/20)
 tags: [essay, organizational-culture]
 category: Essay
+redirect_from:
+  - /잡담/2022/01/20/thought-about-culture.html
 layout: post
 ---
 

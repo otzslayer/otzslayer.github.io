@@ -2,6 +2,8 @@
 title: 한 달의 공백에 대하여
 tags: [essay]
 category: Essay
+redirect_from:
+  - /잡담/2023/04/15/short-post.html
 layout: post
 ---
 

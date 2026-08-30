@@ -4,6 +4,8 @@ title: 2025년 상반기 회고
 layout: post
 tags: [essay, retrospective]
 category: Essay
+redirect_from:
+  - /잡담/2025/08/24/2025-first-half-retrospective.html
 image:
   path: https://i.imgur.com/2XNuKoD.png
   alt: 

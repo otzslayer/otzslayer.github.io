@@ -8,6 +8,7 @@ gem "html-proofer", "~> 5.0", group: :test
 
 group :jekyll_plugins do
   gem 'jekyll-environment-variables'
+  gem 'jekyll-redirect-from', '~> 0.16'
 end
 
 platforms :windows, :jruby do

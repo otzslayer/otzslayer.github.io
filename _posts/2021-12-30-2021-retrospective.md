@@ -2,6 +2,8 @@
 title: 2021년 회고
 tags: [retrospective, essay]
 category: Essay
+redirect_from:
+  - /잡담/2021/12/30/2021-retrospective.html
 layout: post
 ---
 

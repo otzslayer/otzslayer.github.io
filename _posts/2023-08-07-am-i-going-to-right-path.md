@@ -3,6 +3,8 @@ title: 어떤 길을 걸어야 할까?
 layout: post
 tags: [career]
 category: Essay
+redirect_from:
+  - /잡담/2023/08/07/am-i-going-to-right-path.html
 image:
   path: https://i.imgur.com/Ry6ZWWh.png
   alt: Image from [Here](https://www.insperity.com/blog/employee-career-path/)

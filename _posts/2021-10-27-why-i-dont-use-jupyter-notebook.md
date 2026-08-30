@@ -2,6 +2,8 @@
 title: Jupyter Notebook을 쓰지 않게 되는 몇 가지 이유에 대해서
 tags: [jupyter]
 category: Essay
+redirect_from:
+  - /잡담/2021/10/27/why-i-dont-use-jupyter-notebook.html
 layout: post
 ---
 

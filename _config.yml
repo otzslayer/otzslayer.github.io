@@ -2,6 +2,7 @@
 
 plugins:  # "gems" before Jekyll 3.5
   - jekyll-environment-variables
+  - jekyll-redirect-from
 
 # Import the theme
 theme: jekyll-theme-chirpy

@@ -2,6 +2,8 @@
 title: 사내 강의 회고
 tags: [retrospective]
 category: Essay
+redirect_from:
+  - /잡담/2023/05/29/2023-lecture-retrospective.html
 layout: post
 image:
     path: https://i.imgur.com/eeGzIuu.png

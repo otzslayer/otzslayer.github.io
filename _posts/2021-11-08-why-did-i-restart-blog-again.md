@@ -2,6 +2,8 @@
 title: 블로그를 다시 시작하는 이유
 tags: [essay]
 category: Essay
+redirect_from:
+  - /잡담/2021/11/08/why-did-i-restart-blog-again.html
 layout: post
 ---
 

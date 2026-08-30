@@ -2,6 +2,8 @@
 title: Velog에서 이사 옵니다.
 tags: essay
 category: Essay
+redirect_from:
+  - /잡담/2021/10/11/move-from-velog.html
 layout: post
 ---
 
