@@ -2,7 +2,10 @@
 layout: post
 title: 커스텀 LLM 에이전트
 tags: [llm, langchain, agent]
-category: LLM
+category: AI Engineering
+permalink: /ai-engineering/:year/:month/:day/:title.html
+redirect_from:
+  - /llm/2023/07/27/langchain-custom-llm-agent.html
 image:
   path: https://i.imgur.com/tAjMXbv.png
   alt: Image from [here](https://betterprogramming.pub/make-langchain-agent-actually-works-with-local-llms-vicuna-wizardlm-etc-da42b6b1a97)
