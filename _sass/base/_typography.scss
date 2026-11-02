@@ -65,6 +65,32 @@ blockquote {
     margin-bottom: 0;
   }
 
+  &.quote {
+    position: relative;
+    margin: 2.25rem 0 2rem;
+    padding: 1.5rem 0 1.25rem;
+    border-left: 0;
+    border-top: 1px solid var(--quote-rule-color);
+    border-bottom: 1px solid var(--quote-rule-color);
+    font-weight: 500;
+
+    /* 따옴표 뒤 윗선을 본문 배경색으로 가려 선이 따옴표 옆에서 시작하게 한다. */
+    &::before {
+      content: '\201C';
+      position: absolute;
+      left: 0;
+      top: -0.95rem;
+      height: 1.75rem;
+      padding-right: 0.6rem;
+      background: var(--main-bg);
+      color: var(--text-color);
+      font-family: Georgia, serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
   &[class^='prompt-'] {
     border-left: 0;
     position: relative;

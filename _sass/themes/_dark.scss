@@ -15,7 +15,8 @@
   --heading-color: #d4cfc6;
   --label-color: #a9a49b;
   --blockquote-border-color: #423f3a;
-  --blockquote-text-color: #8a857c;
+  --blockquote-text-color: var(--text-color);
+  --quote-rule-color: var(--blockquote-border-color);
   --link-color: #8fb3e6;
   --link-underline-color: #52678f;
   --button-bg: #211f1c;
