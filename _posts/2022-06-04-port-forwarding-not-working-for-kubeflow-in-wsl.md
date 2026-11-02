@@ -54,7 +54,7 @@ wsl hostname -I
 
 그러면 WSL의 IP를 알 수 있습니다. 
 
->   :bulb: 참고로 매번 이렇게 WSL의 IP를 알아낼 수도 있지만 번거롭다고 느끼시는 분들은 WSL를 고정 IP로 설정하여 사용할 수도 있습니다. [넷마블 기술 블로그](https://netmarble.engineering/wsl2-static-ip-scheduler-settings/)에 관련 내용이 있으니 고정 IP로 설정하실 분들은 확인해보시기 바랍니다.
+>   참고로 매번 이렇게 WSL의 IP를 알아낼 수도 있지만 번거롭다고 느끼시는 분들은 WSL를 고정 IP로 설정하여 사용할 수도 있습니다. [넷마블 기술 블로그](https://netmarble.engineering/wsl2-static-ip-scheduler-settings/)에 관련 내용이 있으니 고정 IP로 설정하실 분들은 확인해보시기 바랍니다.
 
 이제 웹브라우저에서 `http://<WSL_IP>:8080` 으로 접속하면 Kubeflow Central Dashboard로 접근할 수 있습니다.
 

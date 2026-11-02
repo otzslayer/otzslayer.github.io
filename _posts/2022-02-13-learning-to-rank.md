@@ -10,7 +10,7 @@ layout: post
 
 ## Learning to Rank?
 
->   :bulb: Learning to Rank (LTR)는 검색 결과의 순서를 정하는 것과 같은 **랭킹 문제 (ranking problem)를 해결하기 위해 지도 학습(supervised learning)을 적용**하는 머신러닝 방법론
+>   Learning to Rank (LTR)는 검색 결과의 순서를 정하는 것과 같은 **랭킹 문제 (ranking problem)를 해결하기 위해 지도 학습(supervised learning)을 적용**하는 머신러닝 방법론
 
 전통적인 지도 학습 방법인 회귀(regression)나 분류(classification)와 LTR 간의 차이는 다음과 같습니다.
 

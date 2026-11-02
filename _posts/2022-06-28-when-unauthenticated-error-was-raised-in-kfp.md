@@ -30,7 +30,7 @@ HTTP response body: {"error":"Internal error: Unauthenticated: Request header er
 
 다른건 몰라도 **인증 관련 문제**인건 확실히 알 수 있습니다. 비슷한 케이스를 찾아보기 위해 구글링을 하다가 [공식 문서](https://www.kubeflow.org/docs/components/pipelines/sdk/connect-api/#connect-to-kubeflow-pipelines-from-outside-your-cluster)에서 다음과 같은 내용을 확인할 수 있었습니다.
 
->   🙀 Note, for Kubeflow Pipelines in multi-user mode, you cannot access the API using kubectl port-forward because it requires authentication.
+>   Note, for Kubeflow Pipelines in multi-user mode, you cannot access the API using kubectl port-forward because it requires authentication.
 
 저는 최신 버전의 Kubeflow를 설치하였기 때문에 당연히 Kubeflow Pipelines도 multi-user mode로 설치되었고 이에 따른 인증 문제가 발생하였음을 알 수 있었습니다.
 

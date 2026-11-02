@@ -17,7 +17,7 @@ Tabular data를 학습하여 예측하는 다소 클래식한 문제에 대해�
 NCF와 Matrix Factorization의 성능을 다시 비교하고 이론적인 인사이트를 제시합니다. 
 이 논문의 결론은 이렇습니다.
 
->   :bulb: MLP 기반의 유사도를 모델링하는 방법은 여러 측면에서 Dot Product와 같은 Matrix Factorization 보다 낫지 않음.
+>   MLP 기반의 유사도를 모델링하는 방법은 여러 측면에서 Dot Product와 같은 Matrix Factorization 보다 낫지 않음.
 
 ## Introduction
 

@@ -10,7 +10,7 @@ Chapter 2: Hello Kubeflow
 <!--more-->
 
 
->   👀 본 포스트는 [Kubeflow for Machine Learning](https://oreilly.com/library/view/kubeflow-for-machine/9781492050117/) 책을 발췌/요약하면서 필요한 내용은 추가하여 작성하였습니다.
+>   본 포스트는 [Kubeflow for Machine Learning](https://oreilly.com/library/view/kubeflow-for-machine/9781492050117/) 책을 발췌/요약하면서 필요한 내용은 추가하여 작성하였습니다.
 >
 >   -   [Chapter 1: Kubeflow: What It is and Who It Is For](/kubeflow/2022/05/08/kubeflow-chapter1.html)
 >   -   [Chapter 2: Hello Kubeflow](/kubeflow/2022/05/15/kubeflow-chapter2.html)
@@ -63,7 +63,7 @@ commit: 362d5fdc0a3dbee389b3d3f1034e8023e72bd3a7
 이제 Minikube에서 쿠버네티스를 설치할텐데 버전 선택에 주의해야 합니다. [Kubeflow Manifest 저장소](https://github.com/kubeflow/manifests)에서 쿠버네티스 1.22 이상 버전과는 호환성 문제가 있을 수 있어 설치에 주의를 요하고 있습니다.
 참고로 M1 맥에서는 Minikube 드라이버를 반드시 Docker로 설정해야 합니다. 본 포스트는 Intel Mac에서 가능한 내용입니다. 따라서 M1이면서 Docker가 설치되지 않은 경우 [관련 문서](https://minikube.sigs.k8s.io/docs/drivers/docker/)를 확인하여 Docker를 설치 및 설정 후 Kuberntetes를 설치하시기 바랍니다.
 
-> 💡 M1으로 Minikube를 이용해 Kubeflow 설치가 안되는 이유는 Kubeflow의 컴포넌트 중 Istio가 올바르게 작동하지 않기 때문입니다.
+> M1으로 Minikube를 이용해 Kubeflow 설치가 안되는 이유는 Kubeflow의 컴포넌트 중 Istio가 올바르게 작동하지 않기 때문입니다.
 > 확인 결과 현재 Istio는 공식적으로 M1 Mac (arm64)를 지원하지 않고 있습니다.
 > 대부분의 컴포넌트는 문제가 없으나 가장 중요한 컴포넌트 중 하나인 Istio를 지원하지 않으므로 설치와 사용에 어려움이 있습니다.
 > 만약 반드시 M1 Mac을 통해 Kubeflow를 설치해야 한다면 가상 환경을 이용해 Linux 환경을 구축하여 설치하시기 바랍니다.

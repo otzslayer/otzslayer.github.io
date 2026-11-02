@@ -105,7 +105,7 @@ $$
 
 따라서 이 과정은 **stochastic**하다고 할 수 있습니다. 이런 과정은 순전파에선 문제가 되지 않습니다. Feed-forward 계산은 단순히 $q_\phi(z \mid x)$ 에서 $z$를 여러개 샘플링하여 $p_\theta(x \mid z)$를 계산하면 되기 때문입니다. 문제는 **역전파 과정**에서 발생합니다. 당연히 우리는 gradient descent/ascent를 이용하여 학습을 할텐데 **샘플링은 미분이 가능한 연산이 아니기 때문**에 gradient descent/ascent를 사용하기 어려워집니다. 기울기를 계산하기 위해서는 확률 변수인 $z$가 **deterministic** 해야 하기 때문이죠.
 
->   :bulb: 엄밀하게는 값을 구할 수 있으나 그 추정값의 분산이 너무 커서 의미가 없다고 합니다. 자세한 내용은 [이 곳](https://stats.stackexchange.com/questions/199605/how-does-the-reparameterization-trick-for-vaes-work-and-why-is-it-important)을 참고하시기 바랍니다.
+>   엄밀하게는 값을 구할 수 있으나 그 추정값의 분산이 너무 커서 의미가 없다고 합니다. 자세한 내용은 [이 곳](https://stats.stackexchange.com/questions/199605/how-does-the-reparameterization-trick-for-vaes-work-and-why-is-it-important)을 참고하시기 바랍니다.
 
 <center>
   <figure>

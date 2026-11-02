@@ -169,7 +169,7 @@ Mixed precision으로 학습할 때 Loss Scaling은 다음의 순서로 이루�
 NVIDIA에서는 Pytorch에서 사용 가능한 여러 가지 확장 기능들을 제공하는 APEX (A PyTorch Extension) 개발하여 배포하고 있습니다.
 여러 가지 기능을 제공하지만 그 중에서도 Mixed Precision Training 기능을 제공하며, Automatic Mixed Precision을 제공합니다.
 
-> 💡 `apex.amp` is a tool to enable mixed precision training by changing only 3 lines of your script. Users can easily experiment with different pure and mixed precision training modes by supplying different flags to `amp.initialize`.
+> `apex.amp` is a tool to enable mixed precision training by changing only 3 lines of your script. Users can easily experiment with different pure and mixed precision training modes by supplying different flags to `amp.initialize`.
 
 NVIDIA에서는 리눅스에 설치하는 것을 권장하고 있으며, 모든 기능을 다 사용하기 위해서는 CUDA와 C++ 익스텐션을 같이 설치해야 합니다.
 

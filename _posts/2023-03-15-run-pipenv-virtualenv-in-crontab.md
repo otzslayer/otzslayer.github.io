@@ -30,7 +30,7 @@ export PYENV_VERSION=3.8.10
 pipenv run python /home/user/project-folder/main.py
 ```
 
-> 💡 덧붙여 쉘 스크립트 파일에 Crontab이 사용자가 설정한 `PATH`를 가져오지 않기 때문에 Pipenv가 있는 경로를 `PATH`에 추가해야 합니다.
+> 덧붙여 쉘 스크립트 파일에 Crontab이 사용자가 설정한 `PATH`를 가져오지 않기 때문에 Pipenv가 있는 경로를 `PATH`에 추가해야 합니다.
 
 Pipenv 공식문서에서 [PIPENV_PIPFILE](https://pipenv.pypa.io/en/latest/advanced/#pipenv.environments.Setting.PIPENV_PIPFILE)의 설명을 찾아볼 수 있습니다.
 
