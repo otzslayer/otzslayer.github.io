@@ -9,11 +9,14 @@
 # from all parents, which matches the history simplification that per-file
 # `git log <path>` applies. Without it, conflict-resolving merges are missed and
 # fast-forward-style merges are counted twice.
+#
+# Commits whose message contains `[skip lastmod]` are ignored, so bulk edits that
+# readers should not see as updates (e.g. markup cleanup) keep the "Updated" date.
 
 Jekyll::Hooks.register :site, :post_read do |site|
   # `core.quotepath=false` keeps non-ASCII filenames from being octal-escaped,
   # which would silently break the path lookup below.
-  log = `git -c core.quotepath=false log --format="%x00%ad" --date=iso --name-only --diff-merges=combined HEAD -- _posts`
+  log = `git -c core.quotepath=false log --format="%x00%ad" --date=iso --name-only --diff-merges=combined --invert-grep --fixed-strings --grep="[skip lastmod]" HEAD -- _posts`
 
   commit_counts = Hash.new(0)
   last_commit_dates = {}
