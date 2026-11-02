@@ -55,19 +55,19 @@
   transform: translateX(-50%);
 }
 
-@mixin prompt($type, $fa-content, $fa-style: 'solid', $rotate: 0) {
-  &.prompt-#{$type} {
-    background-color: var(--prompt-#{$type}-bg);
+@mixin prompt($type, $label, $fa-content, $fa-style: 'solid') {
+  &.prompt-#{$type}::before {
+    content: $fa-content;
+    color: var(--prompt-#{$type}-icon-color);
+    font: var(--fa-font-#{$fa-style});
 
-    &::before {
-      content: $fa-content;
-      color: var(--prompt-#{$type}-icon-color);
-      font: var(--fa-font-#{$fa-style});
+    /* font 단축 속성이 크기를 초기화하므로 그 뒤에 지정한다. */
+    font-size: 1.125rem;
+  }
 
-      @if $rotate != 0 {
-        transform: rotate(#{$rotate}deg);
-      }
-    }
+  &.prompt-#{$type}::after {
+    content: $label;
+    color: var(--prompt-#{$type}-icon-color);
   }
 }
 

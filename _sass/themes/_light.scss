@@ -14,7 +14,6 @@
   --text-muted-highlight-color: inherit;
   --heading-color: #332f2a;
   --label-color: #5c574f;
-  --blockquote-border-color: #e3ded6;
   --blockquote-text-color: var(--text-color);
   --quote-rule-color: #c8c2b8;
   --link-color: #1e5c96;
@@ -78,14 +77,9 @@
   --kbd-wrap-color: #bdb7ac;
   --kbd-text-color: var(--text-color);
   --kbd-bg-color: #fdfcfa;
-  --prompt-text-color: rgb(58 53 46 / 82%);
-  --prompt-tip-bg: rgb(110 200 130 / 18%);
   --prompt-tip-icon-color: #0d7a3c;
-  --prompt-info-bg: rgb(90 150 210 / 15%);
   --prompt-info-icon-color: #1059a8;
-  --prompt-warning-bg: rgb(230 175 60 / 20%);
   --prompt-warning-icon-color: #9c5300;
-  --prompt-danger-bg: rgb(214 90 90 / 15%);
   --prompt-danger-icon-color: #b62a3c;
 
   /* Tags */

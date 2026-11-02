@@ -56,33 +56,48 @@ img {
 }
 
 blockquote {
-  border-left: 0.125rem solid var(--blockquote-border-color);
-  padding-left: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--quote-rule-color);
+  border-bottom: 1px solid var(--quote-rule-color);
   color: var(--blockquote-text-color);
-  margin-top: 0.5rem;
 
-  > p:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 
-  &.quote {
+  /* 연속된 일반 인용구는 앞 블록의 아랫선 하나를 함께 쓴다. */
+  &:not([class]):has(+ blockquote:not([class])) {
+    margin-bottom: 0;
+  }
+
+  &:not([class]) + blockquote:not([class]) {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  &.quote,
+  &[class^='prompt-'] {
     position: relative;
     margin: 2.25rem 0 2rem;
     padding: 1.5rem 0 1.25rem;
-    border-left: 0;
-    border-top: 1px solid var(--quote-rule-color);
-    border-bottom: 1px solid var(--quote-rule-color);
-    font-weight: 500;
 
-    /* 따옴표 뒤 윗선을 본문 배경색으로 가려 선이 따옴표 옆에서 시작하게 한다. */
+    /* 표식 뒤 윗선을 본문 배경색으로 가려 선이 표식 옆에서 시작하게 한다. */
     &::before {
-      content: '\201C';
       position: absolute;
       left: 0;
-      top: -0.95rem;
-      height: 1.75rem;
       padding-right: 0.6rem;
       background: var(--main-bg);
+    }
+  }
+
+  &.quote {
+    font-weight: 500;
+
+    &::before {
+      content: '\201C';
+      top: -0.95rem;
+      height: 1.75rem;
       color: var(--text-color);
       font-family: Georgia, serif;
       font-size: 2.75rem;
@@ -91,29 +106,29 @@ blockquote {
     }
   }
 
-  &[class^='prompt-'] {
-    border-left: 0;
-    position: relative;
-    padding: 1rem 1rem 1rem 3rem;
-    color: var(--prompt-text-color);
-
-    @extend %rounded;
-
-    &::before {
-      text-align: center;
-      width: 3rem;
-      position: absolute;
-      left: 0.25rem;
-      margin-top: 0.4rem;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-    }
+  &[class^='prompt-']::before {
+    top: -0.6rem;
+    width: 1.625rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
   }
 
-  @include mx.prompt('tip', '\f0eb', $fa-style: 'regular');
-  @include mx.prompt('info', '\f06a', $rotate: 180);
-  @include mx.prompt('warning', '\f06a');
-  @include mx.prompt('danger', '\f071');
+  &[class^='prompt-']::after {
+    position: absolute;
+    top: -0.55rem;
+    left: 1.625rem;
+    padding-right: 0.6rem;
+    background: var(--main-bg);
+    font-family: Georgia, serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  @include mx.prompt('tip', 'Tip', '\f0eb', $fa-style: 'regular');
+  @include mx.prompt('info', 'Info', '\f05a');
+  @include mx.prompt('warning', 'Warning', '\f071');
+  @include mx.prompt('danger', 'Danger', '\f057');
 }
 
 kbd {
@@ -207,17 +222,6 @@ main {
   #archives {
     a:not(:hover) {
       @extend %no-bottom-border;
-    }
-  }
-
-  @include bp.lte(bp.get(sm)) {
-    .content {
-      > blockquote[class^='prompt-'] {
-        @include mx.ml-mr(-1rem);
-
-        border-radius: 0;
-        max-width: none;
-      }
     }
   }
 }
