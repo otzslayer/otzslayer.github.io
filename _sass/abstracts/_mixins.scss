@@ -56,6 +56,23 @@
 }
 
 @mixin prompt($type, $label, $fa-content, $fa-style: 'solid') {
+  &.prompt-#{$type} {
+    background: linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--prompt-#{$type}-icon-color) var(--prompt-bg-start),
+        transparent
+      ),
+      color-mix(
+          in srgb,
+          var(--prompt-#{$type}-icon-color) var(--prompt-bg-end),
+          transparent
+        )
+        50%
+    );
+  }
+
   &.prompt-#{$type}::before {
     content: $fa-content;
     color: var(--prompt-#{$type}-icon-color);

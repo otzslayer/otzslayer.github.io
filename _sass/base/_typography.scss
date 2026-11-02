@@ -57,9 +57,10 @@ img {
 
 blockquote {
   margin: 1.5rem 0;
-  padding: 1rem 0;
+  padding: 1rem;
   border-top: 1px solid var(--quote-rule-color);
   border-bottom: 1px solid var(--quote-rule-color);
+  border-radius: 0.5rem;
   color: var(--blockquote-text-color);
 
   > :last-child {
@@ -69,18 +70,25 @@ blockquote {
   /* 연속된 일반 인용구는 앞 블록의 아랫선 하나를 함께 쓴다. */
   &:not([class]):has(+ blockquote:not([class])) {
     margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   &:not([class]) + blockquote:not([class]) {
     margin-top: 0;
     border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   &.quote,
   &[class^='prompt-'] {
     position: relative;
     margin: 2.25rem 0 2rem;
-    padding: 1.5rem 0 1.25rem;
+    padding: 1.5rem 1rem 1.25rem;
+
+    /* 표식이 걸린 왼쪽 위 모서리만 직각으로 둔다. */
+    border-top-left-radius: 0;
 
     /* 표식 뒤 윗선을 본문 배경색으로 가려 선이 표식 옆에서 시작하게 한다. */
     &::before {
@@ -99,16 +107,18 @@ blockquote {
       top: -0.95rem;
       height: 1.75rem;
       color: var(--text-color);
-      font-family: Georgia, serif;
+      font-family: 'Source Serif 4', Georgia, serif;
       font-size: 2.75rem;
       font-weight: 700;
       line-height: 1;
     }
   }
 
+  /* 콜아웃은 윗선까지만 가려 표식 아래로 배경 그라디언트가 이어지게 한다. */
   &[class^='prompt-']::before {
     top: -0.6rem;
     width: 1.625rem;
+    background: linear-gradient(var(--main-bg) 0.6rem, transparent 0);
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
   }
@@ -118,8 +128,8 @@ blockquote {
     top: -0.55rem;
     left: 1.625rem;
     padding-right: 0.6rem;
-    background: var(--main-bg);
-    font-family: Georgia, serif;
+    background: linear-gradient(var(--main-bg) 0.55rem, transparent 0);
+    font-family: 'Source Serif 4', Georgia, serif;
     font-size: 0.9375rem;
     font-weight: 700;
     line-height: 1;
