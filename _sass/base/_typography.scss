@@ -67,6 +67,31 @@ blockquote {
     margin-bottom: 0;
   }
 
+  &:not([class]) {
+    position: relative;
+    font-weight: 500;
+
+    /* 표식이 걸린 왼쪽 위 모서리만 직각으로 둔다. */
+    border-top-left-radius: 0;
+
+    /* 표식 뒤 윗선을 본문 배경색으로 가려 선이 표식 옆에서 시작하게 한다. */
+    &::before {
+      content: '\f075';
+      position: absolute;
+      top: -0.6rem;
+      left: 0;
+      padding-right: 0.6rem;
+      background: var(--main-bg);
+      color: var(--text-color);
+      font: var(--fa-font-regular);
+
+      /* font 단축 속성이 크기를 초기화하므로 그 뒤에 지정한다. */
+      font-size: 1.125rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
   /* 연속된 일반 인용구는 앞 블록의 아랫선 하나를 함께 쓴다. */
   &:not([class]):has(+ blockquote:not([class])) {
     margin-bottom: 0;
@@ -79,6 +104,11 @@ blockquote {
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    /* 하나의 블록으로 보이므로 표식은 첫 블록에만 둔다. */
+    &::before {
+      content: none;
+    }
   }
 
   &.quote,
@@ -123,22 +153,10 @@ blockquote {
     -webkit-font-smoothing: antialiased;
   }
 
-  &[class^='prompt-']::after {
-    position: absolute;
-    top: -0.55rem;
-    left: 1.625rem;
-    padding-right: 0.6rem;
-    background: linear-gradient(var(--main-bg) 0.55rem, transparent 0);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  @include mx.prompt('tip', 'Tip', '\f0eb', $fa-style: 'regular');
-  @include mx.prompt('info', 'Info', '\f05a');
-  @include mx.prompt('warning', 'Warning', '\f071');
-  @include mx.prompt('danger', 'Danger', '\f057');
+  @include mx.prompt('tip', '\f0eb', $fa-style: 'regular');
+  @include mx.prompt('info', '\f05a');
+  @include mx.prompt('warning', '\f071');
+  @include mx.prompt('danger', '\f057');
 }
 
 kbd {

@@ -55,7 +55,7 @@
   transform: translateX(-50%);
 }
 
-@mixin prompt($type, $label, $fa-content, $fa-style: 'solid') {
+@mixin prompt($type, $fa-content, $fa-style: 'solid') {
   &.prompt-#{$type} {
     background: linear-gradient(
       90deg,
@@ -80,11 +80,6 @@
 
     /* font 단축 속성이 크기를 초기화하므로 그 뒤에 지정한다. */
     font-size: 1.125rem;
-  }
-
-  &.prompt-#{$type}::after {
-    content: $label;
-    color: var(--prompt-#{$type}-icon-color);
   }
 }
 
