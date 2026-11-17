@@ -56,6 +56,18 @@
 }
 
 @mixin prompt($type, $fa-content, $fa-style: 'solid') {
+  /* 구분선은 아이콘보다 옅은 종류 색으로 그어 아이콘이 먼저 보이게 한다. */
+  &.prompt-#{$type} {
+    $rule-color: color-mix(
+      in srgb,
+      var(--prompt-#{$type}-icon-color) 70%,
+      var(--main-bg)
+    );
+
+    border-top-color: $rule-color;
+    border-bottom-color: $rule-color;
+  }
+
   &.prompt-#{$type}::before {
     content: $fa-content;
     color: var(--prompt-#{$type}-icon-color);
