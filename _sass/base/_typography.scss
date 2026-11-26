@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:meta';
 @use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
@@ -328,4 +329,29 @@ h6 code {
   font-size: inherit !important;
   font-weight: inherit !important;
   line-height: inherit !important;
+}
+
+/* 읽기 글꼴: 글꼴 토글이 루트의 data-font 속성을 바꾼다.
+   포스트와 About의 제목과 본문에만 .reading-font를 붙이고, 메뉴와 목록 같은 UI는 Pretendard로 남긴다.
+   변수에 넣을 때 meta.inspect로 따옴표를 남긴다. 따옴표가 빠지면 'Source Serif 4'가 잘못된 값이 되어 선언 전체가 무시된다.
+   본문 헤딩은 %heading이 글꼴을 따로 정해서 상속되지 않으므로 함께 지정한다. */
+:root {
+  --reading-font: #{meta.inspect(v.$font-family-base)};
+}
+
+:root[data-font='serif'] {
+  --reading-font: #{meta.inspect(v.$font-family-serif)};
+}
+
+.reading-font {
+  font-family: var(--reading-font);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--reading-font);
+  }
 }

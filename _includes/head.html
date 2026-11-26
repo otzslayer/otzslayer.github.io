@@ -14,6 +14,13 @@
   ></script>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- 저장된 읽기 글꼴을 본문을 그리기 전에 반영해 깜빡임을 막는다. -->
+  <script>
+    if (localStorage.getItem('font') === 'serif') {
+      document.documentElement.setAttribute('data-font', 'serif');
+    }
+  </script>
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
   <meta
@@ -102,6 +109,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
   <!-- Web Font -->
+  <link rel="stylesheet" href="{{ site.data.origin[type].pretendard | default: site.data.origin.cors.pretendard }}">
   <link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}">
 
   <!-- Font Awesome Icons -->

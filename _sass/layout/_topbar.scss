@@ -119,3 +119,28 @@ $collapse-bp: bp.get(md);
 :root[data-bs-theme='dark'] #theme-toggle > [data-icon='to-light'] {
   display: inline-block;
 }
+
+/* 버튼은 바꿀 글꼴로 쓴 '가'를 보여 준다. */
+#font-toggle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-muted-color);
+
+  > span {
+    display: none;
+  }
+
+  > [data-icon='to-serif'] {
+    font-family: v.$font-family-serif;
+  }
+
+  > [data-icon='to-sans'] {
+    font-family: v.$font-family-base;
+  }
+}
+
+:root:not([data-font='serif']) #font-toggle > [data-icon='to-serif'],
+:root[data-font='serif'] #font-toggle > [data-icon='to-sans'] {
+  display: inline-block;
+}
