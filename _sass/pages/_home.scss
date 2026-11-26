@@ -1,6 +1,4 @@
-@use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
-@use '../abstracts/placeholders';
 
 #post-list {
   margin-top: 2rem;
@@ -8,102 +6,7 @@
   @include bp.lg {
     margin-top: 2.5rem;
   }
-
-  .card-wrapper {
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 1.25rem;
-    }
-  }
-
-  .card {
-    border: 0;
-    background: none;
-
-    %img-radius {
-      border-radius: v.$radius-lg v.$radius-lg 0 0;
-
-      @include bp.md {
-        border-radius: 0 v.$radius-lg v.$radius-lg 0;
-      }
-    }
-
-    .preview-img {
-      @extend %img-radius;
-
-      img {
-        @extend %img-radius;
-      }
-    }
-
-    .card-body {
-      height: 100%;
-      padding: 1rem;
-
-      @include bp.md {
-        padding: 1.75rem 1.75rem 1.25rem;
-      }
-
-      .card-title {
-        @extend %text-clip;
-
-        color: var(--heading-color) !important;
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-
-      %muted {
-        color: var(--text-muted-color) !important;
-      }
-
-      .card-text {
-        @include bp.md {
-          display: inherit !important;
-        }
-
-        &.content {
-          @extend %muted;
-
-          p {
-            @extend %text-clip;
-
-            line-height: 1.5;
-            margin: 0;
-          }
-        }
-      }
-
-      .post-meta {
-        @extend %muted;
-
-        i {
-          &:not(:first-child) {
-            margin-left: 1.5rem;
-
-            @include bp.md {
-              margin-left: 1.75rem;
-            }
-          }
-        }
-
-        em {
-          @extend %normal-font-style;
-
-          color: inherit;
-        }
-
-        > div:first-child {
-          display: block;
-
-          @extend %text-ellipsis;
-        }
-      }
-    }
-  }
-} /* #post-list */
+}
 
 .pagination {
   color: var(--text-color);
