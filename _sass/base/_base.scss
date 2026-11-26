@@ -54,16 +54,6 @@ body {
   font-family: v.$font-family-base;
 }
 
-h1.dynamic-title {
-  @include bp.lt(bp.get(lg)) {
-    display: none;
-
-    ~ .content {
-      margin-top: 2.5rem;
-    }
-  }
-}
-
 .preview-img {
   aspect-ratio: 40 / 21;
   width: 100%;
