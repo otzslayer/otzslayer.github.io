@@ -1,8 +1,7 @@
 ---
 layout: default
 panel_includes:
-- toc
-- adsense
+  - toc
 tail_includes:
   - adsense
   - related-posts
@@ -101,6 +100,18 @@ script_includes:
           {% include read-time.html content=content prompt=true lang=lang %}
         </div>
       </div>
+
+      <!-- tags -->
+      {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw me-1"></i>
+          {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/" class="post-tag no-text-decoration">
+              {{- tag -}}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </header>
 
@@ -160,18 +171,6 @@ script_includes:
       <!-- "Edit this post" link -->
       {% include post-edit.html lang=lang %}
     </div>
-
-  <!-- tags -->
-  {% if page.tags.size > 0 %}
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw me-1"></i>
-    {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/" class="post-tag no-text-decoration">
-      {{- tag -}}
-    </a>
-    {% endfor %}
-  </div>
-  {% endif %}
 
   <br><br>
   {% include inarticle_ads.html %}

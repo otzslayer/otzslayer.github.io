@@ -64,14 +64,6 @@ h1.dynamic-title {
   }
 }
 
-main {
-  &.col-12 {
-    @include bp.xxxl {
-      padding-right: 4.5rem !important;
-    }
-  }
-}
-
 .preview-img {
   aspect-ratio: 40 / 21;
   width: 100%;
@@ -442,18 +434,9 @@ mjx-container {
       max-width: 100%;
     }
 
-    /* Pad horizontal */
-    @include bp.between(992px, calc(#{bp.get(xl)} - 1px)) {
-      .col-lg-11 {
-        flex: 0 0 96%;
-        max-width: 96%;
-      }
-    }
-
-    @include bp.lt(bp.get(xl)) {
-      > .row {
-        justify-content: center !important;
-      }
+    > .row {
+      justify-content: center;
+      flex-wrap: nowrap;
     }
 
     @include bp.xxxl {
@@ -472,11 +455,39 @@ mjx-container {
   @include mx.ml-mr(0);
 }
 
-#tail-wrapper {
-  @include bp.xxxl {
-    padding-right: 4.5rem !important;
-  }
+/* 본문과 꼬리 영역은 읽기 폭으로 제한하고, ToC 패널이 있으면 그 오른쪽에 붙인다.
+   꼬리 영역은 따로 된 줄이라서 패널 폭만큼 오른쪽 여백을 두어 본문과 왼쪽 끝을 맞춘다. */
+$reading-width: 720px;
+$reading-padding: 1.5rem;
+$panel-width: 260px;
 
+#main-wrapper main,
+#tail-wrapper {
+  width: 100%;
+  max-width: calc(#{$reading-width} + #{$reading-padding} * 2);
+  flex: 0 1 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include bp.md {
+    padding-left: $reading-padding;
+    padding-right: $reading-padding;
+  }
+}
+
+#main-wrapper #panel-wrapper {
+  flex: 0 0 $panel-width;
+  max-width: $panel-width;
+  padding: 0 0 0 1rem;
+}
+
+#main-wrapper.has-panel #tail-wrapper {
+  @include bp.xl {
+    margin-right: $panel-width;
+  }
+}
+
+#tail-wrapper {
   > :not(script) {
     margin-top: 3rem;
   }
