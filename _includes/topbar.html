@@ -115,6 +115,8 @@
     trigger.addEventListener('click', function () {
       const expanded = menu.classList.toggle('show');
       trigger.setAttribute('aria-expanded', expanded);
+      /* 열린 메뉴가 검색 결과를 가리지 않도록 메뉴 높이를 검색 결과 위 여백으로 넘긴다. */
+      document.documentElement.style.setProperty('--topbar-menu-height', menu.offsetHeight + 'px');
     });
   })();
 </script>
