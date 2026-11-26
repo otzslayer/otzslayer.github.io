@@ -46,16 +46,8 @@
   --menu-highlight-bg: #{fg(8%)};
 
   /* Sidebar */
-  --site-title-color: var(--text-muted-color);
-  --site-subtitle-color: #{fg(75%)};
   --sidebar-bg: #{fg-solid(4%)};
-  --sidebar-border-color: #{fg(10%)};
-  --sidebar-muted-color: #{fg(88%)};
-  --sidebar-active-color: var(--link-color);
-  --sidebar-hover-bg: #{fg(10%)};
   --sidebar-btn-bg: var(--main-bg);
-  --sidebar-btn-color: #{fg(60%)};
-  --avatar-border-color: var(--main-bg);
 
   /* Topbar */
   --topbar-bg: color-mix(in srgb, var(--main-bg) 80%, transparent);

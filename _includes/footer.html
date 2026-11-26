@@ -28,6 +28,27 @@
     {% endif %}
   </p>
 
+  <p class="footer-links">
+    {% for entry in site.data.contact %}
+      {%- assign url = null -%}
+
+      {% case entry.type %}
+        {% when 'github' %}
+          {%- if site.github.username -%}
+            {%- capture url -%}https://github.com/{{ site.github.username }}{%- endcapture -%}
+          {%- endif -%}
+        {% when 'linkedin' %}
+          {%- assign url = entry.url -%}
+      {% endcase %}
+
+      {% if url %}
+        <a href="{{ url }}" aria-label="{{ entry.type }}" target="_blank" rel="noopener noreferrer">
+          <i class="{{ entry.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </p>
+
   <p>
     {%- capture _platform -%}
       <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>

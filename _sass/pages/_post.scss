@@ -349,7 +349,7 @@ header {
 #toc-bar {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: v.$topbar-height;
   z-index: 1;
   margin: 0 -1rem;
   height: v.$topbar-height;
@@ -372,7 +372,7 @@ header {
   }
 
   &.invisible {
-    top: -#{v.$topbar-height};
+    top: 0;
     transition: none;
   }
 }

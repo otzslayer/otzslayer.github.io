@@ -1,77 +1,120 @@
 <!-- The Top Bar -->
 
-<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
-  <div
-    id="topbar"
-    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
-  >
-    <nav id="breadcrumb" aria-label="Breadcrumb">
-      {% assign paths = page.url | split: '/' %}
+<header id="topbar-wrapper" aria-label="Top Bar">
+  <div id="topbar" class="d-flex align-items-center">
+    <a id="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
 
-      {% if paths.size == 0 or page.layout == 'home' %}
-        <!-- index page -->
-        <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
-
-      {% else %}
-        {% for item in paths %}
-          {% if forloop.first %}
-            <span>
-              <a href="{{ '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs.home | capitalize -}}
+    <div id="topbar-menu">
+      <nav aria-label="Main Menu">
+        <ul id="topbar-tabs">
+          {% for tab in site.tabs %}
+            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+            <li{% if tab.url == page.url %} class="active"{% endif %}>
+              <a href="{{ tab.url | relative_url }}">
+                {{- site.data.locales[include.lang].tabs.[tab_name] | default: tab.title -}}
               </a>
-            </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
 
-          {% elsif forloop.last %}
-            {% if page.collection == 'tabs' %}
-              <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
-            {% else %}
-              <span>{{ page.title }}</span>
-            {% endif %}
+      <search id="search" class="align-items-center">
+        <i class="fas fa-search fa-fw"></i>
+        <input
+          class="form-control"
+          id="search-input"
+          type="search"
+          aria-label="search"
+          autocomplete="off"
+          placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+        >
+      </search>
+      <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
+        {{- site.data.locales[include.lang].search.cancel -}}
+      </button>
+    </div>
 
-          {% elsif page.layout == 'category' or page.layout == 'tag' %}
-            <span>
-              <a href="{{ item | append: '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
-              </a>
-            </span>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    </nav>
-    <!-- endof #breadcrumb -->
-
-    <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
+    <button
+      type="button"
+      id="menu-trigger"
+      class="btn btn-link"
+      aria-label="Menu"
+      aria-controls="topbar-menu"
+      aria-expanded="false"
+    >
       <i class="fas fa-bars fa-fw"></i>
     </button>
 
-    <div id="topbar-title">
-      {% if page.layout == 'home' %}
-        {{- site.data.locales[include.lang].title | default: site.title -}}
-      {% elsif page.collection == 'tabs' or page.layout == 'page' %}
-        {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
-        {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
-      {% else %}
-        {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}
-      {% endif %}
+    <!-- #20, #21 티켓의 테마 토글과 글꼴 토글이 들어올 자리 -->
+    <div id="topbar-toggles" class="d-flex align-items-center">
+      {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
+        {%- capture icon_system -%}
+          <i class="fa-solid fa-display" data-theme-mode="system"></i>
+        {%- endcapture -%}
+
+        {%- capture icon_light -%}
+          <i class="fa-regular fa-sun" data-theme-mode="light"></i>
+        {%- endcapture -%}
+
+        {%- capture icon_dark -%}
+          <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
+        {%- endcapture -%}
+
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-link"
+            aria-label="Switch Mode"
+            id="mode-toggle"
+            data-bs-toggle="dropdown"
+          >
+            {{- icon_light -}}
+            {{- icon_dark -}}
+            {{- icon_system -}}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end rounded-3 mt-1 p-1">
+            <li>
+              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light">
+                {{- icon_light -}}
+                {{- site.data.locales[include.lang].theme.light -}}
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark">
+                {{- icon_dark -}}
+                {{- site.data.locales[include.lang].theme.dark -}}
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system">
+                {{- icon_system -}}
+                {{- site.data.locales[include.lang].theme.system -}}
+              </button>
+            </li>
+          </ul>
+        </div>
+      {% endunless %}
+
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
-      <i class="fas fa-search fa-fw"></i>
-    </button>
-
-    <search id="search" class="align-items-center ms-3 ms-lg-0">
-      <i class="fas fa-search fa-fw"></i>
-      <input
-        class="form-control"
-        id="search-input"
-        type="search"
-        aria-label="search"
-        autocomplete="off"
-        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
-      >
-    </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
-      {{- site.data.locales[include.lang].search.cancel -}}
-    </button>
+    <!--
+      커밋된 JS 번들이 시작할 때 아래 id를 찾고 없으면 오류를 낸다.
+      번들을 다시 빌드하기 전까지 화면에 보이지 않는 빈 요소로 남겨 둔다.
+    -->
+    <button type="button" id="sidebar-trigger" hidden></button>
+    <button type="button" id="search-trigger" hidden></button>
+    <div id="topbar-title" hidden></div>
   </div>
 </header>
+
+<script>
+  (function () {
+    const trigger = document.getElementById('menu-trigger');
+    const menu = document.getElementById('topbar-menu');
+
+    trigger.addEventListener('click', function () {
+      const expanded = menu.classList.toggle('show');
+      trigger.setAttribute('aria-expanded', expanded);
+    });
+  })();
+</script>

@@ -16,22 +16,8 @@ search {
     color: var(--search-icon-color);
   }
 
-  @include bp.lt(bp.get(lg)) {
-    display: none;
-  }
-
-  @include bp.lg {
+  @include bp.md {
     max-width: v.$search-max-width;
-  }
-
-  @include bp.xl {
-    margin-right: 4rem;
-  }
-
-  @include bp.xxxl {
-    margin-right: calc(
-      v.$main-content-max-width / 4 - v.$search-max-width - 0.75rem
-    );
   }
 }
 
@@ -154,11 +140,9 @@ search {
 }
 
 #search-hints {
+  /* 모바일 검색 화면이 햄버거 메뉴로 바뀌어 입력 전에 보여 줄 자리가 없다. */
+  display: none;
   padding: 0 1rem;
-
-  @include bp.lg {
-    display: none;
-  }
 
   h4 {
     margin-bottom: 1.5rem;

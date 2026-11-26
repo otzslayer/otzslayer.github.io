@@ -1,86 +1,174 @@
 @use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as mx;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/placeholders';
 
+/* 햄버거 메뉴로 접히는 기준. 이슈 #19가 768px로 정했다. */
+$collapse-bp: bp.get(md);
+
 #topbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
   height: v.$topbar-height;
   background-color: var(--topbar-bg);
-
-  @include bp.lt(bp.get(lg)) {
-    @include mx.slide(top 0.2s ease);
-
-    left: 0;
-  }
+  border-bottom: 1px solid var(--main-border-color);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 #topbar {
   @extend %btn-color;
 
-  #breadcrumb {
-    font-size: 1rem;
-    color: var(--text-muted-color);
-    padding-left: 0.5rem;
+  height: 100%;
+  max-width: v.$main-content-max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  gap: 1rem;
 
-    a:hover {
-      @extend %link-hover;
+  button i {
+    color: var(--text-muted-color);
+  }
+}
+
+#site-title {
+  font-family: v.$font-family-heading;
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  color: var(--topbar-text-color);
+
+  &:hover {
+    color: var(--link-color);
+  }
+}
+
+#topbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+
+  @include bp.lt($collapse-bp) {
+    display: none;
+    position: absolute;
+    top: v.$topbar-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem 1rem;
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--main-border-color);
+
+    &.show {
+      display: flex;
+    }
+  }
+}
+
+#topbar-tabs {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include bp.lt($collapse-bp) {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  a {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted-color);
+
+    @include bp.lt($collapse-bp) {
+      padding: 0.4rem 0;
     }
 
-    span {
-      &:not(:last-child) {
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+
+  .active a {
+    color: var(--link-color);
+    font-weight: 600;
+  }
+}
+
+#menu-trigger {
+  display: none;
+
+  @include bp.lt($collapse-bp) {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+#mode-toggle {
+  > i {
+    display: none;
+
+    @at-root :root[data-bs-theme='light'][data-theme-persisted]
+        &[data-theme-mode='light'] {
+      display: block;
+    }
+
+    @at-root :root[data-bs-theme='dark'][data-theme-persisted]
+        &[data-theme-mode='dark'] {
+      display: block;
+    }
+
+    @at-root :root:not([data-theme-persisted]) &[data-theme-mode='system'] {
+      display: block;
+    }
+  }
+
+  + .dropdown-menu {
+    background-color: var(--menu-bg);
+    border-color: var(--menu-border-color);
+    box-shadow: var(--menu-shadow-color) 0 1px 4px;
+    border-radius: 0.75rem !important;
+
+    &.show {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .dropdown-item {
+      border-radius: 0.5rem;
+      color: var(--text-muted-color);
+      font-size: 90%;
+
+      &.active {
+        font-weight: 600;
+        color: var(--menu-active-color);
+
         &::after {
-          content: '›';
-          padding: 0 0.3rem;
+          content: '\f00c';
+          font: var(--fa-font-solid);
+          font-size: 0.75rem;
+          margin-left: auto;
+          padding-left: 1rem;
         }
       }
+
+      &:active,
+      &:hover,
+      &.active {
+        background-color: var(--menu-highlight-bg);
+      }
+
+      > i {
+        color: var(--text-muted-color);
+        margin-right: 0.5rem;
+      }
     }
-
-    @include bp.lt(bp.get(lg)) {
-      display: none;
-    }
-
-    @include bp.between(bp.get(lg), calc(#{bp.get(xl)} - 1px)) {
-      width: 65%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: keep-all;
-      white-space: nowrap;
-    }
-  }
-
-  @include bp.lte(bp.get(md)) {
-    @include mx.max-w-100;
-  }
-
-  @include bp.lt(bp.get(lg)) {
-    max-width: 100%;
-  }
-}
-
-#topbar-title {
-  display: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: sans-serif;
-  color: var(--topbar-text-color);
-  text-align: center;
-  width: 70%;
-  word-break: keep-all;
-
-  @include bp.lt(bp.get(lg)) {
-    display: block;
-  }
-
-  @include bp.lg {
-    text-align: left;
-  }
-}
-
-#sidebar-trigger,
-#search-trigger {
-  display: none;
-
-  @include bp.lt(bp.get(lg)) {
-    display: block;
   }
 }

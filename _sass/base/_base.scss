@@ -37,6 +37,9 @@ $enable-dark: v.$theme == dark or $enable-dual;
 :root {
   font-size: 16px;
 
+  /* 앵커로 이동할 때 제목이 고정 메뉴바에 가려지지 않게 한다. */
+  scroll-padding-top: v.$topbar-height;
+
   @include bp.lg {
     overflow-y: scroll;
   }
@@ -406,10 +409,6 @@ mjx-container {
 }
 
 @media (hover: hover) {
-  #sidebar ul > li:last-child::after {
-    transition: top 0.5s ease;
-  }
-
   .nav-link {
     transition: background-color 0.3s ease-in-out;
   }
@@ -426,19 +425,10 @@ mjx-container {
 #main-wrapper {
   position: relative;
 
+  /* 화면 위에 고정된 메뉴바 높이만큼 본문을 내린다. */
+  padding-top: v.$topbar-height;
+
   @include mx.pl-pr(0);
-
-  @include bp.lt(bp.get(lg)) {
-    @include mx.slide;
-  }
-
-  @include bp.lg {
-    margin-left: v.$sidebar-width;
-  }
-
-  @include bp.xxxl {
-    margin-left: v.$sidebar-width-large;
-  }
 
   > .container {
     min-height: 100vh;
