@@ -1,117 +1,127 @@
-/* 다크도 라이트와 같은 웜 뉴트럴 축을 따르되, 밝기 관계는 건드리지 않았다.
-   본문 8.4:1, 헤딩 11.2:1, 보조 텍스트 4.7:1이다. */
+@use 'tint' as *;
+
+/* 다크 테마도 라이트와 같은 구조로 배경, 글씨, 하이라이트 세 가지 기준색만
+   리터럴로 두고 나머지 보조색은 tint 함수로 만든다.
+   예외는 콜아웃 네 종류의 색과 코드 구문 강조 색이다.
+   글씨색으로 그림자를 그리면 빛이 번진 것처럼 보여서 그림자는 끈다.
+   대비: 본문 8.4:1, 링크 8.1:1, 흐린 글씨(72%) 5.0:1. */
 @mixin styles {
   color-scheme: dark;
 
-  /* Framework color */
+  /* Base colors */
   --main-bg: #1c1a17;
-  --mask-bg: #454340;
-  --main-border-color: #2c2a26;
+  --text-color: #b8b4ac;
+  --link-color: #8fb3e6;
+
+  /* Framework color */
+  --mask-bg: #{fg-solid(20%)};
+  --main-border-color: #{fg(10%)};
 
   /* Common color */
-  --text-color: #b8b4ac;
-  --text-muted-color: #8a857c;
-  --text-muted-highlight-color: #b0aba2;
-  --heading-color: #d4cfc6;
-  --label-color: #a9a49b;
+  --text-muted-color: #{fg(72%)};
+  --text-muted-highlight-color: #{fg(95%)};
+  --heading-color: var(--text-color);
+  --label-color: #{fg(90%)};
   --blockquote-text-color: var(--text-color);
-  --quote-rule-color: #423f3a;
-  --link-color: #8fb3e6;
-  --link-underline-color: #52678f;
-  --button-bg: #211f1c;
-  --btn-border-color: #302d29;
+  --quote-rule-color: #{fg(22%)};
+  --link-underline-color: #{fg(30%)};
+  --button-bg: #{fg-solid(3%)};
+  --btn-border-color: #{fg(12%)};
   --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #212122;
-  --card-header-bg: #2a2724;
-  --checkbox-color: #77736c;
+  --btn-backtotop-border-color: #{fg(6%)};
+  --card-header-bg: #{fg-solid(7%)};
+  --checkbox-color: #{fg(50%)};
   --checkbox-checked-color: var(--link-color);
-  --img-bg: radial-gradient(circle, rgb(24 22 19) 0%, rgb(35 32 28) 100%);
+  --img-bg: radial-gradient(
+    circle,
+    var(--main-bg) 0%,
+    #{fg-solid(5%)} 100%
+  );
   --shimmer-bg: linear-gradient(
     90deg,
-    rgb(255 255 255 / 0%) 0%,
-    rgb(58 55 55 / 40%) 50%,
-    rgb(255 255 255 / 0%) 100%
+    transparent 0%,
+    #{fg(15%)} 50%,
+    transparent 100%
   );
-  --menu-bg: #211f1c;
-  --menu-border-color: rgb(120 114 104 / 55%);
-  --menu-shadow-color: rgb(6 5 4 / 45%);
-  --menu-active-color: rgb(250 246 238 / 63%);
-  --menu-highlight-bg: rgb(140 132 118 / 12%);
+  --menu-bg: #{fg-solid(3%)};
+  --menu-border-color: #{fg(30%)};
+  --menu-shadow-color: transparent;
+  --menu-active-color: var(--link-color);
+  --menu-highlight-bg: #{fg(10%)};
 
   /* Sidebar */
-  --site-title-color: #75706a;
-  --site-subtitle-color: #8a857c;
-  --sidebar-bg: #201e1b;
-  --sidebar-border-color: #2a2724;
-  --sidebar-muted-color: #8a857c;
-  --sidebar-active-color: rgb(250 246 238 / 95%);
-  --sidebar-hover-bg: #282521;
-  --sidebar-btn-bg: #26231f;
-  --sidebar-btn-color: #7c776f;
-  --avatar-border-color: rgb(206 200 190 / 90%);
+  --site-title-color: #{fg(72%)};
+  --site-subtitle-color: #{fg(72%)};
+  --sidebar-bg: #{fg-solid(3%)};
+  --sidebar-border-color: #{fg(8%)};
+  --sidebar-muted-color: #{fg(72%)};
+  --sidebar-active-color: var(--link-color);
+  --sidebar-hover-bg: #{fg(6%)};
+  --sidebar-btn-bg: #{fg-solid(6%)};
+  --sidebar-btn-color: #{fg(65%)};
+  --avatar-border-color: #{fg(90%)};
 
   /* Topbar */
-  --topbar-bg: rgb(28 26 23 / 64%);
+  --topbar-bg: color-mix(in srgb, var(--main-bg) 64%, transparent);
   --topbar-text-color: var(--text-color);
-  --search-border-color: #38352f;
-  --search-icon-color: #6a655d;
-  --input-focus-border-color: #75706a;
+  --search-border-color: #{fg(18%)};
+  --search-icon-color: #{fg(50%)};
+  --input-focus-border-color: #{fg(60%)};
 
   /* Home page */
-  --post-list-text-color: #b8b4ac;
+  --post-list-text-color: var(--text-color);
   --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #302d29;
+  --btn-paginator-hover-color: #{fg(12%)};
 
   /* Posts */
-  --toc-highlight: rgb(116 178 243);
-  --toc-popup-border-color: #3a372f;
-  --tag-hover: #3a352d;
-  --tb-odd-bg: #262320; /* odd rows of the posts' table */
-  --tb-even-bg: #201e1b; /* even rows of the posts' table */
+  --toc-highlight: var(--link-color);
+  --toc-popup-border-color: #{fg(20%)};
+  --tag-hover: #{fg-solid(18%)};
+  --tb-odd-bg: #{fg(5%)}; /* odd rows of the posts' table */
+  --tb-even-bg: #{fg(2%)}; /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: #4a4326;
-  --btn-share-color: #767068;
-  --btn-share-hover-color: #c4bfb6;
-  --card-bg: #211f1c;
-  --card-hover-bg: #4a453d;
-  --card-shadow:
-    rgb(18 16 13 / 72%) 0 6px 18px 0, rgb(140 133 122 / 24%) 0 0 0 1px;
-  --kbd-wrap-color: #6d685f;
-  --kbd-text-color: #d4cfc6;
-  --kbd-bg-color: #26231f;
+  --footnote-target-bg: #{fg(15%)};
+  --btn-share-color: #{fg(60%)};
+  --btn-share-hover-color: var(--link-color);
+  --card-bg: #{fg-solid(3%)};
+  --card-hover-bg: #{fg-solid(20%)};
+  --card-shadow: #{fg(16%)} 0 0 0 1px;
+  --kbd-wrap-color: #{fg(50%)};
+  --kbd-text-color: var(--text-color);
+  --kbd-bg-color: #{fg-solid(6%)};
   --prompt-tip-icon-color: #2fa84f;
   --prompt-info-icon-color: #3d9be9;
   --prompt-warning-icon-color: rgb(255 165 0 / 80%);
   --prompt-danger-icon-color: #ef5350;
 
   /* Tags */
-  --tag-border: #4a453c;
-  --tag-shadow: #232019;
-  --dash-color: #44403a;
-  --search-tag-bg: #2a2724;
+  --tag-border: #{fg(25%)};
+  --tag-shadow: transparent;
+  --dash-color: #{fg(22%)};
+  --search-tag-bg: #{fg-solid(7%)};
 
   /* Categories */
-  --categories-border: rgb(70 66 60 / 50%);
-  --categories-hover-bg: #4a453e;
-  --categories-icon-hover-color: #faf6ee;
+  --categories-border: #{fg(25%)};
+  --categories-hover-bg: #{fg(25%)};
+  --categories-icon-hover-color: var(--text-color);
 
   /* Archive */
-  --timeline-node-bg: #97928a;
-  --timeline-color: #44403a;
+  --timeline-node-bg: #{fg(75%)};
+  --timeline-color: #{fg(22%)};
   --timeline-year-dot-color: var(--timeline-color);
 
   /* Code highlight colors */
-  --language-border-color: #2d2a26;
-  --highlight-bg-color: #161411;
-  --highlighter-rouge-color: #d3ddea;
-  --highlight-lineno-color: #7e796f;
-  --inline-code-bg: rgb(245 240 230 / 6%);
-  --code-color: #b3aea6;
-  --code-header-text-color: #6d685f;
-  --code-header-muted-color: #35322d;
-  --code-header-icon-color: #57534c;
-  --clipboard-checked-color: #58c46a;
-  --filepath-text-color: #cbc6bd;
+  --language-border-color: #{fg(9%)};
+  --highlight-bg-color: #{fg-solid(4%)};
+  --highlighter-rouge-color: var(--text-color);
+  --highlight-lineno-color: #{fg(60%)};
+  --inline-code-bg: #{fg(8%)};
+  --code-color: var(--text-color);
+  --code-header-text-color: #{fg(50%)};
+  --code-header-muted-color: #{fg(15%)};
+  --code-header-icon-color: #{fg(40%)};
+  --clipboard-checked-color: var(--prompt-tip-icon-color);
+  --filepath-text-color: var(--text-color);
 
   .light {
     display: none;
@@ -143,11 +153,11 @@
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      rgb(28 26 23),
-      rgb(42 39 35),
-      rgb(42 39 35),
-      rgb(42 39 35),
-      rgb(28 26 23)
+      var(--main-bg),
+      #{fg-solid(8%)},
+      #{fg-solid(8%)},
+      #{fg-solid(8%)},
+      var(--main-bg)
     );
   }
 
@@ -173,7 +183,7 @@
   .highlight,
   .highlight .w {
     color: #cdc8bf;
-    background-color: #161411;
+    background-color: var(--highlight-bg-color);
   }
 
   .highlight .err {

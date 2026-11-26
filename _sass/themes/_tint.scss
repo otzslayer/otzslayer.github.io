@@ -1,0 +1,14 @@
+/* 테마의 보조색을 기준색 세 가지(배경, 글씨, 하이라이트)에서만 만들려고 둔 함수다.
+   새 색 리터럴 없이 글씨색에 투명도를 준다. */
+
+/* 글씨색을 $pct만큼 남기고 나머지는 투명하게 한다. 테두리, 흐린 글씨처럼
+   겹쳐 그려도 되는 곳에 쓴다. */
+@function fg($pct) {
+  @return color-mix(in srgb, var(--text-color) $pct, transparent);
+}
+
+/* fg($pct)를 배경 위에 겹친 결과와 같은 불투명한 색이다. 팝업, 메뉴, 코드 블록처럼
+   뒤가 비치면 안 되거나 같은 배경이 겹쳐 그려지는 곳에 쓴다. */
+@function fg-solid($pct) {
+  @return color-mix(in srgb, var(--text-color) $pct, var(--main-bg));
+}
