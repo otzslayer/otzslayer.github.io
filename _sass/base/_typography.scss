@@ -232,13 +232,6 @@ main {
     }
   }
 
-  .categories,
-  #tags,
-  #archives {
-    a:not(:hover) {
-      @extend %no-bottom-border;
-    }
-  }
 }
 
 .footnotes > ol {

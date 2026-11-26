@@ -1,0 +1,32 @@
+{%- comment -%}
+  Tags와 Categories 목록 페이지가 함께 쓰는 "이름 (글 수)" 목록.
+  글 수가 많은 순서로, 글 수가 같으면 이름 순서로 정렬한다.
+
+  Arguments:
+    items: site.tags 또는 site.categories
+    base: 상세 페이지 경로 앞부분. '/tags/' 또는 '/categories/'
+
+  Liquid에는 객체 배열을 만들 방법이 없어서 정렬 키를 문자열 앞에 붙인다.
+  키는 999999에서 글 수를 뺀 여섯 자리 숫자라서 오름차순 정렬이 곧 글 수 내림차순이 된다.
+  이름에 어떤 문자가 와도 깨지지 않도록 구분자 대신 앞 여섯 글자를 잘라 쓴다.
+{%- endcomment -%}
+
+{% assign entries = '' | split: '' %}
+{% for item in include.items %}
+  {% assign key = 999999 | minus: item[1].size %}
+  {% assign entry = key | append: item[0] %}
+  {% assign entries = entries | push: entry %}
+{% endfor %}
+{% assign entries = entries | sort_natural %}
+
+<ul class="taxonomy-list">
+  {% for entry in entries %}
+    {% assign name = entry | slice: 6, entry.size %}
+    {% assign count = entry | slice: 0, 6 | plus: 0 %}
+    {% assign count = 999999 | minus: count %}
+    <li>
+      <a href="{{ name | slugify | url_encode | prepend: include.base | append: '/' | relative_url }}">{{ name }}</a>
+      <span class="taxonomy-count">({{ count }})</span>
+    </li>
+  {% endfor %}
+</ul>

@@ -72,7 +72,6 @@
   --footnote-target-bg: #{fg(10%)};
   --tb-odd-bg: #{fg(3%)};
   --tb-border-color: #{fg(10%)};
-  --dash-color: #{fg(30%)};
   --kbd-wrap-color: #{fg(35%)};
   --kbd-text-color: var(--text-color);
   --kbd-bg-color: var(--main-bg);
@@ -82,15 +81,8 @@
   --prompt-danger-icon-color: #b62a3c;
 
   /* Tags */
-  --tag-border: #{fg(15%)};
-  --tag-shadow: var(--btn-border-color);
   --tag-hover: #{fg-solid(10%)};
   --search-tag-bg: #{fg-solid(6%)};
-
-  /* Categories */
-  --categories-border: #{fg(12%)};
-  --categories-hover-bg: var(--btn-border-color);
-  --categories-icon-hover-color: var(--text-color);
 
   /* --- Custom code light mode colors --- */
   --language-border-color: #{fg(10%)};

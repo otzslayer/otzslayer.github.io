@@ -38,7 +38,8 @@
   align-items: baseline;
   min-width: 0;
 
-  a {
+  /* 본문 링크 규칙(.content a:not(.img-link))과 같은 명시도로 맞춰 밑줄을 없앤다. */
+  a:not(.img-link) {
     @include mx.text-ellipsis;
 
     color: var(--text-color);
@@ -47,6 +48,7 @@
 
     &:hover {
       color: var(--link-color);
+      border-bottom: none;
     }
   }
 }
@@ -64,4 +66,30 @@
   margin: 2rem 0 0.75rem;
   font-size: 1.35rem;
   font-weight: 700;
+}
+
+/* Tags와 Categories 목록의 "이름 (글 수)" */
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  list-style: none;
+
+  a:not(.img-link) {
+    color: var(--text-color);
+    border-bottom: none;
+
+    &:hover {
+      color: var(--link-color);
+      border-bottom: none;
+    }
+  }
+}
+
+.taxonomy-count {
+  color: var(--text-muted-color);
+  font-size: 0.85em;
+  font-weight: 400;
 }

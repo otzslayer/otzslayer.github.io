@@ -29,7 +29,6 @@
   --btn-border-color: #{fg(12%)};
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #{fg(6%)};
-  --card-header-bg: #{fg-solid(7%)};
   --checkbox-color: #{fg(50%)};
   --checkbox-checked-color: var(--link-color);
   --img-bg: radial-gradient(
@@ -87,15 +86,7 @@
   --prompt-danger-icon-color: #ef5350;
 
   /* Tags */
-  --tag-border: #{fg(25%)};
-  --tag-shadow: transparent;
-  --dash-color: #{fg(22%)};
   --search-tag-bg: #{fg-solid(7%)};
-
-  /* Categories */
-  --categories-border: #{fg(25%)};
-  --categories-hover-bg: #{fg(25%)};
-  --categories-icon-hover-color: var(--text-color);
 
   /* Code highlight colors */
   --language-border-color: #{fg(9%)};
@@ -112,29 +103,6 @@
 
   .light {
     display: none;
-  }
-
-  /* Categories */
-  .categories.card,
-  .list-group-item {
-    background-color: var(--card-bg);
-  }
-
-  .categories {
-    .card-header {
-      background-color: var(--card-header-bg);
-    }
-
-    .list-group-item {
-      border-left: none;
-      border-right: none;
-      padding-left: 2rem;
-      border-color: var(--categories-border);
-
-      &:last-child {
-        border-bottom-color: var(--card-bg);
-      }
-    }
   }
 
   /* stylelint-disable-next-line selector-id-pattern */
