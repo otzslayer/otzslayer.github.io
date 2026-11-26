@@ -1,0 +1,29 @@
+{%- comment -%}
+  "날짜, 글 제목" 한 줄 목록의 항목. Archives, 태그 상세, 카테고리 상세, 홈이 함께 쓴다.
+  감싸는 <ul class="post-list">는 쓰는 쪽에서 둔다.
+
+  Arguments:
+    post: 보여 줄 글
+    summary: true면 제목 아래에 요약 한 줄을 더한다. 기본값은 false
+    clap_class: 박수 수를 채울 요소의 클래스. 번들의 홈 코드는 clap-count-home,
+                나머지 페이지 코드는 clap-count-cat을 찾는다. 기본값은 clap-count-cat
+
+  날짜는 번들의 locale-datetime이 다시 쓰지 않도록 data-ts 없이 고정 형식으로 둔다.
+{%- endcomment -%}
+
+{%- assign post = include.post -%}
+
+<li class="post-list-item">
+  <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">
+    {{- post.date | date: '%Y-%m-%d' -}}
+  </time>
+  <div class="post-list-body">
+    <div class="post-list-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="{{ include.clap_class | default: 'clap-count-cat' }}" data-url="{{ post.url | absolute_url }}"></span>
+    </div>
+    {% if include.summary %}
+      <p class="post-list-summary">{% include post-summary.html %}</p>
+    {% endif %}
+  </div>
+</li>

@@ -97,11 +97,6 @@
   --categories-hover-bg: #{fg(25%)};
   --categories-icon-hover-color: var(--text-color);
 
-  /* Archive */
-  --timeline-node-bg: #{fg(75%)};
-  --timeline-color: #{fg(22%)};
-  --timeline-year-dot-color: var(--timeline-color);
-
   /* Code highlight colors */
   --language-border-color: #{fg(9%)};
   --highlight-bg-color: #{fg-solid(4%)};
@@ -140,17 +135,6 @@
         border-bottom-color: var(--card-bg);
       }
     }
-  }
-
-  #archives li:nth-child(odd) {
-    background-image: linear-gradient(
-      to left,
-      var(--main-bg),
-      #{fg-solid(8%)},
-      #{fg-solid(8%)},
-      #{fg-solid(8%)},
-      var(--main-bg)
-    );
   }
 
   /* stylelint-disable-next-line selector-id-pattern */
