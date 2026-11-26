@@ -29,7 +29,19 @@ layout: compress
   <body>
     {% include topbar.html lang=lang %}
 
-    <div id="main-wrapper" class="d-flex justify-content-center{% if layout.panel_includes %} has-panel{% endif %}">
+    {% comment %}
+      포스트 패널에는 ToC만 있어서 ToC가 꺼진 글(헤딩이 없거나 toc: false)은 패널을 그리지 않는다.
+      빈 패널이 남으면 본문이 화면 가운데에서 비켜난다.
+    {% endcomment %}
+    {% assign show_panel = false %}
+    {% if layout.panel_includes contains 'toc' %}
+      {% include toc-status.html %}
+      {% assign show_panel = enable_toc %}
+    {% elsif layout.panel_includes %}
+      {% assign show_panel = true %}
+    {% endif %}
+
+    <div id="main-wrapper" class="d-flex justify-content-center{% if show_panel %} has-panel{% endif %}">
       <div class="container d-flex flex-column px-xxl-5">
         <div class="row flex-grow-1">
           <main aria-label="Main Content">
@@ -40,7 +52,7 @@ layout: compress
             {% endif %}
           </main>
 
-          {% if layout.panel_includes %}
+          {% if show_panel %}
             <!-- panel -->
             <aside aria-label="Panel" id="panel-wrapper" class="text-muted">
               {% for _include in layout.panel_includes %}
