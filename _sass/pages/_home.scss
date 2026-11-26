@@ -1,5 +1,18 @@
 @use '../abstracts/breakpoints' as bp;
 
+/* 맨 위 카테고리 줄이 상단 메뉴바 아래 여백을 맡고, 글 목록과의 간격은 #post-list의 위 여백만 쓴다. */
+#home-categories {
+  margin-top: 2rem;
+
+  @include bp.lg {
+    margin-top: 2.5rem;
+  }
+
+  .taxonomy-list {
+    margin-bottom: 0;
+  }
+}
+
 #post-list {
   margin-top: 2rem;
 

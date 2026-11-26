@@ -43,6 +43,11 @@ layout: default
   {% endfor %}
 {% endif %}
 
+<!-- 모든 쪽의 글 목록 위에 카테고리 전체를 보여 준다. Categories 목록 페이지를 대신한다. -->
+<nav id="home-categories" aria-label="Categories">
+  {% include taxonomy-list.html items=site.categories base='/categories/' %}
+</nav>
+
 <ul id="post-list" class="post-list">
   {% for post in posts %}
     {% include post-list-item.html post=post summary=true clap_class='clap-count-home' %}

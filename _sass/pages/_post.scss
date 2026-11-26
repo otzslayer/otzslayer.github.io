@@ -71,6 +71,12 @@ header {
     @extend %link-underline;
   }
 
+  /* 카테고리 링크는 태그 줄과 같은 monospace로 작게 쓴다. */
+  .post-meta a {
+    font-family: v.$code-font-family;
+    font-size: 0.75rem;
+  }
+
   .share-wrapper {
     vertical-align: middle;
     -webkit-user-select: none;
@@ -142,6 +148,9 @@ header {
   line-height: 2rem;
 
   .post-tag {
+    font-family: v.$code-font-family;
+    font-size: 0.75rem;
+
     &:hover {
       @extend %tag-hover;
     }
