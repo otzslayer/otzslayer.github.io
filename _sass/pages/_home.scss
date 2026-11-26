@@ -6,6 +6,19 @@
   @include bp.lg {
     margin-top: 2.5rem;
   }
+
+  /* 홈 목록만 항목 사이에 구분선을 넣는다. Archives, 태그 상세, 카테고리 상세는 그대로 둔다. */
+  .post-list-item {
+    padding: 0.85rem 0;
+
+    + .post-list-item {
+      border-top: 1px solid var(--main-border-color);
+    }
+  }
+
+  .post-list-title a:not(.img-link) {
+    font-weight: 700;
+  }
 }
 
 .pagination {
