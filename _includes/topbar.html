@@ -45,56 +45,13 @@
       <i class="fas fa-bars fa-fw"></i>
     </button>
 
-    <!-- #20, #21 티켓의 테마 토글과 글꼴 토글이 들어올 자리 -->
     <div id="topbar-toggles" class="d-flex align-items-center">
       {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
-        {%- capture icon_system -%}
-          <i class="fa-solid fa-display" data-theme-mode="system"></i>
-        {%- endcapture -%}
-
-        {%- capture icon_light -%}
-          <i class="fa-regular fa-sun" data-theme-mode="light"></i>
-        {%- endcapture -%}
-
-        {%- capture icon_dark -%}
-          <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
-        {%- endcapture -%}
-
-        <div class="btn-group">
-          <button
-            type="button"
-            class="btn btn-link"
-            aria-label="Switch Mode"
-            id="mode-toggle"
-            data-bs-toggle="dropdown"
-          >
-            {{- icon_light -}}
-            {{- icon_dark -}}
-            {{- icon_system -}}
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end rounded-3 mt-1 p-1">
-            <li>
-              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light">
-                {{- icon_light -}}
-                {{- site.data.locales[include.lang].theme.light -}}
-              </button>
-            </li>
-            <li>
-              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark">
-                {{- icon_dark -}}
-                {{- site.data.locales[include.lang].theme.dark -}}
-              </button>
-            </li>
-            <li>
-              <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system">
-                {{- icon_system -}}
-                {{- site.data.locales[include.lang].theme.system -}}
-              </button>
-            </li>
-          </ul>
-        </div>
+        <button type="button" id="theme-toggle" class="btn btn-link" aria-label="Toggle theme">
+          <i class="fa-regular fa-moon fa-fw" data-icon="to-dark"></i>
+          <i class="fa-regular fa-sun fa-fw" data-icon="to-light"></i>
+        </button>
       {% endunless %}
-
     </div>
 
     <!--
@@ -104,6 +61,10 @@
     <button type="button" id="sidebar-trigger" hidden></button>
     <button type="button" id="search-trigger" hidden></button>
     <div id="topbar-title" hidden></div>
+    {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
+      <button type="button" id="mode-toggle" hidden></button>
+      <ul class="dropdown-menu" hidden></ul>
+    {% endunless %}
   </div>
 </header>
 
@@ -118,5 +79,14 @@
       /* 열린 메뉴가 검색 결과를 가리지 않도록 메뉴 높이를 검색 결과 위 여백으로 넘긴다. */
       document.documentElement.style.setProperty('--topbar-menu-height', menu.offsetHeight + 'px');
     });
+
+    /* 번들의 Theme.update가 선택값 저장과 다이어그램, 댓글 테마 전환 알림을 함께 처리한다. */
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        Theme.update(Theme.isDark ? Theme.Mode.LIGHT : Theme.Mode.DARK);
+      });
+    }
   })();
 </script>

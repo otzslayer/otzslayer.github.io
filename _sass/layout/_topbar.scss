@@ -110,65 +110,12 @@ $collapse-bp: bp.get(md);
   }
 }
 
-#mode-toggle {
-  > i {
-    display: none;
+/* 버튼은 바꿀 테마의 아이콘을 보여 준다. 라이트에서는 달, 다크에서는 해. */
+#theme-toggle > i {
+  display: none;
+}
 
-    @at-root :root[data-bs-theme='light'][data-theme-persisted]
-        &[data-theme-mode='light'] {
-      display: block;
-    }
-
-    @at-root :root[data-bs-theme='dark'][data-theme-persisted]
-        &[data-theme-mode='dark'] {
-      display: block;
-    }
-
-    @at-root :root:not([data-theme-persisted]) &[data-theme-mode='system'] {
-      display: block;
-    }
-  }
-
-  + .dropdown-menu {
-    background-color: var(--menu-bg);
-    border-color: var(--menu-border-color);
-    box-shadow: var(--menu-shadow-color) 0 1px 4px;
-    border-radius: 0.75rem !important;
-
-    &.show {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .dropdown-item {
-      border-radius: 0.5rem;
-      color: var(--text-muted-color);
-      font-size: 90%;
-
-      &.active {
-        font-weight: 600;
-        color: var(--menu-active-color);
-
-        &::after {
-          content: '\f00c';
-          font: var(--fa-font-solid);
-          font-size: 0.75rem;
-          margin-left: auto;
-          padding-left: 1rem;
-        }
-      }
-
-      &:active,
-      &:hover,
-      &.active {
-        background-color: var(--menu-highlight-bg);
-      }
-
-      > i {
-        color: var(--text-muted-color);
-        margin-right: 0.5rem;
-      }
-    }
-  }
+:root:not([data-bs-theme='dark']) #theme-toggle > [data-icon='to-dark'],
+:root[data-bs-theme='dark'] #theme-toggle > [data-icon='to-light'] {
+  display: inline-block;
 }
