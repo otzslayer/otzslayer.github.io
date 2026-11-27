@@ -413,7 +413,8 @@ mjx-container {
   @include mx.pl-pr(0);
 
   > .container {
-    min-height: 100vh;
+    /* 위 padding-top만큼 빼야 내용이 짧은 쪽에서 문서가 화면보다 길어져 스크롤이 생기지 않는다. */
+    min-height: calc(100vh - #{v.$topbar-height});
 
     @include bp.lte(bp.get(md)) {
       @include mx.max-w-100;
@@ -485,6 +486,11 @@ mjx-container {
 #tail-wrapper {
   > :not(script) {
     margin-top: 3rem;
+  }
+
+  /* 홈 한 쪽이 스크롤 없이 화면에 들어가도록 푸터 위 여백만 줄인다. 위 규칙과 명시도가 같아서 뒤에 둔다. */
+  > footer {
+    margin-top: 1rem;
   }
 }
 
