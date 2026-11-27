@@ -4,9 +4,6 @@ title: 추론 시스템 생성 - 동기 추론 패턴
 layout: post
 tags: [inference-system, mlops, synchronous]
 category: ML System Design Pattern
-image:
-  path: https://i.imgur.com/9APrFxF.png
-  alt: 
 ---
 
 ## 유스케이스

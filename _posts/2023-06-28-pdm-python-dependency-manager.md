@@ -3,9 +3,6 @@ title: 파이썬 의존성 관리 도구 PDM
 layout: post
 tags: [pdm, dependency, pipenv, pyenv, poetry]
 category: Python
-image:
-  path: https://res.cloudinary.com/snyk/image/upload/v1530707820/wordpress-sync/Python-feature-1.png
-  alt: Dependency management
 ---
 
 ## 들어가며

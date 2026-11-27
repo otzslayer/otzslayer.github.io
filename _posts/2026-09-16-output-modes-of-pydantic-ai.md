@@ -5,9 +5,6 @@ layout: post
 tags: [pydantic-ai, structured-output, llm, agent]
 category: AI Engineering
 permalink: /ai-engineering/:year/:month/:day/:title.html
-image:
-  path: https://pub-519d95dbc82948c295bcf57354a5880c.r2.dev/images/673b38fb768f9da0f4143f2ac6773ebf.png
-  alt: Image from [Unsplash](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B0%95%EC%8A%A4%EC%99%80-%ED%99%94%EC%82%B4%ED%91%9C%EA%B0%80-%EC%9E%88%EB%8A%94-%ED%94%8C%EB%A1%9C%EC%9A%B0%EC%B0%A8%ED%8A%B8-_XXNjSziZuA)
 ---
 
 요즘 저는 Pydantic AI 공식 문서를 토대로 다시 공부해보고 있습니다. 워낙 코딩 에이전트를 자주 쓰다 보니까 감각을 잃는 것 같아서요. 그러다 조금 오래 붙잡게 된 내용이 바로 **출력 모드(output mode)**였습니다.

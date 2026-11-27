@@ -3,9 +3,6 @@ title: Biases in Recommender Systems
 tags: [bias, recsys]
 category: ML
 layout: post
-image:
-    path: https://files.realpython.com/media/Build-a-Recommendation-Engine-With-Collaborative-Filtering_Watermarked.451abc4ecb9f.jpg
-    alt: Photo from [Here](https://realpython.com/build-recommendation-engine-collaborative-filtering)
 ---
 
 본 포스트는 [Towards Data Science](https://towardsdatascience.com/biases-in-recommender-systems-top-challenges-and-recent-breakthroughs-edcda59d30bf)에 기고된 글을 요약하였습니다.

@@ -4,9 +4,6 @@ title: FastAPI에서 app.state 활용하기
 layout: post
 tags: [fastapi, starlette, application-state, startup-events]
 category: FastAPI
-image:
-  path: https://i.imgur.com/5e25iz6.png
-  alt: Image from [Unsplash](https://i.imgur.com/P0s60SA.png)
 ---
 
 FastAPI로 서비스를 구축하다 보면 애플리케이션 기동 시 한 번 불러온 결과를 전역 변수처럼 재사용하고 싶을 때가 많습니다. 이때 일반적인 전역 변수보다 안전하고, FastAPI의 의존성 주입과도 잘 어울리는 방법이 바로 `app.state`입니다. 이 포스트에서는 `app.state`의 개념과 구현 패턴, 그리고 예시를 정리합니다.

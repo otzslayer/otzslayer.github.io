@@ -5,9 +5,6 @@ category: Essay
 redirect_from:
   - /잡담/2023/05/29/2023-lecture-retrospective.html
 layout: post
-image:
-    path: https://i.imgur.com/eeGzIuu.png
-    alt: Photo by [Kenny Eliason](https://unsplash.com/es/@neonbrand) on [Unsplash](https://unsplash.com)
 ---
 
 ## 들어가며

@@ -4,9 +4,6 @@ title: SOLID 원칙으로 ML 프로젝트 확장하기
 layout: post
 tags: [solid, clean-code]
 category: ML
-image:
-  path: https://i.imgur.com/bXNV3VT.png
-  alt: 
 ---
 
 본 포스트는 [Jeremy Arancio](https://medium.com/@jeremyarancio)의 ["Scale your Machine Learning Projects with SOLID Principles"](https://towardsdatascience.com/scale-your-machine-learning-projects-with-solid-principles-824230fa8ba1)을 번역하였습니다.

@@ -3,9 +3,6 @@ title: BentoML에서 Input에 다양한 타입이 필요한 경우 (Pydantic 활
 tags: [bentoml, serving, pydantic]
 category: MLOps
 layout: post
-image:
-    path: https://i.imgur.com/A7dwPi7.png
-    alt: Photo from [Here](https://realpython.com/python-data-types/)
 ---
 
 

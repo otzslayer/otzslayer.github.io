@@ -4,9 +4,6 @@ title: Apple Silicon (M1, M2)에 Kubeflow 설치하기
 layout: post
 tags: [kubeflow, apple-Silicon, minikube, docker, kubernetes]
 category: MLOps
-image:
-  path: https://i.imgur.com/MwNRWQh.png
-  alt: Kubeflow
 ---
 
 ## 들어가며

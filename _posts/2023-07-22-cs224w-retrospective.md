@@ -4,9 +4,6 @@ title: CS224W 짧은 회고
 layout: post
 tags: [cs224w]
 category: CS224W
-image:
-  path: https://i.imgur.com/lfyYz9I.jpg
-  alt: Image from [Unsplash](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/Byg5oMl03Ig)
 ---
 
 ## 회고

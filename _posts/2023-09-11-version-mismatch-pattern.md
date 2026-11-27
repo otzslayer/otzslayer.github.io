@@ -3,9 +3,6 @@ title: 버전 불일치 패턴
 layout: post
 tags: [dependency-conflict-pattern, ml-system-design-pattern, docker, onnx]
 category: ML System Design Pattern
-image:
-  path: https://i.imgur.com/9APrFxF.png
-  alt: 
 ---
 
 ## 상황

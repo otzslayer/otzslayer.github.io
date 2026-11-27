@@ -4,9 +4,6 @@ title: How ML Breaks
 layout: post
 tags: [mlops, troubleshooting]
 category: MLOps
-image:
-  path: https://i.imgur.com/5miI4qj.png
-  alt: 
 ---
 
 본 포스트는 [How ML Breaks: A Decade of Outages for One Large ML Pipeline](https://www.usenix.org/conference/opml20/presentation/papasian)의 내용을 요약/정리한 내용을 담고 있습니다.

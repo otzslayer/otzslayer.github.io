@@ -5,9 +5,6 @@ category: Essay
 redirect_from:
   - /잡담/2023/06/09/reintroduce-my-blog.html
 layout: post
-image:
-    path: https://i.imgur.com/BGxZBVf.png
-    alt: Chirpy
 ---
 
 

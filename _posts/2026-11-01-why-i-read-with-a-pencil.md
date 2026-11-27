@@ -4,9 +4,6 @@ title: 샤프를 들고 읽는 이유
 layout: post
 tags: [essay, reading, paper-vs-screen, digital-reading, self-study]
 category: Essay
-image:
-  path: https://pub-519d95dbc82948c295bcf57354a5880c.r2.dev/images/2e59993afc3543eab21087daecb33eda.png
-  alt: Image from [Unsplash](https://unsplash.com/photos/book-page-with-pencil-5Gvfl330xcQ)
 ---
 
 ## 활자를 좋아하는 사람

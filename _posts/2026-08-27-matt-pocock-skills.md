@@ -4,8 +4,6 @@ title: Matt Pocock의 Engineering Skills를 사용하는 이유
 layout: post
 tags: [agentic-coding, essay, matt-pocock, grilling, superpowers, compound-engineering]
 category: Essay
-image:
-  path: https://pub-519d95dbc82948c295bcf57354a5880c.r2.dev/images/774ed0a62a857112dc292ea663bf6e63.png
 ---
 
 Claude Code나 Codex를 사용하면 어느 시점에선 반드시 [하네스 엔지니어링(Harness engineering)](https://addyosmani.com/blog/agent-harness-engineering/)을 신경 쓰게 됩니다. 더불어서 나만의 개발 워크플로우를 수립하게 되고 더 나아가선 토큰 효율적인 워크플로우를 원하게 됩니다. 저는 오랜 시간 동안 Claude Code를 사용해왔고 모델이 여러 번 바뀔 때마다 제 하네스와 개발 워크플로우를 다듬는 데에 많은 시간을 들였습니다.

@@ -4,9 +4,6 @@ title: "SQLAlchemy expire_on_commit 사용법: 동기 vs 비동기 예제"
 layout: post
 tags: [sqlalchemy, expire_on_commit, async]
 category: Python
-image:
-  path: https://i.imgur.com/kjKz7Qu.png
-  alt: 
 ---
 
 ## `expire_on_commit`의 역할

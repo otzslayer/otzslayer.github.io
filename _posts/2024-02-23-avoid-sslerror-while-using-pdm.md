@@ -5,9 +5,6 @@ title: PDM을 이용하여 환경 설정 시 SSL 에러 벗어나기
 layout: post
 tags: [InsecureRequestWarning, urllib3, python, pdm, sslerror]
 category: Python
-image:
-  path: https://i.imgur.com/fc9JDiS.png
-  alt: 
 ---
 
 ## 배경

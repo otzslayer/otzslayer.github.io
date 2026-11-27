@@ -6,9 +6,6 @@ tags: [blog]
 category: Essay
 redirect_from:
   - /잡담/2025/01/16/new-tab-for-book-reviews.html
-image:
-  path: https://i.imgur.com/rbIZOsh.jpeg
-  alt: Image from [Here](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B0%88%EC%83%89-%EC%B1%85-%EA%B7%BC%EC%A0%91-%EC%B4%AC%EC%98%81-%EC%82%AC%EC%A7%84-_nm_mZ4Cs2I)
 ---
 
 새해를 맞이해서 블로그에 새로운 탭을 추가했습니다. 지난 연말부터 올 초까지 공부하면서 여러 책을 읽었는데, 문득 이런 생각을 했습니다.
