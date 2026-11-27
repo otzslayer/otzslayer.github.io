@@ -540,9 +540,10 @@ h4 {
 }
 
 /* 본문 각주 번호 옆에 띄우는 메모 상자. _javascript/modules/components/footnote-popover.js가 body 끝에 만든다.
-   각주 영역과 같은 글자 크기를 쓴다. */
+   각주 영역과 같은 글자 크기를 쓴다. .reading-font 밖에 있으므로 읽기 글꼴 변수를 직접 써서 Serif 토글을 따라간다. */
 .footnote-popover {
   position: absolute;
+  font-family: var(--reading-font);
   z-index: 1050;
   width: max-content;
   max-width: min(26rem, calc(100vw - 1.5rem));
