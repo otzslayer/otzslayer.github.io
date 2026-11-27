@@ -17,6 +17,8 @@
 - [ ] 구문 강조 `.highlight .gr` 글씨 `#f2efe9`가 코드 배경 `#f6f6f6`과 대비 1.06:1이라 거의 안 보임. 변경 전에도 1.01:1. 구문 강조 색은 #17 범위 밖 (#29)
 - [ ] 구문 강조에 남은 따뜻한 회색 리터럴(`#3f3b35`, `#6e675e`, `#f2efe9`)이 무채색 흰 배경과 색조가 약간 어긋남 (#29)
 - [ ] `_includes/head.html`의 라이트 `<meta name="theme-color">`가 `#f7f7f7`이라 새 배경 `#ffffff`와 다름 (#29)
+- [ ] 같은 파일의 다크 `<meta name="theme-color">`도 `#1b1b1e`라 새 다크 배경 `#302f2c`와 다름
+- [ ] 다크 배경을 `#302f2c`로 밝힌 뒤 구문 강조 색 일부가 코드 배경 대비 4.5:1 미만이 됨. 계산값: `#848484` 3.3:1, `#aa759f` 3.4:1, `#87939d` 3.9:1 (#29)
 - [ ] `_light.scss` 머리 주석이 기준색을 "배경, 글씨, 하이라이트"로 적지만 리터럴 이름은 `--link-color` (#29)
 - [ ] Categories 목록 페이지를 지운 뒤 남은 JS: `_javascript/categories.js`, `rollup.config.js`의 `build('categories')`, `assets/js/dist/categories.min.js`, `_javascript/modules/components/category-collapse.js`. 지우려면 JS 번들을 다시 빌드해야 함 (#30)
 - [ ] `_data/locales/*.yml`의 `tabs.categories`와 `categories:` 키를 더 쓰지 않음 (#30)

@@ -4,13 +4,14 @@
    리터럴로 두고 나머지 보조색은 tint 함수로 만든다.
    예외는 콜아웃 네 종류의 색과 코드 구문 강조 색이다.
    글씨색으로 그림자를 그리면 빛이 번진 것처럼 보여서 그림자는 끈다.
-   대비: 본문 8.4:1, 링크 8.1:1, 흐린 글씨(72%) 5.0:1. */
+   배경과 글씨는 eugeneyan.com 다크 테마 값을 따른다. 예전 값(#1c1a17, #b8b4ac)은 본문 대비가 8.4:1이라 글씨가 흐려 보였다.
+   대비: 본문 11.8:1, 링크 6.2:1, 흐린 글씨(72%) 7.0:1. */
 @mixin styles {
   color-scheme: dark;
 
   /* Base colors */
-  --main-bg: #1c1a17;
-  --text-color: #b8b4ac;
+  --main-bg: #302f2c;
+  --text-color: #f4f1e6;
   --link-color: #8fb3e6;
 
   /* Framework color */
