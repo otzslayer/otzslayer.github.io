@@ -412,6 +412,9 @@ mjx-container {
 #main-wrapper {
   position: relative;
 
+  /* ToC 패널 폭 상한을 cqw로 계산하려고 둔다. 아래 #panel-wrapper 주석 참고. */
+  container-type: inline-size;
+
   /* 화면 위에 고정된 메뉴바 높이만큼 본문을 내린다. */
   padding-top: v.$topbar-height;
 
@@ -482,9 +485,12 @@ mjx-container {
   }
 }
 
+/* 패널은 화면 가운데에서 본문 열 절반만큼 떨어진 곳에서 시작하므로 남은 폭은 50cqw - 본문 열 절반이다.
+   100vw는 클래식 스크롤바(15px)까지 포함해서 $panel-breakpoint 바로 위에서 패널이 최대 7px 넘쳤다.
+   cqw는 스크롤바를 뺀 #main-wrapper 폭을 기준으로 한다. */
 #main-wrapper #panel-wrapper {
   width: v.$panel-width;
-  max-width: none;
+  max-width: calc(50cqw - #{v.$reading-column-width} / 2);
   padding: 0 0 0 1rem;
 }
 
