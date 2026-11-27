@@ -538,3 +538,35 @@ h4 {
     scroll-margin-top: 2rem;
   }
 }
+
+/* 본문 각주 번호 옆에 띄우는 메모 상자. _javascript/modules/components/footnote-popover.js가 body 끝에 만든다.
+   각주 영역과 같은 글자 크기를 쓴다. */
+.footnote-popover {
+  position: absolute;
+  z-index: 1050;
+  width: max-content;
+  max-width: min(26rem, calc(100vw - 1.5rem));
+  max-height: 50vh;
+  overflow: auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: v.$radius-sm;
+  box-shadow: var(--card-shadow);
+
+  > p {
+    margin: 0;
+
+    + p {
+      margin-top: 0.5rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

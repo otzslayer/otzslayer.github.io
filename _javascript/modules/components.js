@@ -8,3 +8,4 @@ export { loadMermaid } from './components/mermaid';
 export { modeWatcher } from './components/mode-toggle';
 export { back2top } from './components/back-to-top';
 export { loadTooltip } from './components/tooltip-loader';
+export { initFootnotePopover } from './components/footnote-popover';
