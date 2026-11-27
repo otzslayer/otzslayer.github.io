@@ -28,8 +28,16 @@ search {
   width: 100%;
   overflow: auto;
 
+  /* 결과는 본문 열과 같은 폭과 좌우 여백으로 한 줄씩 쌓아 메뉴바 제목, 본문 글자와 왼쪽 끝을 맞춘다. */
   .content {
+    width: 100%;
+    max-width: v.$reading-column-width;
     margin-top: 2rem;
+    padding: 0 1rem;
+
+    @include bp.md {
+      padding: 0 v.$reading-padding;
+    }
   }
 
   /* 햄버거 메뉴가 열려 있으면 그 높이만큼 결과를 내린다. 값은 topbar.html의 인라인 스크립트가 넣는다. */
@@ -44,21 +52,10 @@ search {
       letter-spacing: 0;
     }
   }
-
-  @include bp.lg {
-    max-width: v.$main-content-max-width;
-    justify-content: start !important;
-  }
 }
 
 #search-results {
   padding-bottom: 3rem;
-
-  @include bp.between(bp.get(lg), calc(#{bp.get(xl)} - 1px)) {
-    > div {
-      max-width: 700px;
-    }
-  }
 
   a {
     font-size: 1.4rem;
@@ -80,25 +77,13 @@ search {
       margin-bottom: 1rem;
     }
 
-    @include bp.xl {
-      width: 45%;
-
-      &:nth-child(odd) {
-        margin-right: 1.5rem;
-      }
-
-      &:nth-child(even) {
-        margin-left: 1.5rem;
-      }
-
-      &:last-child:nth-child(odd) {
-        position: relative;
-        right: 24.3%;
-      }
-    }
-
     h2 {
       line-height: 2.5rem;
+
+      /* 결과 영역도 .content라 본문용 헤딩 라벨 칩이 붙어 제목이 정렬선보다 안쪽에서 시작했다. */
+      &::before {
+        content: none;
+      }
     }
 
     /* icons */
