@@ -424,13 +424,12 @@ mjx-container {
     /* 위 padding-top만큼 빼야 내용이 짧은 쪽에서 문서가 화면보다 길어져 스크롤이 생기지 않는다. */
     min-height: calc(100vh - #{v.$topbar-height});
 
-    @include bp.lte(bp.get(md)) {
+    /* Bootstrap .container는 768~991px에서 최대 폭이 720px이라 본문 열(768px)보다 좁고 좌우 여백 12px도 있다.
+       그러면 본문 글자가 메뉴바 제목보다 안쪽에서 시작하므로 이 구간까지는 화면 폭을 다 쓴다.
+       992px은 Bootstrap의 lg 기준이고 bp.get(lg)(850px)와 다르다. */
+    @include bp.lt(992px) {
       @include mx.max-w-100;
       @include mx.pl-pr(0);
-    }
-
-    @include bp.lt(bp.get(lg)) {
-      max-width: 100%;
     }
 
     > .row {
