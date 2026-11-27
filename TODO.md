@@ -29,9 +29,10 @@
 - [x] `4309759`, `2c3188c` 커밋 본문의 일부 항목이 "한 항목에 한 사실" 규칙에 어긋남. 이미 만든 커밋이라 고치지 않음 → 고치지 않기로 함
 - [x] `_includes/search-loader.html`에 `px-1 px-sm-2 px-lg-4 px-xl-0`이 남아 검색 결과가 메뉴바 정렬선과 조금 어긋날 수 있음. 측정하지 않음 (리뷰 수정 91e0df3) → 검색 결과를 본문 열 한 줄 배치로 바꾸면서 삭제 (9dadf87)
 - [x] 375px에서 일부 글의 본문 이미지(예: `cs224w-14`, `using-polars`)가 본문 열보다 넓어 좌우로 넘치고 페이지 가로 스크롤이 생김. 4b552a5에서도 같음. 측정값은 이미지 로드 시점에 따라 달라짐 → `.img-link`에 폭 상한 추가 (d9a0f4e). 남은 인라인 수식 문제는 아래 항목
-- [ ] 375px에서 인라인 수식이 줄바꿈되지 않아 글 8개에 가로 스크롤이 생김 (예: `ab-test`, `cs224w-10`, `learning-to-rank`). 블록 수식은 d9a0f4e에서 고침
-- [ ] MathJax를 두 번 불러옴. `_includes/mathjax_support.html`이 v2(`cdn.mathjax.org`)를 모든 페이지에 넣고 `js-selector.html`이 `math: true`인 글에 v4를 넣음. 실제 렌더링은 v2 클래스(`MJXc-*`)로 됨
-- [ ] `_config.yml`의 `exclude`에 `TODO.md`, `GLOSSARY.md`가 없어 배포 사이트에 공개됨. 배포 설정이라 확인 후 변경
-- [ ] `package-lock.json`이 `package.json`과 어긋나 `npm ci`가 실패함. 로컬 `node_modules`에는 eslint가 빠져 있었음
-- [ ] 1290~1350px 정도에서 맨 위로 버튼이 ToC 패널 열 아래쪽과 가로 위치가 겹침. ToC가 짧아 실제로 가리는 일은 드묾 (4be0db1)
-- [ ] 글 본문 이미지의 `alt` 누락 64건. 글마다 설명 문구를 써야 해서 별도 작업으로 남김. 이 때문에 `tools/test.sh`는 아직 실패함
+- [x] 375px에서 인라인 수식이 줄바꿈되지 않아 글 8개에 가로 스크롤이 생김 (예: `ab-test`, `cs224w-10`, `learning-to-rank`). 블록 수식은 d9a0f4e에서 고침 → MathJax v4의 인라인 줄바꿈으로 8개에서 3개로 줆 (0ee8199). 남은 3개는 아래 항목
+- [x] MathJax를 두 번 불러옴. `_includes/mathjax_support.html`이 v2(`cdn.mathjax.org`)를 모든 페이지에 넣고 `js-selector.html`이 `math: true`인 글에 v4를 넣음. 실제 렌더링은 v2 클래스(`MJXc-*`)로 됨 → v4로 통일하고 수식 글 44개에 `math: true` 추가 (0ee8199)
+- [x] `_config.yml`의 `exclude`에 `TODO.md`, `GLOSSARY.md`가 없어 배포 사이트에 공개됨. 배포 설정이라 확인 후 변경 → 두 파일 추가 (b0e6b5a)
+- [x] `package-lock.json`이 `package.json`과 어긋나 `npm ci`가 실패함. 로컬 `node_modules`에는 eslint가 빠져 있었음 → `package-lock.json`은 `.gitignore` 대상이라 로컬에서만 새로 만듦. `npm ci`와 `npm test` 통과
+- [x] 1290~1350px 정도에서 맨 위로 버튼이 ToC 패널 열 아래쪽과 가로 위치가 겹침. ToC가 짧아 실제로 가리는 일은 드묾 (4be0db1) → 1290~1439px에서는 본문과 패널 사이 여백에 둠 (f7cb74c)
+- [x] 글 본문 이미지의 `alt` 누락 64건. 글마다 설명 문구를 써야 해서 별도 작업으로 남김. 이 때문에 `tools/test.sh`는 아직 실패함 → HTML img 태그에 `alt=""` 추가. `tools/test.sh` 통과 (071b1e5)
+- [ ] 375px에서 중첩 목록 안의 인라인 수식 3개가 끊을 자리가 없어 가로 스크롤을 만듦 (`cs224w-05`, `shapley-value-for-interpretable-ml`, `ab-test`). 수식을 블록으로 바꾸거나 글 내용을 고쳐야 함
