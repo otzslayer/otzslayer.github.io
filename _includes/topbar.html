@@ -46,10 +46,13 @@
     </button>
 
     <div id="topbar-toggles" class="d-flex align-items-center">
-      <button type="button" id="font-toggle" class="btn btn-link" aria-label="Toggle reading font">
-        <span data-icon="to-serif">가</span>
-        <span data-icon="to-sans">가</span>
-      </button>
+      {% comment %} 글꼴 토글은 본문을 읽는 포스트 화면에만 둔다. 고른 글꼴은 About 본문에도 그대로 적용된다. {% endcomment %}
+      {% if page.layout == 'post' %}
+        <button type="button" id="font-toggle" class="btn btn-link" aria-label="Toggle reading font">
+          <span data-icon="to-serif">가</span>
+          <span data-icon="to-sans">가</span>
+        </button>
+      {% endif %}
       {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
         <button type="button" id="theme-toggle" class="btn btn-link" aria-label="Toggle theme">
           <i class="fa-regular fa-moon fa-fw" data-icon="to-dark"></i>
@@ -85,17 +88,21 @@
     });
 
     /* 읽기 글꼴은 루트의 data-font 속성으로 표시하고 head의 스크립트가 같은 키를 읽는다. */
-    document.getElementById('font-toggle').addEventListener('click', function () {
-      const root = document.documentElement;
-      const serif = root.getAttribute('data-font') !== 'serif';
+    const fontToggle = document.getElementById('font-toggle');
 
-      if (serif) {
-        root.setAttribute('data-font', 'serif');
-      } else {
-        root.removeAttribute('data-font');
-      }
-      localStorage.setItem('font', serif ? 'serif' : 'sans');
-    });
+    if (fontToggle) {
+      fontToggle.addEventListener('click', function () {
+        const root = document.documentElement;
+        const serif = root.getAttribute('data-font') !== 'serif';
+
+        if (serif) {
+          root.setAttribute('data-font', 'serif');
+        } else {
+          root.removeAttribute('data-font');
+        }
+        localStorage.setItem('font', serif ? 'serif' : 'sans');
+      });
+    }
 
     /* 번들의 Theme.update가 선택값 저장과 다이어그램, 댓글 테마 전환 알림을 함께 처리한다. */
     const themeToggle = document.getElementById('theme-toggle');

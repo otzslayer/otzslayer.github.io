@@ -132,8 +132,15 @@ $collapse-bp: bp.get(md);
   display: inline-block;
 }
 
-/* 버튼은 바꿀 글꼴로 쓴 '가'를 보여 준다. */
+/* 버튼은 바꿀 글꼴로 쓴 '가'를 보여 준다.
+   두 글꼴의 '가'는 폭과 높이가 달라서 버튼 크기를 고정한다. 고정하지 않으면 토글할 때마다
+   버튼 폭이 바뀌어 왼쪽의 탭과 검색창이 옆으로 밀린다. */
 #font-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2rem;
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1;
