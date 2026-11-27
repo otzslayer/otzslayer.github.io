@@ -1,8 +1,11 @@
 @use '../abstracts/breakpoints' as bp;
 
-/* 맨 위 카테고리 줄이 상단 메뉴바 아래 여백을 맡고, 글 목록과의 간격은 #post-list의 위 여백만 쓴다. */
+/* 맨 위 카테고리 줄이 상단 메뉴바 아래 여백을 맡는다.
+   글 목록보다 작고 흐린 글씨로 써서 목록이 먼저 읽히게 하고, 진한 구분선으로 둘을 나눈다. */
 #home-categories {
   margin-top: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--text-color);
 
   @include bp.lg {
     margin-top: 2.5rem;
@@ -10,15 +13,20 @@
 
   .taxonomy-list {
     margin-bottom: 0;
+    font-size: 0.78rem;
+
+    a:not(.img-link) {
+      color: var(--text-muted-color);
+
+      &:hover {
+        color: var(--link-color);
+      }
+    }
   }
 }
 
 #post-list {
-  margin-top: 2rem;
-
-  @include bp.lg {
-    margin-top: 2.5rem;
-  }
+  margin-top: 1rem;
 
   /* 홈 목록만 항목 사이에 구분선을 넣는다. Archives, 태그 상세, 카테고리 상세는 그대로 둔다. */
   .post-list-item {
