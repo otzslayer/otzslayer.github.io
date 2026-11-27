@@ -1,3 +1,4 @@
+@use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
 
@@ -14,7 +15,7 @@
     margin-bottom: 4rem;
   }
 
-  @include bp.lt(bp.get(xl)) {
+  @include bp.lt(v.$panel-breakpoint) {
     display: none;
   }
 }

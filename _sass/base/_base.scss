@@ -445,36 +445,41 @@ mjx-container {
   @include mx.ml-mr(0);
 }
 
-/* 본문과 꼬리 영역은 읽기 폭으로 제한하고, ToC 패널이 있으면 그 오른쪽에 붙인다.
-   꼬리 영역은 따로 된 줄이라서 패널 폭만큼 오른쪽 여백을 두어 본문과 왼쪽 끝을 맞춘다. */
-$reading-width: 720px;
-$reading-padding: 1.5rem;
-$panel-width: 260px;
+/* 본문과 꼬리 영역은 가운데 열에 놓고, ToC 패널은 오른쪽 열(본문 오른쪽 여백)에 놓는다.
+   양쪽 열의 폭이 같아서 패널이 있든 없든 본문 열은 화면 가운데에 놓인다.
+   컨테이너 최대 폭 때문에 오른쪽 열이 패널보다 좁으면 패널은 열 밖으로 넘친다.
+   패널 오른쪽 끝이 화면 가운데에서 본문 열 절반과 패널 폭만큼 떨어지므로 $panel-breakpoint 이상에서는 화면 안에 들어온다. */
+#main-wrapper > .container > .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, v.$reading-column-width) minmax(0, 1fr);
+
+  > main,
+  > #tail-wrapper {
+    grid-column: 2;
+  }
+
+  > #panel-wrapper {
+    grid-column: 3;
+  }
+}
 
 #main-wrapper main,
 #tail-wrapper {
   width: 100%;
-  max-width: calc(#{$reading-width} + #{$reading-padding} * 2);
-  flex: 0 1 auto;
+  max-width: v.$reading-column-width;
   padding-left: 1rem;
   padding-right: 1rem;
 
   @include bp.md {
-    padding-left: $reading-padding;
-    padding-right: $reading-padding;
+    padding-left: v.$reading-padding;
+    padding-right: v.$reading-padding;
   }
 }
 
 #main-wrapper #panel-wrapper {
-  flex: 0 0 $panel-width;
-  max-width: $panel-width;
+  width: v.$panel-width;
+  max-width: none;
   padding: 0 0 0 1rem;
-}
-
-#main-wrapper.has-panel #tail-wrapper {
-  @include bp.xl {
-    margin-right: $panel-width;
-  }
 }
 
 #tail-wrapper {

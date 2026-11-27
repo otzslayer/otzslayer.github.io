@@ -368,7 +368,7 @@ header {
 
   @extend %btn-color;
 
-  @include bp.xl {
+  @media all and (min-width: v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -391,7 +391,7 @@ header {
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
 
-  @include bp.xl {
+  @media all and (min-width: v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -509,7 +509,7 @@ header {
 h2,
 h3,
 h4 {
-  @include bp.xl {
+  @media all and (min-width: v.$panel-breakpoint) {
     scroll-margin-top: 2rem;
   }
 }

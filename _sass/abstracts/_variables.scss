@@ -74,6 +74,18 @@ $search-max-width: 200px !default;
 $footer-height: 5rem !default;
 $footer-height-large: 6rem !default; /* screen width: < 850px */
 $main-content-max-width: 1250px !default;
+
+/* 본문 열은 화면 가운데에 놓고 ToC 패널은 그 오른쪽 여백에 놓는다.
+   본문 열의 왼쪽 끝은 calc((100% - $reading-column-width) / 2)이고 글자는 $reading-padding만큼 안쪽에서 시작한다. */
+$reading-width: 720px !default;
+$reading-padding: 1.5rem !default;
+$reading-column-width: calc(#{$reading-width} + #{$reading-padding} * 2) !default;
+$panel-width: 260px !default;
+
+/* 본문 열(768px)과 양쪽 패널 폭(260px × 2)이 들어가는 화면 폭.
+   이보다 좁으면 패널을 숨기고 ToC 팝업 버튼을 쓴다.
+   _javascript/modules/components/toc.js와 assets/js/dist/post.min.js의 matchMedia 값과 같아야 한다. */
+$panel-breakpoint: 1290px !default;
 $radius-sm: 6px !default;
 $radius-lg: 10px !default;
 $back2top-size: 2.75rem !default;
