@@ -536,8 +536,11 @@ applause-button .style-root {
 .clap-count-home {
   color: var(--text-muted-color);
   display: none;
-  margin-left: 1.75rem;
+  margin-left: 1rem;
   font-size: 0.85rem;
+  /* 제목과 기준선 정렬하면 아이콘이 처져 보여서 살짝 올린다. */
+  position: relative;
+  top: -0.1em;
 
   svg {
     height: 1em;
