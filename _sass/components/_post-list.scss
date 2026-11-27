@@ -72,12 +72,12 @@
 
 /* Tags 목록과 홈 카테고리 줄의 "이름 (글 수)". 코드 블록과 같은 monospace로 작게 쓴다. */
 .taxonomy-list {
+  @extend %code-text;
+
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   margin: 0 0 2.5rem;
-  @extend %code-text;
-
   padding: 0;
   list-style: none;
 
