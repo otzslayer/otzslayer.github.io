@@ -42,7 +42,13 @@ Jekyll::Hooks.register :site, :post_write do |site|
     'author' => site.config.dig('social', 'name').to_s
   }
 
+  # `jekyll serve` watches this file too, so writing it on every build would
+  # trigger another build forever. Write only when the content changes.
   dir = File.join(site.source, '.og-cache')
+  file = File.join(dir, 'posts.json')
+  content = JSON.pretty_generate({ 'site' => meta, 'posts' => posts })
+  next if File.exist?(file) && File.read(file) == content
+
   FileUtils.mkdir_p(dir)
-  File.write(File.join(dir, 'posts.json'), JSON.pretty_generate({ 'site' => meta, 'posts' => posts }))
+  File.write(file, content)
 end
