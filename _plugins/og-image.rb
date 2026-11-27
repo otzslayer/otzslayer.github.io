@@ -39,8 +39,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
   meta = {
     'title' => site.config['title'].to_s,
-    'author' => site.config.dig('social', 'name').to_s,
-    'avatar' => site.config['avatar'].to_s
+    'author' => site.config.dig('social', 'name').to_s
   }
 
   dir = File.join(site.source, '.og-cache')

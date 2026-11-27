@@ -49,12 +49,9 @@ async function main() {
   }
 
   const template = fs.readFileSync(TEMPLATE, 'utf8');
-  const avatarFile = path.join(ROOT, site.avatar.replace(/^\//, ''));
-  const avatar = fs.readFileSync(avatarFile);
-  const avatarData = `data:image/${path.extname(avatarFile).slice(1)};base64,${avatar.toString('base64')}`;
 
   // 템플릿, 이 스크립트, 사이트 공통 값이 바뀌면 모든 카드를 다시 만든다.
-  const templateHash = sha(template, fs.readFileSync(fileURLToPath(import.meta.url), 'utf8'), site.title, site.author, sha(avatar));
+  const templateHash = sha(template, fs.readFileSync(fileURLToPath(import.meta.url), 'utf8'), site.title, site.author);
   const manifest = readJson(MANIFEST, {});
   fs.mkdirSync(CARD_DIR, { recursive: true });
 
@@ -68,7 +65,7 @@ async function main() {
     await page.setContent(template, { waitUntil: 'networkidle' });
 
     for (const post of jobs) {
-      await page.evaluate((data) => window.render(data), { site: { ...site, avatarData }, title: post.title, url: post.url });
+      await page.evaluate((data) => window.render(data), { site, title: post.title, url: post.url });
       await page.evaluate(() => document.fonts.ready);
       await page.screenshot({ path: path.join(CARD_DIR, `${post.name}.png`) });
       manifest[post.name] = post.hash;

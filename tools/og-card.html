@@ -38,21 +38,10 @@
 
   #brand {
     position: absolute;
-    top: 30px;
+    top: 48px;
     left: 70px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
     font-weight: 700;
     font-size: 30px;
-  }
-
-  #brand img {
-    width: 64px;
-    height: 64px;
-    border-radius: 12px;
-    background: #fff;
-    object-fit: cover;
   }
 
   /* 제목 상자. 글자 크기는 render()가 이 상자에 네 줄 안으로 들어갈 때까지 줄인다. */
@@ -108,7 +97,7 @@
 </style>
 </head>
 <body>
-  <div id="brand"><img id="avatar" alt=""><span id="site"></span></div>
+  <div id="brand"></div>
   <div id="title"><h1></h1></div>
   <div id="byline"></div>
   <div id="url"></div>
@@ -116,8 +105,7 @@
 <script>
   // 카드 한 장을 그린다. 단어마다 span으로 감싸 줄바꿈된 위치로 줄을 나누고 줄마다 색을 준다.
   window.render = ({ site, title, url }) => {
-    document.getElementById('avatar').src = site.avatarData;
-    document.getElementById('site').textContent = site.title;
+    document.getElementById('brand').textContent = site.title;
     document.getElementById('byline').textContent = site.author;
     // 긴 URL은 한 줄에 들어갈 때까지 글자를 줄이고, 그래도 넘치면 말줄임표로 자른다.
     const urlEl = document.getElementById('url');
