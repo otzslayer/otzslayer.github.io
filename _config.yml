@@ -250,6 +250,8 @@ exclude:
   - docs
   - tools
   - README.md
+  - TODO.md
+  - GLOSSARY.md
   - LICENSE
   - purgecss.js
   - "*.config.js"
