@@ -87,7 +87,8 @@
 
   a {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
+    font-weight: 700;
     color: var(--text-muted-color);
 
     @include bp.lt(bp.$topbar-collapse) {
@@ -101,7 +102,6 @@
 
   .active a {
     color: var(--link-color);
-    font-weight: 600;
   }
 }
 

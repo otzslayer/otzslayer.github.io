@@ -74,9 +74,11 @@
 .taxonomy-list {
   @extend %code-text;
 
+  /* 다른 글꼴 규칙이 덮어쓰지 않게 monospace를 고정한다. */
+  font-family: v.$code-font-family !important;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  gap: 0.15rem 1.5rem;
   margin: 0 0 2.5rem;
   padding: 0;
   list-style: none;
