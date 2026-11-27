@@ -19,7 +19,7 @@ Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무�
 
 ## Concept Shift
 
-> *Concept shift happnes when the relationship between the input and class variables change, which presents the hardest challenge among the different types of Dataset Shift that have been tackled so far. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
+> *Concept shift happnes when the relationship between the input and class variables change, which presents the hardest challenge among the different types of Dataset Shift that have been tackled so far. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](https://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
 > 
 
 Concept Drift라고 부르기도 하는 Concept Shift는 이미 다룬 두 가지의 Dataset Shift하고는 성질이 조금 다릅니다. 입력 피처의 분포 변화는 없지만 입력 피처와 레이블과의 관계가 변화한 경우입니다. 

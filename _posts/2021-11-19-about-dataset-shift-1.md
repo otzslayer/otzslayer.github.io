@@ -76,7 +76,7 @@ Covariate Shift에 대해 강건한 모델을 만들기 위해서는 항상 인�
 
 ### Prior Probability Shift
 
-> *Prior probability shift appears only in $Y \to X$ problems, and is defined as the case where $P_{tr}(X \mid Y) = P_{ts}(X \mid Y)$ and $P_{tr}(Y) \neq P_{ts}(Y)$. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
+> *Prior probability shift appears only in $Y \to X$ problems, and is defined as the case where $P_{tr}(X \mid Y) = P_{ts}(X \mid Y)$ and $P_{tr}(Y) \neq P_{ts}(Y)$. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](https://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
 
 
 <figure>
