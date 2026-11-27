@@ -3,9 +3,6 @@ title: 블로그에 View Counts 달기
 layout: post
 tags: [essay, jeykll, view-counts]
 category: etc
-image:
-  path: https://i.imgur.com/ilzcEHC.png
-  alt: 
 ---
 
 ## 들어가며

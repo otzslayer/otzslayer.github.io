@@ -3,9 +3,6 @@ title: 모델 배포 - 모델-인-이미지 패턴
 layout: post
 tags: [inference, model-deployment, mlops]
 category: ML System Design Pattern
-image:
-  path: https://i.imgur.com/9APrFxF.png
-  alt: 
 ---
 
 ![](https://i.imgur.com/9A8C3Iu.png){: w="600"}

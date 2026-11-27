@@ -6,9 +6,6 @@ tags: [essay, retrospective]
 category: Essay
 redirect_from:
   - /잡담/2024/12/31/2024-retrospective.html
-image:
-  path: https://i.imgur.com/rzI6jRI.png
-  alt: 
 ---
 
 ## 게으름과 바쁨, 그 사이

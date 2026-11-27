@@ -4,6 +4,7 @@ tags: [essay]
 category: etc
 layout: post
 mathjax: false
+math: true
 ---
 
 너무 귀찮아서 Jekyll 블로그 포스트 생성 스크립트를 만들었습니다. 🎉

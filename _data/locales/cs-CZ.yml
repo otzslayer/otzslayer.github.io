@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Domů
-  categories: Kategorie
   tags: Štítky
   archives: Archivy
   about: O mně
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Pokud není uvedeno jinak, jsou příspěvky na tomto webu licencovány
     pod licencí Creative Commons Attribution 4.0 International (CC BY 4.0) Licence autora.
-
-meta: Použití :PLATFORM s motivem :THEME
 
 not_found:
   statement: Omlouváme se, adresu URL jsme špatně umístili nebo odkazuje na něco, co neexistuje.
@@ -86,10 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure: kategorie
-  post_measure:
-    singular: příspěvěk
-    plural: příspěvky

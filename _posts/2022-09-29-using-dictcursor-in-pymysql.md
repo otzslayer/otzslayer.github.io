@@ -75,5 +75,5 @@ df.head()
 
 ## 레퍼런스
 
--   [http://www.kitebird.com/articles/pydbapi.html](http://www.kitebird.com/articles/pydbapi.html)
+-   [http://www.kitebird.com/articles/pydbapi.html (웹 아카이브 사본)](https://web.archive.org/web/20220910063709/http://www.kitebird.com/articles/pydbapi.html)
 -   [https://pandas.pydata.org/docs/reference/api/pandas.read_sql.html](https://pandas.pydata.org/docs/reference/api/pandas.read_sql.html)

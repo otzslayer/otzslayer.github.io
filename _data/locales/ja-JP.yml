@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: ホーム
-  categories: カテゴリー
   tags: タグ
   archives: アーカイブ
   about: このサイトについて
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Except where otherwise noted, the blog posts on this site are licensed
     under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
-
-meta: :PLATFORM 用の :THEME を使用しています。
 
 not_found:
   statement: このURLは存在しないものを指し示しています。
@@ -83,8 +80,3 @@ df:
   post:
     strftime: "%Y/%m/%d"
     dayjs: "YYYY/MM/DD"
-
-# categories page
-categories:
-  category_measure: カテゴリー
-  post_measure: 投稿

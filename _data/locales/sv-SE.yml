@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Hem #Home
-  categories: Kategorier #Categories
   tags: Taggar #Tags
   archives: Arkiv #Archives
   about: Om #About
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Om inte annat anges är blogginläggen på denna webbplats licensierade
      under Creative Commons Attribution 4.0 International (CC BY 4.0) av författaren.
-
-meta: Byggd med :PLATFORM och temat :THEME
 
 not_found:
   statement: Ursäkta, vi har tappat bort den här webbadressen eller så pekar den på något som inte längre finns.
@@ -86,12 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: kategori
-    plural: kategorier
-  post_measure:
-    singular: inlägg
-    plural: inlägg

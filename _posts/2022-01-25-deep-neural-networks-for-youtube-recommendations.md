@@ -3,6 +3,7 @@ title: Deep Neural Networks for YouTube Recommendations
 tags: [recsys, youtube, two-stage-model]
 category: ML
 layout: post
+math: true
 ---
 
 Covington, Paul, Jay Adams, and Emre Sargin. "Deep neural networks for youtube recommendations." Proceedings of the 10th ACM conference on recommender systems. 2016.

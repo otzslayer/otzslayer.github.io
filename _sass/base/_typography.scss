@@ -1,7 +1,9 @@
 @use 'sass:map';
+@use 'sass:meta';
 @use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
+@use '../themes/tint' as t;
 @use '../abstracts/placeholders';
 
 /* 본문 1rem에 맞춘 헤딩 스케일. 인접 단계 비율은 1.06~1.25로,
@@ -230,14 +232,15 @@ main {
       }
     }
   }
+}
 
-  .categories,
-  #tags,
-  #archives {
-    a:not(:hover) {
-      @extend %no-bottom-border;
-    }
-  }
+/* 본문과 각주 사이 구분선은 글마다 ---를 쓰지 않도록 레이아웃에서 그린다.
+   일반 가로선(--main-border-color)보다 진하게 하고 위아래 여백을 넉넉히 둔다. */
+.footnotes {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid t.fg(30%);
+  font-size: 0.875rem;
 }
 
 .footnotes > ol {
@@ -292,7 +295,7 @@ main {
     border-spacing: 0;
 
     thead {
-      border-bottom: solid 2px rgb(210 215 217 / 75%);
+      border-bottom: solid 2px t.fg(20%);
 
       th {
         @extend %table-cell;
@@ -328,4 +331,52 @@ h6 code {
   font-size: inherit !important;
   font-weight: inherit !important;
   line-height: inherit !important;
+}
+
+/* 읽기 글꼴: 글꼴 토글이 루트의 data-font 속성을 바꾼다.
+   포스트와 About의 제목과 본문에만 .reading-font를 붙이고, 메뉴와 목록 같은 UI는 Pretendard로 남긴다.
+   변수에 넣을 때 meta.inspect로 따옴표를 남긴다. 따옴표가 빠지면 'Source Serif 4'가 잘못된 값이 되어 선언 전체가 무시된다.
+   본문 헤딩은 %heading이 글꼴을 따로 정해서 상속되지 않으므로 함께 지정한다. */
+:root {
+  --reading-font: #{meta.inspect(v.$font-family-base)};
+}
+
+/* 같은 글자 크기에서 Noto Serif KR의 한글은 Pretendard보다 높이가 약 8%, 폭이 약 4% 크다
+   (headless Chrome의 canvas measureText, 100px '가' 기준 85.3px 대 78.9px).
+   본문은 대부분 한글이라 Serif일 때만 본문과 제목을 함께 줄여 Sans와 눈에 보이는 크기를 맞춘다.
+   Source Serif 4의 라틴 x-height는 Pretendard보다 오히려 작아서 더 줄이면 영문이 작아 보인다. */
+$serif-scale: 0.95;
+
+:root[data-font='serif'] {
+  --reading-font: #{meta.inspect(v.$font-family-serif)};
+
+  .content.reading-font {
+    font-size: 1rem * $serif-scale;
+  }
+
+  /* 각주와 각주 메모도 본문과 같은 비율로 줄인다. 둘 다 rem 단위라 본문 크기를 상속하지 않는다. */
+  .footnotes,
+  .footnote-popover {
+    font-size: 0.875rem * $serif-scale;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i}.reading-font,
+    .reading-font h#{$i} {
+      font-size: map.get($heading-sizes, $i) * $serif-scale;
+    }
+  }
+}
+
+.reading-font {
+  font-family: var(--reading-font);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--reading-font);
+  }
 }

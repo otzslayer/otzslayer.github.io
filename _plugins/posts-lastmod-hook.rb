@@ -12,6 +12,15 @@
 #
 # Commits whose message contains `[skip lastmod]` are ignored, so bulk edits that
 # readers should not see as updates (e.g. markup cleanup) keep the "Updated" date.
+#
+# Commits authored before LASTMOD_SINCE are not treated as updates either. No post
+# had a real content update before that date, but bulk commits (front matter
+# changes, the 2026 redesign) touched almost every post. The author date is used
+# because it survives rebases.
+
+require 'time'
+
+LASTMOD_SINCE = Time.new(2026, 11, 28, 0, 0, 0, '+09:00')
 
 Jekyll::Hooks.register :site, :post_read do |site|
   # `core.quotepath=false` keeps non-ASCII filenames from being octal-escaped,
@@ -39,6 +48,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
   site.posts.docs.each do |post|
     path = post.relative_path
     next unless commit_counts[path] > 1
+    next if Time.parse(last_commit_dates[path]) < LASTMOD_SINCE
 
     post.data['last_modified_at'] = last_commit_dates[path]
   end

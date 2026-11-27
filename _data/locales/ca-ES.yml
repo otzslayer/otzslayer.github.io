@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Inici
-  categories: Categories
   tags: Etiquetes
   archives: Arxiu
   about: Sobre
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Excepte que s'indiqui explícitament, les entrades d'aquest blog estan llicenciades
     sota la llicència Creative Commons Attribution 4.0 International (CC BY 4.0) per l'autor.
-
-meta: Fet amb :PLATFORM utilitzant el tema :THEME
 
 not_found:
   statement: Ho sentim, hem perdut aquesta URL o apunta a alguna cosa que no existeix.
@@ -83,8 +80,3 @@ df:
   post:
     strftime: "%Y/%m/%d"
     dayjs: "YYYY/MM/DD"
-
-# categories page
-categories:
-  category_measure: categories
-  post_measure: entrades

@@ -3,6 +3,7 @@ title: Successive Halving Algorithm
 tags: [hpo, sha, multi-fidelity]
 category: ML
 layout: post
+math: true
 ---
 
 📄 Jamieson, Kevin, and Ameet Talwalkar. "Non-stochastic best arm identification and hyperparameter optimization." *Artificial intelligence and statistics*. PMLR, 2016.

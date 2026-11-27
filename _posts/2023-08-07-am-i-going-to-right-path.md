@@ -5,9 +5,6 @@ tags: [career]
 category: Essay
 redirect_from:
   - /잡담/2023/08/07/am-i-going-to-right-path.html
-image:
-  path: https://i.imgur.com/Ry6ZWWh.png
-  alt: Image from [Here](https://www.insperity.com/blog/employee-career-path/)
 ---
 
 최근에 팀 회식을 하는데 재밌게도 여러 후배분들에게서 비슷한 질문을 들을 수 있었습니다.

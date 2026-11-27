@@ -28,7 +28,8 @@ export default defineConfig([
         dayjs: 'readonly',
         mermaid: 'readonly',
         tocbot: 'readonly',
-        swconf: 'readonly'
+        swconf: 'readonly',
+        apiUrl: 'readonly'
       }
     }
   }

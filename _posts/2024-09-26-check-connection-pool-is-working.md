@@ -4,9 +4,6 @@ title: SQLAlchemy 커넥션 풀 작동 확인하기
 layout: post
 tags: [sqlalchemy, connection-pool, queue-pool]
 category: Python
-image:
-  path: https://i.imgur.com/s6FtV55.png
-  alt: 
 ---
 
 ## 커넥션 풀

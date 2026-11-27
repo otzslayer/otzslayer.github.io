@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Pagina principale
-  categories: Categorie
   tags: Tags
   archives: Archivio
   about: Informazioni
@@ -40,7 +39,6 @@ copyright:
     Eccetto quando esplicitamente menzionato, i post di questo blog sono da ritenersi sotto
     i termini di licenza Creative Commons Attribution 4.0 International (CC BY 4.0).
 
-meta: Servizio offerto da :PLATFORM con tema :THEME
 not_found:
   statement: Ci scusiamo, non è stato possibile trovare l'URL in questione. Potrebbe puntare ad una pagina non esistente.
 
@@ -85,12 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: categoria
-    plural: categorie
-  post_measure:
-    singular: post
-    plural: posts

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Ana Sayfa
-  categories: Kategoriler
   tags: Etiketler
   archives: Arşiv
   about: Hakkında
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Aksi belirtilmediği sürece, bu sitedeki gönderiler Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0) Lisansı altındadır.
     Kısaca sayfa linkini vererek değiştirebilir / paylaşabilirsiniz.
-
-meta: :PLATFORM ve :THEME teması
 
 not_found:
   statement: Üzgünüz, bu linki yanlış yerleştirdik veya var olmayan bir şeye işaret ediyor.
@@ -76,8 +73,3 @@ post:
     share_link:
       title: Linki kopyala
       succeed: Link kopyalandı.
-
-# categories page
-categories:
-  category_measure: kategori
-  post_measure: gönderi

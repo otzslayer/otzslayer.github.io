@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: کورپاڼه
-  categories: وېشنيزې
   tags: ټګونه
   archives: آرشيف
   about: په اړه
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     تر هغه ځایه چې بل ډول نه وي یاد شوي، د دې سایټ لیکنې
     د لیکوال له خوا د کریټېو کامنز د انتساب 4.0 نړیوال (CC BY 4.0) جواز لاندې خپرېږي.
-
-meta: د :PLATFORM لپاره د :THEME موضوع کاروي.
 
 not_found:
   statement: بښنه غواړو، دغه URL ناسم دی یا هغه څه ته اشاره کوي چې شتون نه لري.
@@ -86,11 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-categories:
-  category_measure:
-    singular: وېشنيزه
-    plural: وېشنيزې
-  post_measure:
-    singular: لیکنه
-    plural: لیکنې

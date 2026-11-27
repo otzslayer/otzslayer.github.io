@@ -3,6 +3,7 @@ title: An Introduction to Sparse Matrices
 tags: [scipy, sparse-matrix, python, coo, csr, csc]
 category: Python
 layout: post
+math: true
 ---
 
 대부분 0으로 이루어진 행렬을 굳이 다 쓸 필요는 없는데 말이죠.

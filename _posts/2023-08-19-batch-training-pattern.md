@@ -3,9 +3,6 @@ title: 모델 배포 - 배치 학습 패턴
 layout: post
 tags: [batch-training-pattern, ml-system-design-pattern, ml-pipeline, crontab]
 category: ML System Design Pattern
-image:
-  path: https://i.imgur.com/9APrFxF.png
-  alt: 
 ---
 
 ## 유스케이스

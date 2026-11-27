@@ -3,9 +3,6 @@ title: Docker 명령어 실행 시 권한 오류 발생할 때
 layout: post
 tags: [docker]
 category: DevOps
-image:
-  path: https://i.imgur.com/3J5NYFA.png
-  alt: 
 ---
 
 `docker images` 등 Docker 명령어를 사용할 때 다음과 같은 권한 오류가 발생하는 경우가 있습니다.

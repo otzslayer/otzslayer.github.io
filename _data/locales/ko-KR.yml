@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: 홈
-  categories: 카테고리
   tags: 태그
   archives: 아카이브
   about: 정보
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     명시되지 않는 한 이 사이트의 블로그 게시물은 작성자의
     Creative Commons Attribution 4.0 International(CC BY 4.0) 라이선스에 따라 사용이 허가되었습니다.
-
-meta: Powered by :PLATFORM with :THEME theme
 
 not_found:
   statement: 해당 URL은 존재하지 않습니다.
@@ -83,8 +80,3 @@ df:
   post:
     strftime: "%Y/%m/%d"
     dayjs: "YYYY/MM/DD"
-
-# categories page
-categories:
-  category_measure: 카테고리
-  post_measure: 포스트

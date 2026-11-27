@@ -3,6 +3,7 @@ title: A worrying Analysis of Recent Neural Recommendation Approaches
 tags: [recsys, model-evaluation]
 category: ML
 layout: post
+math: true
 ---
 
 Dacrema, Maurizio Ferrari, Paolo Cremonesi, and Dietmar Jannach. "Are we really making much progress? A worrying analysis of recent neural recommendation approaches." Proceedings of the 13th ACM conference on recommender systems. 2019.

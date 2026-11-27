@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Главная
-  categories: Категории
   tags: Теги
   archives: Архив
   about: О сайте
@@ -38,8 +37,6 @@ copyright:
   brief: Некоторые права защищены.
   verbose: >-
     Если не указано иное, авторские посты на этом сайте защищены лицензией Creative Commons Attribution 4.0 International (CC BY 4.0).
-
-meta: Использует тему :THEME для :PLATFORM
 
 not_found:
   statement: Извините, мы перепутали URL-адрес или он указывает на что-то несуществующее.
@@ -82,12 +79,3 @@ df:
   post:
     strftime: "%d.%m.%Y"
     dayjs: "DD.MM.YYYY"
-
-# categories page
-categories:
-  category_measure:
-    singular: категория
-    plural: категории
-  post_measure:
-    singular: пост
-    plural: посты

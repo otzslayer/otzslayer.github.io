@@ -15,7 +15,9 @@ resource_hints:
       - rel: dns-prefetch
 
 # Web Fonts
-webfonts: https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&family=Source+Serif+4:wght@700&display=swap
+webfonts: https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Noto+Serif+KR:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap
+
+pretendard: https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css
 
 # Libraries
 

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Kezdőlap
-  categories: Kategóriák
   tags: Címkék
   archives: Archívum
   about: Bemutatkozás
@@ -40,8 +39,6 @@ copyright:
     Az oldalon található tartalmak
     Creative Commons Attribution 4.0 International (CC BY 4.0) licenccel rendelkeznek,
     hacsak másképp nincs jelezve.
-
-meta: Készítve :THEME témával a :PLATFORM platformra.
 
 not_found:
   statement: Sajnáljuk, az URL-t rosszul helyeztük el, vagy valami nem létezőre mutat.
@@ -87,12 +84,3 @@ df:
   archives:
     strftime: "%B"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: kategória
-    plural: kategória
-  post_measure:
-    singular: bejegyzés
-    plural: bejegyzés

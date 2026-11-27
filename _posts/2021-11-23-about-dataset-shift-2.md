@@ -3,6 +3,7 @@ title: Dataset Shift에 대하여 (2)
 tags: [dataset-shift, concept-drift]
 category: ML
 layout: post
+math: true
 ---
 
 Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무엇일까요? 🤔
@@ -10,7 +11,7 @@ Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무�
 <!--more-->
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/drift.jpg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/drift.jpg'>
   <figcaption style="text-align: center;">Image from <a href="https://pixabay.com/photos/drift-car-race-speed-smoke-3723673/">Pixabay</a></figcaption>
 </figure>
 
@@ -19,7 +20,7 @@ Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무�
 
 ## Concept Shift
 
-> *Concept shift happnes when the relationship between the input and class variables change, which presents the hardest challenge among the different types of Dataset Shift that have been tackled so far. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
+> *Concept shift happnes when the relationship between the input and class variables change, which presents the hardest challenge among the different types of Dataset Shift that have been tackled so far. —  [Herrera, Francisco. "Dataset shift in classification: Approaches and problems." International work-conference on artificial neural networks (IWANN). 2011.](https://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)*
 > 
 
 Concept Drift라고 부르기도 하는 Concept Shift는 이미 다룬 두 가지의 Dataset Shift하고는 성질이 조금 다릅니다. 입력 피처의 분포 변화는 없지만 입력 피처와 레이블과의 관계가 변화한 경우입니다. 
@@ -32,7 +33,7 @@ Concept Shift는 시간의 흐름에 의존적인 데이터에서 많이 발생�
 ### Gradual Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/gradual_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/gradual_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 
@@ -43,7 +44,7 @@ Gradual Concept Drift 또는 Incremental Concept Drift라고 부르는 이 현�
 ### Sudden Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/sudden_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/sudden_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 
@@ -54,7 +55,7 @@ Sudden Concept Drift는 문자 그대로 갑자기 발생하는 Concept Drift입
 ### Recurrent Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/recurrent_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/recurrent_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 

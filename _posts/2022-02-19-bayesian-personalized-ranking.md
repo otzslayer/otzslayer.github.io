@@ -3,6 +3,7 @@ title: Bayesian Personalized Ranking (BPR)
 tags: [bayesian, bpr, recsys, implicit]
 category: ML
 layout: post
+math: true
 ---
 
 Rendle, Steffen, et al. "BPR: Bayesian personalized ranking from implicit feedback." arXiv preprint arXiv:1205.2618 (2012).

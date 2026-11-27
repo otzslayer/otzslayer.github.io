@@ -3,6 +3,7 @@ title: Multi-armed Bandit
 tags: [recsys, multi-armed-bandit, mab, ab-test]
 category: ML
 layout: post
+math: true
 ---
 
 A/B 테스트를 대체할 수 있는 Multi-armed Bandit에 대해서 알아봅시다. 🎰
@@ -271,7 +272,7 @@ A/B 테스트의 경우 '통계적으로 유의미한 결과'를 보여줄 수 �
 
 - [1] [What is Multi-Armed Bandit(MAB) Testing? - VWO](https://vwo.com/blog/multi-armed-bandit-algorithm/)
 
-- [2] [Machine learning 스터디 (20-1) Multi-armed Bandit - README](http://sanghyukchun.github.io/96/)
+- [2] [Machine learning 스터디 (20-1) Multi-armed Bandit - README](https://web.archive.org/web/20240305093702/http://sanghyukchun.github.io/96/)
 
 - [3] [Beyond A/B Testing: Multi-armed Bandit Experiments](https://towardsdatascience.com/beyond-a-b-testing-multi-armed-bandit-experiments-1493f709f804)
 

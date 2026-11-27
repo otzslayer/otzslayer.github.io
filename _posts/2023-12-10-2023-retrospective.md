@@ -7,9 +7,6 @@ tags: [essay, retrospective]
 category: Essay
 redirect_from:
   - /잡담/2023/12/10/2023-retrospective.html
-image:
-  path: https://images.pexels.com/photos/15874765/pexels-photo-15874765/free-photo-of-black-and-white-picture-of-a-side-view-mirror-in-a-car.jpeg
-  alt: 
 ---
 
 오랜만에 작성하는 포스트지만 조금 빠르게 2023년을 회고하고자 합니다. 태어나서 가장 힘들었던 한 해였던만큼 많은 생각을 가져본 한 해였습니다.

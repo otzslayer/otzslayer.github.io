@@ -3,33 +3,25 @@ layout: page
 # The Archives of posts.
 ---
 
-{% include lang.html %}
+{%- comment -%}
+  연도 제목은 h2 대신 role="heading"을 쓴다.
+  page 레이아웃이 본문을 .content로 감싸서 h2를 쓰면 헤딩 레벨 칩이 붙기 때문이다.
+{%- endcomment -%}
 
-{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
-{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
-
-<div id="archives" class="pl-xl-3">
+<div id="archives">
   {% for post in site.posts %}
     {% assign cur_year = post.date | date: '%Y' %}
 
     {% if cur_year != last_year %}
       {% unless forloop.first %}</ul>{% endunless %}
 
-      <time class="year lead d-block">{{ cur_year }}</time>
-      {{ '<ul class="list-unstyled">' }}
+      <div class="post-list-heading" role="heading" aria-level="2">{{ cur_year }}</div>
+      {{ '<ul class="post-list">' }}
 
       {% assign last_year = cur_year %}
     {% endif %}
 
-    <li>
-      {% assign ts = post.date | date: '%s' %}
-      <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.date | date: '%d' }}</span>
-      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
-        {{ post.date | date: df_strftime_m }}
-      </span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="clap-count-cat" data-url="{{ post.url | absolute_url }}"></span>
-    </li>
+    {% include post-list-item.html post=post %}
 
     {% if forloop.last %}</ul>{% endif %}
   {% endfor %}

@@ -1,5 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as mx;
+@use '../themes/tint' as t;
 
 %heading {
   color: var(--heading-color);
@@ -45,8 +46,8 @@
 }
 
 %link-hover {
-  color: #d2603a !important;
-  border-bottom: 1px solid #d2603a;
+  color: var(--link-color) !important;
+  border-bottom: 1px solid var(--link-color);
   text-decoration: none;
 }
 
@@ -92,16 +93,8 @@
     font-style: normal;
     font-size: 80%;
     padding: 0;
-    color: #6d6c6c;
+    color: var(--text-muted-color);
   }
-}
-
-%sidebar-links {
-  color: var(--sidebar-muted-color);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 %text-clip {
@@ -129,6 +122,13 @@
   font-size: 0.8rem;
 }
 
+/* Tags 목록, 카테고리 링크, 태그 줄처럼 코드 블록과 같은 monospace로 작게 쓰는 글자.
+   더 작게 쓸 곳은 font-size만 덮어쓴다. */
+%code-text {
+  font-family: v.$code-font-family;
+  font-size: v.$code-font-size;
+}
+
 %sup-fn-target {
   &:target {
     background-color: var(--footnote-target-bg);
@@ -141,7 +141,7 @@
 
 %btn-color {
   button i {
-    color: #999999;
+    color: t.fg(50%);
   }
 }
 

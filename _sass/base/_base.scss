@@ -5,6 +5,7 @@
 @use '../abstracts/placeholders';
 @use '../themes/light';
 @use '../themes/dark';
+@use '../themes/tint' as t;
 
 $enable-dual: not list.index(v.$theme-options, v.$theme);
 $enable-light: v.$theme == light or $enable-dual;
@@ -37,6 +38,9 @@ $enable-dark: v.$theme == dark or $enable-dual;
 :root {
   font-size: 16px;
 
+  /* 앵커로 이동할 때 제목이 고정 메뉴바에 가려지지 않게 한다. */
+  scroll-padding-top: v.$topbar-height;
+
   @include bp.lg {
     overflow-y: scroll;
   }
@@ -49,24 +53,6 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   font-family: v.$font-family-base;
-}
-
-h1.dynamic-title {
-  @include bp.lt(bp.get(lg)) {
-    display: none;
-
-    ~ .content {
-      margin-top: 2.5rem;
-    }
-  }
-}
-
-main {
-  &.col-12 {
-    @include bp.xxxl {
-      padding-right: 4.5rem !important;
-    }
-  }
 }
 
 .preview-img {
@@ -256,6 +242,10 @@ main {
 .img-link {
   color: transparent;
   display: inline-flex;
+
+  /* inline-flex 폭은 안의 이미지 폭을 따른다. 상한이 없으면 img의 max-width: 100%가
+     이 링크 폭을 기준으로 계산돼 width 속성(예: 600px)이 본문 열보다 넓어도 줄지 않는다. */
+  max-width: 100%;
 }
 
 .shimmer {
@@ -358,12 +348,12 @@ main {
 /* Overwrite bootstrap outline button */
 .btn.btn-outline-primary {
   &:not(.disabled):hover {
-    border-color: #007bff !important;
+    border-color: var(--link-color) !important;
   }
 }
 
 .disabled {
-  color: rgb(206 196 196);
+  color: t.fg(25%);
   pointer-events: auto;
   cursor: not-allowed;
 }
@@ -406,10 +396,6 @@ mjx-container {
 }
 
 @media (hover: hover) {
-  #sidebar ul > li:last-child::after {
-    transition: top 0.5s ease;
-  }
-
   .nav-link {
     transition: background-color 0.3s ease-in-out;
   }
@@ -426,50 +412,33 @@ mjx-container {
 #main-wrapper {
   position: relative;
 
+  /* 화면 위에 고정된 메뉴바 높이만큼 본문을 내린다. */
+  padding-top: v.$topbar-height;
+
   @include mx.pl-pr(0);
 
-  @include bp.lt(bp.get(lg)) {
-    @include mx.slide;
-  }
-
-  @include bp.lg {
-    margin-left: v.$sidebar-width;
-  }
-
-  @include bp.xxxl {
-    margin-left: v.$sidebar-width-large;
-  }
-
   > .container {
-    min-height: 100vh;
+    /* 위 padding-top만큼 빼야 내용이 짧은 쪽에서 문서가 화면보다 길어져 스크롤이 생기지 않는다. */
+    min-height: calc(100vh - #{v.$topbar-height});
 
-    @include bp.lte(bp.get(md)) {
+    /* Bootstrap .container는 768~991px에서 최대 폭이 720px이라 본문 열(768px)보다 좁고 좌우 여백 12px도 있다.
+       그러면 본문 글자가 메뉴바 제목보다 안쪽에서 시작하므로 이 구간까지는 화면 폭을 다 쓴다.
+       992px은 Bootstrap의 lg 기준이고 bp.get(lg)(850px)와 다르다. */
+    @include bp.lt(992px) {
       @include mx.max-w-100;
       @include mx.pl-pr(0);
     }
 
-    @include bp.lt(bp.get(lg)) {
-      max-width: 100%;
+    > .row {
+      justify-content: center;
+      flex-wrap: nowrap;
     }
 
-    /* Pad horizontal */
-    @include bp.between(992px, calc(#{bp.get(xl)} - 1px)) {
-      .col-lg-11 {
-        flex: 0 0 96%;
-        max-width: 96%;
-      }
-    }
-
-    @include bp.lt(bp.get(xl)) {
-      > .row {
-        justify-content: center !important;
-      }
-    }
-
-    @include bp.xxxl {
-      max-width: v.$main-content-max-width;
-
-      @include mx.pl-pr(1.75rem, true);
+    /* ToC 패널이 보이는 폭에서도 화면 폭을 다 쓴다. 그래야 오른쪽 열 폭이 본문 열 오른쪽에 남은 폭과 같아져
+       패널 폭 상한을 max-width: 100%로 걸 수 있다. 아래 #panel-wrapper 주석 참고. */
+    @include bp.gte(v.$panel-breakpoint) {
+      @include mx.max-w-100;
+      @include mx.pl-pr(0);
     }
   }
 }
@@ -482,13 +451,52 @@ mjx-container {
   @include mx.ml-mr(0);
 }
 
-#tail-wrapper {
-  @include bp.xxxl {
-    padding-right: 4.5rem !important;
+/* 본문과 꼬리 영역은 가운데 열에 놓고, ToC 패널은 오른쪽 열(본문 오른쪽 여백)에 놓는다.
+   양쪽 열의 폭이 같아서 패널이 있든 없든 본문 열은 화면 가운데에 놓인다.
+   패널이 보이는 폭에서는 컨테이너가 화면 폭을 다 써서 오른쪽 열 폭이 본문 열 오른쪽 여백과 같다. */
+#main-wrapper > .container > .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, v.$reading-column-width) minmax(0, 1fr);
+
+  > main,
+  > #tail-wrapper {
+    grid-column: 2;
   }
 
+  > #panel-wrapper {
+    grid-column: 3;
+  }
+}
+
+#main-wrapper main,
+#tail-wrapper {
+  width: 100%;
+  max-width: v.$reading-column-width;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include bp.md {
+    padding-left: v.$reading-padding;
+    padding-right: v.$reading-padding;
+  }
+}
+
+/* 미디어 쿼리 폭은 클래식 스크롤바(15px)까지 포함해서 $panel-breakpoint 바로 위에서는 오른쪽 열이 패널보다 좁아
+   패널이 최대 7px 넘쳤다. 오른쪽 열 폭을 상한으로 둔다. */
+#main-wrapper #panel-wrapper {
+  width: v.$panel-width;
+  max-width: 100%;
+  padding: 0 0 0 1rem;
+}
+
+#tail-wrapper {
   > :not(script) {
     margin-top: 3rem;
+  }
+
+  /* 홈 한 쪽이 스크롤 없이 화면에 들어가도록 푸터 위 여백만 줄인다. 위 규칙과 명시도가 같아서 뒤에 둔다. */
+  > footer {
+    margin-top: 1rem;
   }
 }
 

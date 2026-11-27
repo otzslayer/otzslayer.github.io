@@ -3,9 +3,6 @@ title: Polars 사용기
 layout: post
 tags: [polars, pandas]
 category: Polars
-image:
-  path: https://i.imgur.com/1h26Chi.png
-  alt: Image from [here](https://towardsdatascience.com/pandas-vs-polars-a-syntax-and-speed-comparison-5aa54e27497e)
 ---
 
 ## 들어가며

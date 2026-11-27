@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: အဓိကစာမျက်နှာ
-  categories: ကဏ္ဍများ
   tags: နာမ(တက်ဂ်)များ
   archives: မှတ်တမ်း​တိုက်
   about: အကြောင်းအရာ
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     အခြားမှတ်သားထားချက်များမှလွဲ၍ ဤဆိုက်ရှိ ဘလော့ဂ်ပို့စ်များသည် စာရေးသူ၏
     Creative Commons Attribution 4.0 International (CC BY 4.0) အောက်တွင် လိုင်စင်ရထားပါသည်။
-
-meta: Powered by :PLATFORM with :THEME theme
 
 not_found:
   statement: ဝမ်းနည်းပါသည်၊ ကျွန်ုပ်တို့သည် အဆိုပါ URL ကို မှားယွင်းစွာ နေရာချထားခြင်း သို့မဟုတ် ၎င်းသည် မရှိသောအရာကို ညွှန်ပြနေပါသည်။
@@ -76,8 +73,3 @@ post:
     share_link:
       title: လင့်ခ်ကို ကူးယူရန်
       succeed: လင့်ခ်ကို ကူးယူလိုက်ပြီ။
-
-# categories page
-categories:
-  category_measure: ကဏ္ဍများ
-  post_measure: ပို့စ်များ

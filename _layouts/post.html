@@ -1,10 +1,8 @@
 ---
 layout: default
 panel_includes:
-- toc
-- adsense
+  - toc
 tail_includes:
-  - adsense
   - related-posts
   - post-nav
 script_includes:
@@ -20,44 +18,29 @@ script_includes:
   <script src="{{ site.baseurl }}/assets/js/data/applause-button.js"></script>
 {% endif %}
 
-<article class="px-1" data-toc="{{ enable_toc }}">
+<article data-toc="{{ enable_toc }}">
   <header>
-    <h1 data-toc-skip>{{ page.title }}</h1>
+    <h1 class="reading-font" data-toc-skip>{{ page.title }}</h1>
     {% if page.description %}
       <p class="post-desc fw-light mb-4">{{ page.description }}</p>
     {% endif %}
 
     <div class="post-meta text-muted">
-      <!-- published date -->
-      <span>
-        {{ site.data.locales[lang].post.posted }}
-        {% include datetime.html date=page.date tooltip=true lang=lang %}
-      </span>
-
-      <!-- lastmod date -->
-      {% if page.last_modified_at and page.last_modified_at != page.date %}
+      <div class="post-dates">
+        <!-- published date -->
         <span>
-          {{ site.data.locales[lang].post.updated }}
-          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+          {{ site.data.locales[lang].post.posted }}
+          {% include datetime.html date=page.date tooltip=true lang=lang %}
         </span>
-      {% endif %}
 
-      {% if page.image %}
-        {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
-        {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
-        {% capture alt %}alt="{{ page.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
-
-        {% if page.image.lqip %}
-          {%- capture lqip -%}lqip="{{ page.image.lqip }}"{%- endcapture -%}
+        <!-- lastmod date -->
+        {% if page.last_modified_at and page.last_modified_at != page.date %}
+          <span>
+            {{ site.data.locales[lang].post.updated }}
+            {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+          </span>
         {% endif %}
-
-        <div class="mt-3 mb-3">
-          <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip | strip }}>
-          {%- if page.image.alt -%}
-            <figcaption class="text-center pt-2 pb-2">{{ page.image.alt | markdownify }}</figcaption>
-          {%- endif -%}
-        </div>
-      {% endif %}
+      </div>
 
       <div class="d-flex justify-content-between">
         <!-- author(s) -->
@@ -101,13 +84,21 @@ script_includes:
           {% include read-time.html content=content prompt=true lang=lang %}
         </div>
       </div>
+
+      <!-- tags -->
+      {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw me-1"></i>
+          {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/" class="post-tag no-text-decoration">
+              {{- tag -}}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </header>
 
-  <br><br>
-  {% include inarticle_ads.html %}
-  
-  
   {% if enable_toc %}
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
       <span class="label text-truncate">{{ page.title }}</span>
@@ -130,7 +121,7 @@ script_includes:
     </dialog>
   {% endif %}
 
-  <div class="content">
+  <div class="content reading-font">
     {{ content }}
   </div>
   
@@ -160,21 +151,6 @@ script_includes:
       <!-- "Edit this post" link -->
       {% include post-edit.html lang=lang %}
     </div>
-
-  <!-- tags -->
-  {% if page.tags.size > 0 %}
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw me-1"></i>
-    {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/" class="post-tag no-text-decoration">
-      {{- tag -}}
-    </a>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <br><br>
-  {% include inarticle_ads.html %}
 
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-5 pb-2">

@@ -3,6 +3,7 @@ title: Bayesian Optimization
 tags: [bayesian-optimization, tpe, gp, hpo]
 category: ML
 layout: post
+math: true
 ---
 
 

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Inicio
-  categories: Categorías
   tags: Etiquetas
   archives: Archivo
   about: Acerca de
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Salvo que se indique explícitamente, las entradas de este blog están licenciadas
     bajo la Creative Commons Attribution 4.0 International (CC BY 4.0) License por el autor.
-
-meta: Hecho con :PLATFORM usando el tema :THEME
 
 not_found:
   statement: Lo sentimos, hemos perdido esa URL o apunta a algo que no existe.
@@ -76,8 +73,3 @@ post:
     share_link:
       title: Copiar enlace
       succeed: ¡Enlace copiado!
-
-# categories page
-categories:
-  category_measure: categorias
-  post_measure: entradas

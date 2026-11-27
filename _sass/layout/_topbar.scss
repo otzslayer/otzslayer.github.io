@@ -1,86 +1,162 @@
 @use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as mx;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/placeholders';
 
 #topbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
   height: v.$topbar-height;
   background-color: var(--topbar-bg);
-
-  @include bp.lt(bp.get(lg)) {
-    @include mx.slide(top 0.2s ease);
-
-    left: 0;
-  }
+  border-bottom: 1px solid var(--main-border-color);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
+/* 메뉴바 내용은 본문 열과 같은 폭으로 화면 가운데에 놓는다.
+   배경과 아래 경계선은 #topbar-wrapper가 화면 전체 폭으로 그린다.
+   좌우 여백은 본문 글자가 시작하는 자리인 본문 열 여백($reading-padding)에 맞춘다. */
 #topbar {
   @extend %btn-color;
 
-  #breadcrumb {
-    font-size: 1rem;
+  height: 100%;
+  max-width: v.$reading-column-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  gap: 1rem;
+
+  @include bp.md {
+    padding: 0 v.$reading-padding;
+  }
+
+  button i {
     color: var(--text-muted-color);
-    padding-left: 0.5rem;
-
-    a:hover {
-      @extend %link-hover;
-    }
-
-    span {
-      &:not(:last-child) {
-        &::after {
-          content: '›';
-          padding: 0 0.3rem;
-        }
-      }
-    }
-
-    @include bp.lt(bp.get(lg)) {
-      display: none;
-    }
-
-    @include bp.between(bp.get(lg), calc(#{bp.get(xl)} - 1px)) {
-      width: 65%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: keep-all;
-      white-space: nowrap;
-    }
-  }
-
-  @include bp.lte(bp.get(md)) {
-    @include mx.max-w-100;
-  }
-
-  @include bp.lt(bp.get(lg)) {
-    max-width: 100%;
   }
 }
 
-#topbar-title {
-  display: none;
+#site-title {
+  font-family: v.$font-family-heading;
+  font-weight: 700;
   font-size: 1.1rem;
-  font-weight: 600;
-  font-family: sans-serif;
+  white-space: nowrap;
   color: var(--topbar-text-color);
-  text-align: center;
-  width: 70%;
-  word-break: keep-all;
 
-  @include bp.lt(bp.get(lg)) {
-    display: block;
-  }
-
-  @include bp.lg {
-    text-align: left;
+  &:hover {
+    color: var(--link-color);
   }
 }
 
-#sidebar-trigger,
-#search-trigger {
+#topbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+
+  @include bp.lt(bp.$topbar-collapse) {
+    display: none;
+    position: absolute;
+    top: v.$topbar-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem 1rem;
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--main-border-color);
+
+    &.show {
+      display: flex;
+    }
+  }
+}
+
+#topbar-tabs {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include bp.lt(bp.$topbar-collapse) {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  a {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-muted-color);
+
+    @include bp.lt(bp.$topbar-collapse) {
+      padding: 0.4rem 0;
+    }
+
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+
+  .active a {
+    color: var(--link-color);
+  }
+}
+
+#menu-trigger {
   display: none;
 
-  @include bp.lt(bp.get(lg)) {
+  @include bp.lt(bp.$topbar-collapse) {
     display: block;
+    margin-left: auto;
   }
+}
+
+/* 맨 오른쪽 토글은 오른쪽 안쪽 여백을 없애서 아이콘이 본문 열의 오른쪽 끝에 닿게 한다. */
+#topbar-toggles > :last-child {
+  padding-right: 0;
+}
+
+/* 버튼은 바꿀 테마의 아이콘을 보여 준다. 라이트에서는 달, 다크에서는 해. */
+#theme-toggle > i {
+  display: none;
+}
+
+:root:not([data-bs-theme='dark']) #theme-toggle > [data-icon='to-dark'],
+:root[data-bs-theme='dark'] #theme-toggle > [data-icon='to-light'] {
+  display: inline-block;
+}
+
+/* 버튼은 바꿀 글꼴로 쓴 '가'를 보여 준다.
+   두 글꼴의 '가'는 폭과 높이가 달라서 버튼 크기를 고정한다. 고정하지 않으면 토글할 때마다
+   버튼 폭이 바뀌어 왼쪽의 탭과 검색창이 옆으로 밀린다. */
+#font-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-muted-color);
+
+  > span {
+    display: none;
+  }
+
+  > [data-icon='to-serif'] {
+    font-family: v.$font-family-serif;
+  }
+
+  > [data-icon='to-sans'] {
+    font-family: v.$font-family-base;
+  }
+}
+
+:root:not([data-font='serif']) #font-toggle > [data-icon='to-serif'],
+:root[data-font='serif'] #font-toggle > [data-icon='to-sans'] {
+  display: inline-block;
 }

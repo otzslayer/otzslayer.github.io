@@ -33,4 +33,12 @@ footer {
     text-align: center;
     margin-bottom: 0;
   }
+
+  .footer-links a {
+    font-size: 1rem;
+
+    &:not(:last-child) {
+      margin-right: 0.75rem;
+    }
+  }
 }

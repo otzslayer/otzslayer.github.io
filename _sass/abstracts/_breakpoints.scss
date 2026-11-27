@@ -16,9 +16,20 @@ $-breakpoints: (
   @return map.get($-breakpoints, $breakpoint);
 }
 
+/* 상단 메뉴바가 햄버거 메뉴로 접히는 기준. 이슈 #19가 768px로 정했다.
+   메뉴바와 검색 결과가 같은 값을 써야 해서 여기에 둔다. */
+$topbar-collapse: get(md);
+
 /* Less than the given width */
 @mixin lt($width) {
   @media all and (max-width: calc(#{$width} - 1px)) {
+    @content;
+  }
+}
+
+/* Greater than or equal to the given width (the opposite of lt) */
+@mixin gte($width) {
+  @media all and (min-width: $width) {
     @content;
   }
 }

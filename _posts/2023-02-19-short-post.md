@@ -5,9 +5,6 @@ category: Essay
 redirect_from:
   - /잡담/2023/02/19/short-post.html
 layout: post
-image:
-    path: /assets/images/2023-02-19-short-post/businessman-having-headache.jpg
-    alt: Busy!
 ---
 
 ## 근황

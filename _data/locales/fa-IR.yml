@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: خانه
-  categories: دسته‌بندی‌ها
   tags: برچسب‌ها
   archives: آرشیو
   about: درباره
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     به‌جز مواردی که خلاف آن ذکر شده باشد، محتوای پست‌های این وبلاگ
     تحت مجوز Creative Commons Attribution 4.0 International (CC BY 4.0) توسط نویسنده منتشر شده‌اند.
-
-meta: با استفاده از قالب :THEME برای :PLATFORM
 
 not_found:
   statement: متأسفیم، لینک زیر معتبر نیست یا به صفحه‌ای که وجود ندارد اشاره می‌کند.
@@ -86,12 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: دسته‌بندی
-    plural: دسته‌بندی‌
-  post_measure:
-    singular: پست
-    plural: پست‌

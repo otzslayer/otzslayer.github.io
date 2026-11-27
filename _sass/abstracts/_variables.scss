@@ -2,8 +2,6 @@
  * The SCSS variables
  */
 
-@import 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css';
-
 @font-face {
     font-family: 'JetBrains Mono';
     src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@2.304/fonts/webfonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
@@ -69,20 +67,25 @@
   }
 
 
-/* sidebar */
-
-$sidebar-width: 260px !default; /* the basic width */
-$sidebar-width-large: 300px !default; /* screen width: >= 1650px */
-$sb-btn-gap: 0.8rem !default;
-$sb-btn-gap-lg: 1rem !default;
-
 /* other framework sizes */
 
 $topbar-height: 3rem !default;
 $search-max-width: 200px !default;
 $footer-height: 5rem !default;
 $footer-height-large: 6rem !default; /* screen width: < 850px */
-$main-content-max-width: 1250px !default;
+
+/* 본문 열은 화면 가운데에 놓고 ToC 패널은 그 오른쪽 여백에 놓는다.
+   본문 열의 왼쪽 끝은 calc((100% - $reading-column-width) / 2)이고 글자는 $reading-padding만큼 안쪽에서 시작한다. */
+$reading-width: 720px !default;
+$reading-padding: 1.5rem !default;
+$reading-column-width: calc(#{$reading-width} + #{$reading-padding} * 2) !default;
+$panel-width: 260px !default;
+
+/* 본문 열(768px)과 양쪽 패널 폭(260px × 2)이 들어가는 화면 폭.
+   이보다 좁으면 패널을 숨기고 ToC 팝업 버튼을 쓴다.
+   계산값은 1288px이지만 #28 티켓이 정한 "약 1290px"을 그대로 써서 2px 여유가 있다.
+   _javascript/modules/components/toc.js와 assets/js/dist/post.min.js의 matchMedia 값과 같아야 한다. */
+$panel-breakpoint: 1290px !default;
 $radius-sm: 6px !default;
 $radius-lg: 10px !default;
 $back2top-size: 2.75rem !default;
@@ -99,6 +102,10 @@ $code-icon-width: 1.75rem !default;
 
 $font-family-base: 'Pretendard', 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
 $font-family-heading: 'Pretendard', Lato, 'Microsoft Yahei', sans-serif;
+
+/* 글꼴 토글이 Serif일 때 포스트와 About의 본문과 제목에만 쓴다.
+   라틴 글자는 Source Serif 4로 먼저 그리고, 그 글꼴에 없는 한글만 Noto Serif KR로 넘긴다. */
+$font-family-serif: 'Source Serif 4', 'Noto Serif KR', Georgia, serif;
 $code-font-family: 'JetBrains Mono', 'JetBrainsMono Nerd Font', monospace;
 
 /* Theme mode settings */

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Beranda
-  categories: Kategori
   tags: Tagar
   archives: Arsip
   about: Tentang
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Kecuali jika dinyatakan, Postingan blog di situs ini dilisensikan
     di bawah Lisensi Creative Commons Attribution 4.0 International (CC BY 4.0) oleh penulis.
-
-meta: Didukung oleh :PLATFORM dengan tema :THEME
 
 not_found:
   statement: Maaf, kami gagal menemukan URL itu atau memang mengarah ke sesuatu yang tidak ada.
@@ -76,8 +73,3 @@ post:
     share_link:
       title: Salin tautan
       succeed: Tautan berhasil disalin!
-
-# categories page
-categories:
-  category_measure: kategori
-  post_measure: Postingan

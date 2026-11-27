@@ -1,7 +1,7 @@
 import { TocMobile as mobile } from './toc/toc-mobile';
 import { TocDesktop as desktop } from './toc/toc-desktop';
 
-const desktopMode = matchMedia('(min-width: 1200px)');
+const desktopMode = matchMedia('(min-width: 1290px)');
 
 function refresh(e) {
   if (e.matches) {

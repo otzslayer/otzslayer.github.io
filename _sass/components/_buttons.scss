@@ -23,14 +23,20 @@
     bottom: calc(v.$footer-height - v.$back2top-size / 2);
   }
 
-  @include bp.xxl {
-    right: calc((100vw - v.$sidebar-width - 1140px) / 2 + 3rem);
+  /* ToC 패널이 보이는 폭에서는 패널 오른쪽에 버튼이 들어갈 자리가 없으면 본문 열과 패널 사이 여백
+     (본문 $reading-padding + 패널 왼쪽 여백 1rem)의 가운데에 둔다. 여백이 버튼보다 4px 좁아 양쪽으로 2px씩 걸친다.
+     fixed 요소의 %는 스크롤바를 뺀 화면 폭 기준이라 스크롤바가 있어도 위치가 맞는다. */
+  @include bp.gte(v.$panel-breakpoint) {
+    right: calc(
+      50% - #{v.$reading-column-width} / 2 + (#{v.$reading-padding} - 1rem) / 2 -
+        #{v.$back2top-size} / 2
+    );
   }
 
-  @include bp.xxxl {
-    right: calc(
-      (100vw - v.$sidebar-width-large - v.$main-content-max-width) / 2 + 2rem
-    );
+  /* 패널 오른쪽 끝(화면 가운데 + 본문 열 절반 + 패널 폭)과 화면 끝 사이에 버튼과 1rem 여백이 들어가는 폭.
+     계산값은 약 1424px이고 스크롤바 15px을 더해 1440px로 둔다. */
+  @include bp.gte(1440px) {
+    right: 1rem;
   }
 
   &:hover {

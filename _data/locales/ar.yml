@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: الرئيسية
-  categories: الفئات
   tags: الوسوم
   archives: الأرشيف
   about: حول
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     ما لم يذكر خلاف ذلك ، يتم ترخيص منشورات المدونة على هذا الموقع
     بموجب ترخيص Creative Commons Attribution 4.0 International (CC BY 4.0) من قبل المؤلف.
-
-meta: باستخدام :PLATFORM السمة :THEME
 
 not_found:
   statement: عذرا, الرابط التالي غير صالح أو انه يشير إلى صفحة غير موجودة.
@@ -86,12 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: فئة
-    plural: فئات
-  post_measure:
-    singular: منشور
-    plural: منشورات

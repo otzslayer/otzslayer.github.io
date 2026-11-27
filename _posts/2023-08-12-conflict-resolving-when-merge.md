@@ -3,9 +3,6 @@ title: Git merge에서 발생하는 충돌 해결하기
 layout: post
 tags: [git, merge, conflict-resolving]
 category: Git
-image:
-  path: https://i.imgur.com/zKykbkJ.png
-  alt: Image from [here](https://paautism.org/resource/conflict-resolution-relationships/)
 ---
 
 ## 예시

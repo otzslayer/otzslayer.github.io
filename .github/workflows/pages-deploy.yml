@@ -51,6 +51,28 @@ jobs:
           JEKYLL_ENV: "production"
           API_URL: ${{ secrets.API_URL }}
 
+      # 공유 카드(og:image). 지난 실행에서 만든 카드를 캐시에서 받아 새 글이나 제목이 바뀐 글만 다시 만든다.
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Restore share cards
+        uses: actions/cache@v6
+        with:
+          path: .og-cache
+          key: og-cards-${{ github.run_id }}
+          restore-keys: og-cards-
+
+      # package-lock.json은 저장소에 없어서 package.json에 적힌 playwright 버전만 설치한다.
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock "playwright@$(node -p "require('./package.json').devDependencies.playwright")"
+          npx playwright install --with-deps --only-shell chromium
+
+      - name: Build share cards
+        run: node tools/og-cards.mjs "_site${{ steps.pages.outputs.base_path }}"
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v5
         with:

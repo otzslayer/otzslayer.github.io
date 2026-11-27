@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Начало
-  categories: Категории
   tags: Тагове
   archives: Архив
   about: За мен
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Освен ако не е посочено друго, публикациите в блога на този сайт са лицензирани
     под лиценза Creative Commons Attribution 4.0 (CC BY 4.0) от автора.
-
-meta: Създадено чрез :PLATFORM и :THEME тема
 
 not_found:
   statement: Съжалявам, но на този URL адрес няма налично съдържание.
@@ -76,12 +73,3 @@ post:
     share_link:
       title: Копирай линк
       succeed: Линкът е копиран успешно!
-
-# categories page
-categories:
-  category_measure:
-    singular: категория
-    plural: категории
-  post_measure:
-    singular: публикация
-    plural: публикации

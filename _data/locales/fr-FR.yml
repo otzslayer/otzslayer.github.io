@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Accueil
-  categories: Catégories
   tags: Tags
   archives: Archives
   about: À propos
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Sauf mention contraire, les articles de ce site sont publiés
     sous la licence Creative Commons Attribution 4.0 International (CC BY 4.0) par l'auteur.
-
-meta: Propulsé par :PLATFORM avec le thème :THEME
 
 not_found:
   statement: Désolé, nous avons égaré cette URL ou elle pointe vers quelque chose qui n'existe pas.
@@ -76,8 +73,3 @@ post:
     share_link:
       title: Copier le lien
       succeed: Lien copié avec succès !
-
-# categories page
-categories:
-  category_measure: catégories
-  post_measure: posts

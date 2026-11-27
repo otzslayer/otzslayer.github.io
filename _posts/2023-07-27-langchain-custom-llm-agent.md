@@ -6,9 +6,6 @@ category: AI Engineering
 permalink: /ai-engineering/:year/:month/:day/:title.html
 redirect_from:
   - /llm/2023/07/27/langchain-custom-llm-agent.html
-image:
-  path: https://i.imgur.com/tAjMXbv.png
-  alt: Image from [here](https://betterprogramming.pub/make-langchain-agent-actually-works-with-local-llms-vicuna-wizardlm-etc-da42b6b1a97)
 ---
 
 사내에 공유할 정보가 있어 [LangChain](https://python.langchain.com/docs/modules/agents/how_to/custom_llm_chat_agent) 문서를 번역하였습니다.

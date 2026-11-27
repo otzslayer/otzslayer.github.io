@@ -43,6 +43,18 @@ header {
   h1 + .post-meta {
     margin-top: 1.5rem;
   }
+
+  /* 제목은 가운데에, 작성일과 수정일은 오른쪽 끝에 둔다. 그 아래 작성자와 조회수 줄, 태그는 그대로 양쪽 정렬이다. */
+  h1 {
+    text-align: center;
+
+    /* TimedRotatingFileHandler처럼 긴 영어 낱말은 좁은 화면에서 줄바꿈되지 않아 가로 스크롤을 만든다. */
+    overflow-wrap: anywhere;
+  }
+
+  .post-dates {
+    text-align: right;
+  }
 }
 
 .post-tail-wrapper {
@@ -69,6 +81,13 @@ header {
 
   .post-meta a:not(:hover) {
     @extend %link-underline;
+  }
+
+  /* 카테고리 링크는 태그 줄과 같은 monospace로 작게 쓴다. */
+  .post-meta a {
+    @extend %code-text;
+
+    font-size: 0.75rem;
   }
 
   .share-wrapper {
@@ -130,9 +149,9 @@ header {
   --wc-stm-font-family: #{v.$font-family-base};
   --wc-stm-dialog-background-color: var(--card-bg);
   --wc-stm-form-button-border: 1px solid var(--btn-border-color);
-  --wc-stm-form-submit-background-color: var(--sidebar-btn-bg);
-  --wc-stm-form-cancel-background-color: var(--sidebar-btn-bg);
-  --wc-stm-form-button-background-color-hover: #007bff;
+  --wc-stm-form-submit-background-color: var(--form-btn-bg);
+  --wc-stm-form-cancel-background-color: var(--form-btn-bg);
+  --wc-stm-form-button-background-color-hover: var(--link-color);
   --wc-stm-form-button-color-hover: white;
 
   font-size: 1rem;
@@ -142,6 +161,10 @@ header {
   line-height: 2rem;
 
   .post-tag {
+    @extend %code-text;
+
+    font-size: 0.75rem;
+
     &:hover {
       @extend %tag-hover;
     }
@@ -166,6 +189,9 @@ header {
 
   .btn {
     @extend %-btn-post-nav;
+
+    /* 글 제목의 긴 영어 낱말이 버튼 밖으로 넘치지 않게 한다. flex 항목이라 break-word로는 줄지 않는다. */
+    overflow-wrap: anywhere;
 
     &:not(:hover) {
       color: var(--link-color);
@@ -349,7 +375,7 @@ header {
 #toc-bar {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: v.$topbar-height;
   z-index: 1;
   margin: 0 -1rem;
   height: v.$topbar-height;
@@ -359,7 +385,7 @@ header {
 
   @extend %btn-color;
 
-  @include bp.xl {
+  @include bp.gte(v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -372,7 +398,7 @@ header {
   }
 
   &.invisible {
-    top: -#{v.$topbar-height};
+    top: 0;
     transition: none;
   }
 }
@@ -382,7 +408,7 @@ header {
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
 
-  @include bp.xl {
+  @include bp.gte(v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -491,6 +517,14 @@ header {
   }
 }
 
+/* 글에 붙여 넣은 YouTube 임베드는 width="560" height="315" 고정값이라 좁은 화면에서 넘친다.
+   폭만 줄이면 높이가 그대로 남아서 16:9 비율로 높이를 다시 계산한다. */
+.content iframe[src*='youtube.com/embed'] {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 .content > p > img {
   @include bp.lte(bp.get(md)) {
     max-width: calc(100% + 1rem);
@@ -500,7 +534,40 @@ header {
 h2,
 h3,
 h4 {
-  @include bp.xl {
+  @include bp.gte(v.$panel-breakpoint) {
     scroll-margin-top: 2rem;
+  }
+}
+
+/* 본문 각주 번호 옆에 띄우는 메모 상자. _javascript/modules/components/footnote-popover.js가 body 끝에 만든다.
+   각주 영역과 같은 글자 크기를 쓴다. .reading-font 밖에 있으므로 읽기 글꼴 변수를 직접 써서 Serif 토글을 따라간다. */
+.footnote-popover {
+  position: absolute;
+  font-family: var(--reading-font);
+  z-index: 1050;
+  width: max-content;
+  max-width: min(26rem, calc(100vw - 1.5rem));
+  max-height: 50vh;
+  overflow: auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: v.$radius-sm;
+  box-shadow: var(--card-shadow);
+
+  > p {
+    margin: 0;
+
+    + p {
+      margin-top: 0.5rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

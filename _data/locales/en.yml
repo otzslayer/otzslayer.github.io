@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
-  categories: Categories
   tags: Tags
   archives: Archives
   about: About
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Except where otherwise noted, the blog posts on this site are licensed
     under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
-
-meta: Using the :THEME theme for :PLATFORM.
 
 not_found:
   statement: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
@@ -86,12 +83,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: category
-    plural: categories
-  post_measure:
-    singular: post
-    plural: posts

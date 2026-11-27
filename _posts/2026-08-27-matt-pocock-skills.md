@@ -4,8 +4,6 @@ title: Matt Pocock의 Engineering Skills를 사용하는 이유
 layout: post
 tags: [agentic-coding, essay, matt-pocock, grilling, superpowers, compound-engineering]
 category: Essay
-image:
-  path: https://pub-519d95dbc82948c295bcf57354a5880c.r2.dev/images/774ed0a62a857112dc292ea663bf6e63.png
 ---
 
 Claude Code나 Codex를 사용하면 어느 시점에선 반드시 [하네스 엔지니어링(Harness engineering)](https://addyosmani.com/blog/agent-harness-engineering/)을 신경 쓰게 됩니다. 더불어서 나만의 개발 워크플로우를 수립하게 되고 더 나아가선 토큰 효율적인 워크플로우를 원하게 됩니다. 저는 오랜 시간 동안 Claude Code를 사용해왔고 모델이 여러 번 바뀔 때마다 제 하네스와 개발 워크플로우를 다듬는 데에 많은 시간을 들였습니다.
@@ -129,8 +127,6 @@ grill-with-docs → to-spec → to-tickets → implement → code-review
 결국 제가 사용하는 워크플로우와 하네스를 바꾼 이유는 Matt Pocock의 스킬이 절대 superpowers나 CE보다 더 나아서가 아닙니다. 두 플러그인 모두 잘 만들어져 있고 여전히 훌륭합니다. Opus 4.6과 Opus 4.8처럼 조금 지난 모델에는 두 플러그인이 갖춘 상세함이 실제로 필요했으니까요. 다만 새로운 세대의 모델이 등장하면서 더 맞는 하네스를 찾아야 했을 뿐입니다. Amp Code의 Nicolay Gerold는 모델이 발전하고 바뀌면 하네스도 함께 달라져야 하거나 하네스 자체가 필요 없어질 수 있다고 말했습니다. 제 경우가 그가 말한 [커비 효과(Kirby Effect)](https://www.youtube.com/watch?v=IPJ7Mp_ajuQ) 그 자체입니다.[^4]
 
 지금 제게는 Matt Pocock의 Engineering Skills가 딱 맞았습니다. 하네스를 구성할 때 중요하게 여겼던 기준에 부합했고 새로운 세대의 모델인 Opus 5와도 잘 맞았습니다. 여기에 함께 쓸 좋은 스킬도 있고요. 하지만 또 어떻게 될지 모르는 일입니다. 제가 다른 모델을 쓰게 되거나 새로운 모델이 나온다면 분명 지금과 같은 이유로 하네스를 들여다보고 제게 맞는 무언가를 찾거나 뜯어고치고 있지 않을까요?
-
----
 
 [^1]: 이 워크플로우에서 Sonnet 4.6은 사용하되 Sonnet 5는 사용하지 않았습니다. Sonnet 5는 "성능"만 놓고 보면 당연히 Sonnet 4.6보다 훌륭했지만 다른 측면에서는 모두 만족스럽지 못했습니다. 특히 Sonnet 5 특유의 만연체 탓에 토큰 사용량이 많았고 문제를 해결하려고 다른 모델보다 더 많은 턴을 소모하는 경향이 있어 비용이 Opus보다 훨씬 높았기 때문입니다. 제가 주로 찾아보는 [Senior SWE-Bench](https://senior-swe-bench.snorkel.ai/)에서 이 특징을 쉽게 확인할 수 있습니다. ![](https://pub-519d95dbc82948c295bcf57354a5880c.r2.dev/images/fd637762c1fc570afad3bce1021e1588.png){: width="400px"}.<br>이미지에는 GPT-5.6 Sol과 비교한 결과도 함께 담겨 있습니다. 저 역시 모델 성능은 이제 OpenAI가 Anthropic을 추월했다고 생각합니다. 그럼에도 제가 Claude Code를 사용하는 이유는 기회가 되면 따로 다뤄 보겠습니다.
 

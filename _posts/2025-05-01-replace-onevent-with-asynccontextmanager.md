@@ -4,9 +4,6 @@ title: FastAPI @on_event에서 @asynccontextmanager로 갈아타기
 layout: post
 tags: [fastapi, lifespan, asyncio, asynccontextmanager, application-state, startup-events]
 category: FastAPI
-image:
-  path: https://i.imgur.com/I4nSNZD.jpeg
-  alt: Image from [Unsplash](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%82%AC%EB%A7%89%EC%97%90%EC%84%9C-%EB%B0%98%EB%8C%80-%EB%B0%A9%ED%96%A5%EC%9D%84-%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94-%EB%8F%84%EB%A1%9C-%ED%91%9C%EC%A7%80%ED%8C%90-h1OhvEIIcxs)
 ---
 
 FastAPI를 사용하다보면 애플리케이션 서비스 시작과 종료 시점에 특정 작업을 처리하기 위해서 `@app.on_event("startup")`과 `@app.on_event("shutdown")` 데코레이터를 사용합니다. 미리 설정 파일을 불러오거나, 쿼리를 통해 전역 변수로 특정 값을 설정하는 작업에 매우 유용합니다. 하지만 FastAPI 최신 버전에서는 이 방식보다는 `lifespan`  파라미터와 표준 라이브러리인 `contextlib`의 `asynccontextmanager`를 사용하도록 권장하고 있습니다. [지난 포스트](https://otzslayer.github.io/fastapi/2025/04/25/app-state-in-fastapi.html)에서는 `@app.on_event()`로 코드를 작성했지만 이번 포스트에서는 기존 포스트의 코드를 모두 `asynccontextmanager`로 바꾸고, 서비스 시작 시 여러 작업을 처리해야 할 때 어떻게 `lifespan`방식으로 개발할 수 있는지 알아봅니다.

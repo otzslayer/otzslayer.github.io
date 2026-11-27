@@ -4,9 +4,6 @@ title: 리눅스 systemd에 서비스 등록하기
 layout: post
 tags: [systemd, systemctl, fastapi]
 category: etc
-image:
-  path: https://i.imgur.com/C8tvJQi.png
-  alt: 
 ---
 
 ## 배경

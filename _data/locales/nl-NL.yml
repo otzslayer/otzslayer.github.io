@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Startpagina
-  categories: Categorieën
   tags: Tags
   archives: Archief
   about: Over
@@ -39,8 +38,6 @@ copyright:
   verbose: >-
     Tenzij anders vermeld, alle posts zijn onder de
     Creative Commons Attribution 4.0 International (CC BY 4.0) gepubliceerd door de auteur.
-
-meta: Gebruikt :THEME
 
 not_found:
   statement: Sorry, we hebben de URL verkeerd geplaatst of hij verwijst naar iets dat niet bestaat.
@@ -85,12 +82,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: categorie
-    plural: categorieën
-  post_measure:
-    singular: post
-    plural: posts

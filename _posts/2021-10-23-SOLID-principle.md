@@ -3,6 +3,7 @@ title: SOLID한 코드를 작성하기 위한 다섯 가지 원칙
 tags: [solid, clean-code]
 category: Python
 layout: post
+math: true
 ---
 
 SOLID 원칙이란 '클린 코드'의 저자인 로버트 마틴이 명명한 객체 지향 프로그래밍의 다섯 가지 기본 원칙입니다.

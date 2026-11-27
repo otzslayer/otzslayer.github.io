@@ -34,7 +34,7 @@ REST API 응답 등에 사용할 때는 JSON만한 포맷이 없습니다.
 
 ## 사용법
 
-Learning to Rank 포스트에서 LightGBM를 이용해 LambdaRank를 간단하게 사용하는 법 [(링크)](http://otzslayer.github.io/ml/2022/02/13/learning-to-rank.html#ltr-using-lightgbm-lambdarank)을 공유드렸었는데요.
+Learning to Rank 포스트에서 LightGBM를 이용해 LambdaRank를 간단하게 사용하는 법 [(링크)](https://otzslayer.github.io/ml/2022/02/13/learning-to-rank.html#ltr-using-lightgbm-lambdarank)을 공유드렸었는데요.
 해당 코드를 다시 쓰되 사용한 설정값들을 YAML 파일로 어떻게 관리할 수 있는지 알아보겠습니다.
 
 해당 포스트를 다시 보시면 관리해야 할 설정값은 크게 경로, 하이퍼파라미터 정도입니다.

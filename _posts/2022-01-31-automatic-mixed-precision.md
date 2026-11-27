@@ -3,6 +3,7 @@ title: Automatic Mixed Precision (AMP)
 tags: [amp, mixed-precision, pytorch, apex]
 category: ML
 layout: post
+math: true
 ---
 
 

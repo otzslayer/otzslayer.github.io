@@ -3,6 +3,7 @@ title: PyTorch Loss에서 reduction의 선택
 tags: [pytorch, loss-reduction]
 category: PyTorch
 layout: post
+math: true
 ---
 
 
