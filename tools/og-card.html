@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- 공유 카드 템플릿. tools/og-cards.mjs가 1200x630으로 찍는다.
+     이 파일을 고치면 템플릿 해시가 바뀌어 모든 카드를 다시 만든다. -->
+<style>
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Black.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Medium.woff2') format('woff2');
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+
+  html, body { width: 1200px; height: 630px; }
+
+  body {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Pretendard', sans-serif;
+    color: #fff;
+    background:
+      radial-gradient(circle at 30% 50%, transparent 0, rgb(0 0 0 / 35%) 100%),
+      repeating-linear-gradient(135deg, rgb(255 255 255 / 4%) 0 2px, transparent 2px 7px),
+      #222;
+  }
+
+  #brand {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  #brand img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: #fff;
+    object-fit: cover;
+  }
+
+  /* 제목 상자. 글자 크기는 render()가 이 상자에 네 줄 안으로 들어갈 때까지 줄인다. */
+  #title {
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    width: 1060px;
+    height: 330px;
+    display: flex;
+    align-items: center;
+  }
+
+  #title h1 {
+    font-weight: 900;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    -webkit-text-stroke: 10px #111;
+    paint-order: stroke fill;
+    text-shadow: 0 4px 12px rgb(0 0 0 / 45%);
+  }
+
+  /* 단어 안에서는 줄을 바꾸지 않는다(하이픈이 든 XSRF-TOKEN 같은 낱말 포함). */
+  #title h1 span { white-space: nowrap; }
+
+  /* 줄마다 흰색과 연보라를 번갈아 쓴다. */
+  #title .line-even { color: #fff; }
+  #title .line-odd { color: #c9b8f0; }
+
+  #byline {
+    position: absolute;
+    left: 70px;
+    bottom: 88px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  #url {
+    position: absolute;
+    left: 70px;
+    bottom: 50px;
+    max-width: 1060px;
+    font-weight: 500;
+    font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #e6e6e6;
+  }
+</style>
+</head>
+<body>
+  <div id="brand"><img id="avatar" alt=""><span id="site"></span></div>
+  <div id="title"><h1></h1></div>
+  <div id="byline"></div>
+  <div id="url"></div>
+
+<script>
+  // 카드 한 장을 그린다. 단어마다 span으로 감싸 줄바꿈된 위치로 줄을 나누고 줄마다 색을 준다.
+  window.render = ({ site, title, url }) => {
+    document.getElementById('avatar').src = site.avatarData;
+    document.getElementById('site').textContent = site.title;
+    document.getElementById('byline').textContent = site.author;
+    // 긴 URL은 한 줄에 들어갈 때까지 글자를 줄이고, 그래도 넘치면 말줄임표로 자른다.
+    const urlEl = document.getElementById('url');
+    urlEl.textContent = decodeURI(url);
+    for (let px = 22; px >= 16; px -= 1) {
+      urlEl.style.fontSize = `${px}px`;
+      if (urlEl.scrollWidth <= urlEl.clientWidth) break;
+    }
+
+    const box = document.getElementById('title');
+    const h1 = box.querySelector('h1');
+    h1.replaceChildren();
+    const words = title.split(/\s+/).filter(Boolean).map((word, i) => {
+      if (i > 0) h1.append(' ');
+      const span = document.createElement('span');
+      span.textContent = word;
+      h1.append(span);
+      return span;
+    });
+
+    const lines = () => new Set(words.map((w) => w.offsetTop)).size;
+    // 긴 영어 낱말(TimedRotatingFileHandler 등)은 줄을 바꾸지 않으므로 상자 밖으로 나가면 글자를 줄인다.
+    const overflow = () => words.some((w) => w.getBoundingClientRect().right > box.getBoundingClientRect().right + 1);
+    let size = 96;
+    h1.style.maxWidth = '';
+    h1.style.fontSize = `${size}px`;
+    while (size > 44 && (lines() > 4 || overflow() || h1.scrollHeight > box.clientHeight)) {
+      size -= 4;
+      h1.style.fontSize = `${size}px`;
+    }
+
+    // 한 줄에 다 들어가는 짧은 제목은 폭을 좁혀 두 줄로 나눈다. 두 줄이어야 색이 번갈아 보인다.
+    if (lines() === 1 && words.length > 1) {
+      let width = h1.getBoundingClientRect().width;
+      while (lines() === 1 && width > 200) {
+        width -= 20;
+        h1.style.maxWidth = `${width}px`;
+      }
+      if (overflow()) h1.style.maxWidth = '';
+    }
+
+    const tops = [...new Set(words.map((w) => w.offsetTop))].sort((a, b) => a - b);
+    for (const w of words) {
+      w.className = tops.indexOf(w.offsetTop) % 2 ? 'line-odd' : 'line-even';
+    }
+    return { size, lines: tops.length };
+  };
+</script>
+</body>
+</html>

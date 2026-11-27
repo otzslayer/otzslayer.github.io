@@ -35,3 +35,6 @@ assets/js/dist
 *~
 .DS_Store
 Thumbs.db
+
+# Generated share cards (tools/og-cards.mjs)
+.og-cache
