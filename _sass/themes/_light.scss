@@ -1,9 +1,10 @@
 @use 'tint' as *;
 
-/* 라이트 테마는 배경, 글씨, 하이라이트 세 가지 기준색만 리터럴로 둔다.
+/* 라이트 테마는 배경, 글씨, 링크 세 가지 기준색만 리터럴로 둔다.
    나머지 보조색은 tint 함수로 글씨색의 투명도만 바꿔 만든다.
    예외는 콜아웃 네 종류의 색과 코드 구문 강조 색이다.
-   대비: 본문 17.4:1, 링크 6.9:1, 흐린 글씨(80%) 9.2:1. */
+   대비: 본문 17.4:1, 링크 6.9:1, 흐린 글씨(80%) 9.2:1.
+   구문 강조 색은 코드 배경(#f6f6f6) 대비 4.5:1 이상이고 회색은 무채색으로 맞췄다. */
 @mixin styles {
   /* Base colors */
   --main-bg: #ffffff;
@@ -45,10 +46,6 @@
   --menu-active-color: var(--link-color);
   --menu-highlight-bg: #{fg(8%)};
 
-  /* Sidebar */
-  --sidebar-bg: #{fg-solid(4%)};
-  --sidebar-btn-bg: var(--main-bg);
-
   /* Topbar */
   --topbar-bg: color-mix(in srgb, var(--main-bg) 80%, transparent);
   --topbar-text-color: var(--text-color);
@@ -59,7 +56,7 @@
   /* Home page */
   --post-list-text-color: #{fg(90%)};
   --btn-patinator-text-color: var(--label-color);
-  --btn-paginator-hover-color: var(--sidebar-bg);
+  --btn-paginator-hover-color: #{fg-solid(4%)};
 
   /* Posts */
   --toc-highlight: var(--link-color);
@@ -67,6 +64,7 @@
   --btn-share-color: #{fg(60%)};
   --btn-share-hover-color: var(--link-color);
   --card-bg: var(--main-bg);
+  --form-btn-bg: var(--main-bg);
   --card-hover-bg: #{fg-solid(9%)};
   --card-shadow: #{fg(6%)} 0 2px 6px 0, #{fg(12%)} 0 0 0 1px;
   --footnote-target-bg: #{fg(10%)};
@@ -116,7 +114,7 @@
 
   .highlight,
   .highlight .w {
-    color: #3f3b35;
+    color: #3b3b3b;
     background-color: var(--highlight-bg-color);
   }
 
@@ -131,7 +129,7 @@
   }
 
   .highlight .gr {
-    color: #f2efe9;
+    color: #82071e;
   }
 
   .highlight .gd {
@@ -256,7 +254,7 @@
   }
 
   .highlight .err {
-    color: #f2efe9;
+    color: #ffffff;
     background-color: #82071e;
   }
 
@@ -268,32 +266,32 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #6e675e;
+    color: #666666;
   }
 
   .highlight .gl {
-    color: #6e675e;
+    color: #666666;
   }
 
   .highlight .gt {
-    color: #6e675e;
+    color: #666666;
   }
 
   .highlight .ni {
-    color: #3f3b35;
+    color: #3b3b3b;
   }
 
   .highlight .si {
-    color: #3f3b35;
+    color: #3b3b3b;
   }
 
   .highlight .ge {
-    color: #3f3b35;
+    color: #3b3b3b;
     font-style: italic;
   }
 
   .highlight .gs {
-    color: #3f3b35;
+    color: #3b3b3b;
     font-weight: bold;
   }
 }

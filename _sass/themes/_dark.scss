@@ -1,11 +1,12 @@
 @use 'tint' as *;
 
-/* 다크 테마도 라이트와 같은 구조로 배경, 글씨, 하이라이트 세 가지 기준색만
+/* 다크 테마도 라이트와 같은 구조로 배경, 글씨, 링크 세 가지 기준색만
    리터럴로 두고 나머지 보조색은 tint 함수로 만든다.
    예외는 콜아웃 네 종류의 색과 코드 구문 강조 색이다.
    글씨색으로 그림자를 그리면 빛이 번진 것처럼 보여서 그림자는 끈다.
    배경과 글씨는 eugeneyan.com 다크 테마 값을 따른다. 예전 값(#1c1a17, #b8b4ac)은 본문 대비가 8.4:1이라 글씨가 흐려 보였다.
-   대비: 본문 11.8:1, 링크 6.2:1, 흐린 글씨(72%) 7.0:1. */
+   대비: 본문 11.8:1, 링크 6.2:1, 흐린 글씨(72%) 7.0:1.
+   구문 강조 색은 코드 배경(#383733) 대비 4.5:1 이상이 되도록 base16 값을 밝혔다. */
 @mixin styles {
   color-scheme: dark;
 
@@ -49,10 +50,6 @@
   --menu-active-color: var(--link-color);
   --menu-highlight-bg: #{fg(10%)};
 
-  /* Sidebar */
-  --sidebar-bg: #{fg-solid(3%)};
-  --sidebar-btn-bg: #{fg-solid(6%)};
-
   /* Topbar */
   --topbar-bg: color-mix(in srgb, var(--main-bg) 64%, transparent);
   --topbar-text-color: var(--text-color);
@@ -76,6 +73,7 @@
   --btn-share-color: #{fg(60%)};
   --btn-share-hover-color: var(--link-color);
   --card-bg: #{fg-solid(3%)};
+  --form-btn-bg: #{fg-solid(6%)};
   --card-hover-bg: #{fg-solid(20%)};
   --card-shadow: #{fg(16%)} 0 0 0 1px;
   --kbd-wrap-color: #{fg(50%)};
@@ -114,7 +112,7 @@
   /* --- Syntax highlight theme from `rougify style base16.dark` --- */
 
   .highlight .gp {
-    color: #87939d;
+    color: #99a3ac;
   }
 
   .highlight table td {
@@ -143,7 +141,7 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #848484;
+    color: #a2a2a2;
   }
 
   .highlight .cp {
@@ -174,7 +172,7 @@
   }
 
   .highlight .gh {
-    color: #6a9fb5;
+    color: #77a8bc;
     background-color: #161411;
     font-weight: bold;
   }
@@ -184,19 +182,19 @@
   .highlight .kp,
   .highlight .kr,
   .highlight .kv {
-    color: #aa759f;
+    color: #be95b5;
   }
 
   .highlight .kc {
-    color: #d28445;
+    color: #d79259;
   }
 
   .highlight .kt {
-    color: #d28445;
+    color: #d79259;
   }
 
   .highlight .kd {
-    color: #d28445;
+    color: #d79259;
   }
 
   .highlight .s,
@@ -212,7 +210,7 @@
   }
 
   .highlight .sa {
-    color: #aa759f;
+    color: #be95b5;
   }
 
   .highlight .sr {
@@ -220,11 +218,11 @@
   }
 
   .highlight .si {
-    color: #b76d45;
+    color: #cb9679;
   }
 
   .highlight .se {
-    color: #b76d45;
+    color: #cb9679;
   }
 
   .highlight .nn {
@@ -240,7 +238,7 @@
   }
 
   .highlight .na {
-    color: #6a9fb5;
+    color: #77a8bc;
   }
 
   .highlight .m,
