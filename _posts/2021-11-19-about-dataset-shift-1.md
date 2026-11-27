@@ -27,7 +27,7 @@ Dataset Shift는 입력 피처값이 활용되는 방식, 학습 데이터와 �
 ## Dataset Shift
 
 <figure>
-  <img src='/assets/images/2021-11-19-about-dataset-shift-1/dataset_shift.png'>
+  <img alt="" src='/assets/images/2021-11-19-about-dataset-shift-1/dataset_shift.png'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ Dataset Shift는 발생 원인, 현상 등을 근거로 크게 세 가지로 분
 > 
 
 <figure>
-  <img src='/assets/images/2021-11-19-about-dataset-shift-1/covariate_shift.png'>
+  <img alt="" src='/assets/images/2021-11-19-about-dataset-shift-1/covariate_shift.png'>
   <figcaption style="text-align: center;">Image from [2]</figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ Covariate Shift에 대해 강건한 모델을 만들기 위해서는 항상 인�
 
 
 <figure>
-  <img src='/assets/images/2021-11-19-about-dataset-shift-1/prior_probability_shift.png'>
+  <img alt="" src='/assets/images/2021-11-19-about-dataset-shift-1/prior_probability_shift.png'>
   <figcaption style="text-align: center;">Image from [3]</figcaption>
 </figure>
 

@@ -37,7 +37,7 @@ image:
 
 <center>
 	<figure>
-		<img src="https://piunikaweb.com/wp-content/uploads/2021/03/YouTube-progress-bar.png"  loading="lazy"/>
+		<img alt="" src="https://piunikaweb.com/wp-content/uploads/2021/03/YouTube-progress-bar.png"  loading="lazy"/>
 	<figcaption style="text-align: center;">Image from <a href="https://piunikaweb.com/2021/04/01/some-youtube-users-say-progress-bar-now-appears-in-yellow-like-in-ads/">here</a></figcaption>
 	</figure>
 </center>

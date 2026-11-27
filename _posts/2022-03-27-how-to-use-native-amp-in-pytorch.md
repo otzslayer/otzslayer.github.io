@@ -10,7 +10,7 @@ layout: post
 
 <center>
   <figure>
-    <img src="/assets/images/2022-03-27-how-to-use-native-amp-in-pytorch/andrea-sonda-nw2H5tAhR4I-unsplash.jpg" style="zoom:33%;" loading="lazy" />
+    <img alt="" src="/assets/images/2022-03-27-how-to-use-native-amp-in-pytorch/andrea-sonda-nw2H5tAhR4I-unsplash.jpg" style="zoom:33%;" loading="lazy" />
     <figcaption style="text-align: center;">Photo by <a href="https://unsplash.com/@andreasonda">Andrea Sonda</a> on <a href="https://unsplash.com">Unsplash</a></figcaption>
   </figure>
 </center>

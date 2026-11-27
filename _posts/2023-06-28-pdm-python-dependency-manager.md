@@ -16,7 +16,7 @@ image:
 
 그래서 'Poetry로 넘어가야 되려나' 라고 생각하던 찰나에 [**PDM**](https://github.com/pdm-project/pdm)이란 관리 도구를 알게 되었습니다. 
 
-<a href="https://asciinema.org/a/jnifN30pjfXbO9We2KqOdXEhB" target="_blank"><img src="https://asciinema.org/a/jnifN30pjfXbO9We2KqOdXEhB.svg" /></a>
+<a href="https://asciinema.org/a/jnifN30pjfXbO9We2KqOdXEhB" target="_blank"><img alt="" src="https://asciinema.org/a/jnifN30pjfXbO9We2KqOdXEhB.svg" /></a>
 
 위 영상을 보고 든 첫 인상은 **빠르다**와 **보여주는 정보가 많다** 였습니다. Pipenv와 비교해서 굉장히 빠른 속도를 가진 것 같았고, Pipenv와 다르게 어떤 의존성을 설치하는지 보여주는게 매력적이었습니다. 확인해보니 설치도 어려운 것 같지 않아 시험삼아 사용해봤는데 아주 만족스러웠습니다.
 

@@ -19,7 +19,7 @@ image:
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/EXLF2Hy.png" style="zoom:50%;" loading="lazy"/>
+    <img alt="" src="https://i.imgur.com/EXLF2Hy.png" style="zoom:50%;" loading="lazy"/>
     <figcaption style="text-align: center;"><a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/zoCDWPuiRuA">Photo</a> by <a href="https://unsplash.com/@epicantus">Daria Nepriakhina</a> on <a href="https://unsplash.com/ko">Unsplash</a></figcaption>
   </figure>
 </center>
@@ -36,7 +36,7 @@ image:
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/iNM49bn.png" style="zoom:50%;" loading="lazy"/>
+    <img alt="" src="https://i.imgur.com/iNM49bn.png" style="zoom:50%;" loading="lazy"/>
     <figcaption style="text-align: center;"><a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/0ZUoBtLw3y4">Photo</a> by <a href="https://unsplash.com/fr/@towfiqu999999">Towfiqu Barbhuiya</a> on <a href="https://unsplash.com/ko">Unsplash</a></figcaption>
   </figure>
 </center>

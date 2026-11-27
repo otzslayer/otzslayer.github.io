@@ -10,7 +10,7 @@ Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무�
 <!--more-->
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/drift.jpg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/drift.jpg'>
   <figcaption style="text-align: center;">Image from <a href="https://pixabay.com/photos/drift-car-race-speed-smoke-3723673/">Pixabay</a></figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Concept Shift는 시간의 흐름에 의존적인 데이터에서 많이 발생�
 ### Gradual Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/gradual_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/gradual_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Gradual Concept Drift 또는 Incremental Concept Drift라고 부르는 이 현�
 ### Sudden Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/sudden_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/sudden_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ Sudden Concept Drift는 문자 그대로 갑자기 발생하는 Concept Drift입
 ### Recurrent Concept Drift
 
 <figure>
-  <img src='/assets/images/2021-11-23-about-dataset-shift-2/recurrent_concept_drift.jpeg'>
+  <img alt="" src='/assets/images/2021-11-23-about-dataset-shift-2/recurrent_concept_drift.jpeg'>
   <figcaption style="text-align: center;">Image from [1]</figcaption>
 </figure>
 

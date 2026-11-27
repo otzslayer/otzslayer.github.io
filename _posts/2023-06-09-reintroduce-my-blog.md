@@ -25,7 +25,7 @@ image:
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/swPGTzH.png" style="zoom:50%;" loading="lazy"/>
+    <img alt="" src="https://i.imgur.com/swPGTzH.png" style="zoom:50%;" loading="lazy"/>
   </figure>
 </center>
 
@@ -35,7 +35,7 @@ image:
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/NimcUk0.png" style="zoom:50%;" loading="lazy"/>
+    <img alt="" src="https://i.imgur.com/NimcUk0.png" style="zoom:50%;" loading="lazy"/>
   </figure>
 </center>
 

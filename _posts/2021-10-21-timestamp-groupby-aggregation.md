@@ -48,7 +48,7 @@ df = df.sort_values("timestamp").reset_index(drop=True)
 
 아래의 데이터를 얻을 수 있습니다.
 
-<img src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df1.png" width="33%">
+<img alt="" src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df1.png" width="33%">
 
 
 여기서 타임스탬프에 대한 Rolling Aggregation을 하기 위해선 **데이터프레임의 인덱스를 타임스탬프로 바꿔야 합니다.**
@@ -57,7 +57,7 @@ df = df.sort_values("timestamp").reset_index(drop=True)
 df = df.set_index("timestamp")
 ```
 
-<img src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df2.png" width="33%">
+<img alt="" src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df2.png" width="33%">
 
 인덱스를 바꾼 데이터에 `rolling()` 메서드를 사용하는데, 윈도우 크기를 30초로 설정해줘야 합니다. 최종 코드는 아래와 같습니다.
 
@@ -65,7 +65,7 @@ df = df.set_index("timestamp")
 df.groupby(["user"]).rolling("30S", min_period=1).sum().reset_index()
 ```
 
-<img src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df3.png" width="33%">
+<img alt="" src="/assets/images/2021-10-21-timestamp-groupby-aggregation/timestamp_rolling_df3.png" width="33%">
 
 
 `"30S"` 는 윈도우 크기에 맞춰서 수정하면 하루 단위, 월 단위 등으로 바꿀 수 있습니다. 이걸 **Frequency String** 이라고 하는데 [Pandas 공식 문서](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)에서 추가로 확인하실 수 있습니다.
