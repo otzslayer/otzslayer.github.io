@@ -64,11 +64,14 @@ jobs:
           key: og-cards-${{ github.run_id }}
           restore-keys: og-cards-
 
-      # package-lock.json은 저장소에 없어서 package.json에 적힌 playwright 버전만 설치한다.
+      # 저장소에서 npm install을 하면 devDependencies 전체가 함께 설치되므로
+      # 임시 폴더에 package.json에 적힌 버전의 playwright만 설치하고 node_modules로 연결한다.
+      # 브라우저는 내려받지 않고 러너에 설치된 Chrome을 쓴다(tools/og-cards.mjs의 대체 경로).
       - name: Install Playwright
         run: |
-          npm install --no-save --no-package-lock "playwright@$(node -p "require('./package.json').devDependencies.playwright")"
-          npx playwright install --with-deps --only-shell chromium
+          version="$(node -p "require('./package.json').devDependencies.playwright")"
+          npm install --prefix "$RUNNER_TEMP/playwright" --no-save --no-package-lock --no-audit --no-fund "playwright@$version"
+          ln -s "$RUNNER_TEMP/playwright/node_modules" node_modules
 
       - name: Build share cards
         run: node tools/og-cards.mjs "_site${{ steps.pages.outputs.base_path }}"
