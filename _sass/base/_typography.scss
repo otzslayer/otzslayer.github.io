@@ -234,6 +234,15 @@ main {
   }
 }
 
+/* 본문과 각주 사이 구분선은 글마다 ---를 쓰지 않도록 레이아웃에서 그린다.
+   일반 가로선(--main-border-color)보다 진하게 하고 위아래 여백을 넉넉히 둔다. */
+.footnotes {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid t.fg(30%);
+  font-size: 0.875rem;
+}
+
 .footnotes > ol {
   padding-left: 2rem;
   margin-top: 0.5rem;
