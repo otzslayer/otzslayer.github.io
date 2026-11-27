@@ -539,8 +539,6 @@ dump_parts("tool_name", result.all_messages())
 | `strict` 없이 선택 필드 키 | 빠질 수 있음              | 채워짐                     | 채워짐                  |
 | 재시도 예산 단위           | 출력 툴 하나당            | 실행 전체 공유             | 실행 전체 공유          |
 
----
-
 
 [^1]: 제약 디코딩(Constrained Decoding)을 의미합니다. 다음 토큰을 고를 때 스키마에 없는 값을 고르지 않도록 제약을 줍니다.
 

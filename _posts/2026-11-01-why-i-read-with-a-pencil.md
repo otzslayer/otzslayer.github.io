@@ -124,6 +124,4 @@ AI가 읽기와 쓰기의 많은 부분을 대체해 버린 시대입니다. 저
 - Ben-Yehudah, G., & Eshet-Alkalai, Y. (2018). [The contribution of text-highlighting to comprehension: A comparison of print and digital reading](https://cris.openu.ac.il/en/publications/the-contribution-of-text-highlighting-to-comprehension-a-comparis/). Journal of Educational Multimedia and Hypermedia, 27(2), 153–178.
 - Lauterman, T., & Ackerman, R. (2014). [Overcoming screen inferiority in learning and calibration](https://www.datalearner.com/academic/journal-papers/0747-5632/volumes-and-issues/145/paper-detail/34532). Computers in Human Behavior, 35, 455–463.
 
----
-
 [^1]: 연구마다 부호를 정하는 기준이 달라 절댓값으로 보면 되고, 교육 연구에서는 0.2 안팎을 작은 효과로 봅니다.
