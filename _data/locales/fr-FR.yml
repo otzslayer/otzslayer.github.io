@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Accueil
-  categories: Catégories
   tags: Tags
   archives: Archives
   about: À propos
@@ -76,8 +75,3 @@ post:
     share_link:
       title: Copier le lien
       succeed: Lien copié avec succès !
-
-# categories page
-categories:
-  category_measure: catégories
-  post_measure: posts

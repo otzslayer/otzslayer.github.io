@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: ホーム
-  categories: カテゴリー
   tags: タグ
   archives: アーカイブ
   about: このサイトについて
@@ -83,8 +82,3 @@ df:
   post:
     strftime: "%Y/%m/%d"
     dayjs: "YYYY/MM/DD"
-
-# categories page
-categories:
-  category_measure: カテゴリー
-  post_measure: 投稿

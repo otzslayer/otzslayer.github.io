@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: سەرەکی
-  categories: هاوپۆلەکان
   tags: تاگەکان
   archives: ئەرشیف
   about: دەربارە
@@ -86,12 +85,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: هاوپۆل
-    plural: هاوپۆل
-  post_measure:
-    singular: بابەت
-    plural: بابەت

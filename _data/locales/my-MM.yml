@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: အဓိကစာမျက်နှာ
-  categories: ကဏ္ဍများ
   tags: နာမ(တက်ဂ်)များ
   archives: မှတ်တမ်း​တိုက်
   about: အကြောင်းအရာ
@@ -76,8 +75,3 @@ post:
     share_link:
       title: လင့်ခ်ကို ကူးယူရန်
       succeed: လင့်ခ်ကို ကူးယူလိုက်ပြီ။
-
-# categories page
-categories:
-  category_measure: ကဏ္ဍများ
-  post_measure: ပို့စ်များ

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Kezdőlap
-  categories: Kategóriák
   tags: Címkék
   archives: Archívum
   about: Bemutatkozás
@@ -87,12 +86,3 @@ df:
   archives:
     strftime: "%B"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: kategória
-    plural: kategória
-  post_measure:
-    singular: bejegyzés
-    plural: bejegyzés

@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: خانه
-  categories: دسته‌بندی‌ها
   tags: برچسب‌ها
   archives: آرشیو
   about: درباره
@@ -86,12 +85,3 @@ df:
   archives:
     strftime: "%b"
     dayjs: "MMM"
-
-# categories page
-categories:
-  category_measure:
-    singular: دسته‌بندی
-    plural: دسته‌بندی‌
-  post_measure:
-    singular: پست
-    plural: پست‌

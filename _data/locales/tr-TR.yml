@@ -11,7 +11,6 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Ana Sayfa
-  categories: Kategoriler
   tags: Etiketler
   archives: Arşiv
   about: Hakkında
@@ -76,8 +75,3 @@ post:
     share_link:
       title: Linki kopyala
       succeed: Link kopyalandı.
-
-# categories page
-categories:
-  category_measure: kategori
-  post_measure: gönderi
