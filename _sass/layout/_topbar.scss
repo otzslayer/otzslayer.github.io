@@ -18,14 +18,22 @@ $collapse-bp: bp.get(md);
   backdrop-filter: blur(8px);
 }
 
+/* 메뉴바 내용은 본문 열과 같은 폭으로 화면 가운데에 놓는다.
+   배경과 아래 경계선은 #topbar-wrapper가 화면 전체 폭으로 그린다.
+   좌우 여백은 본문 글자가 시작하는 자리에 맞춘다.
+   본문 열 여백($reading-padding)에 포스트와 페이지의 article.px-1(0.25rem)을 더한 값이다. */
 #topbar {
   @extend %btn-color;
 
   height: 100%;
-  max-width: v.$main-content-max-width;
+  max-width: v.$reading-column-width;
   margin: 0 auto;
   padding: 0 1rem;
   gap: 1rem;
+
+  @include bp.md {
+    padding: 0 calc(#{v.$reading-padding} + 0.25rem);
+  }
 
   button i {
     color: var(--text-muted-color);
@@ -108,6 +116,11 @@ $collapse-bp: bp.get(md);
     display: block;
     margin-left: auto;
   }
+}
+
+/* 맨 오른쪽 토글은 오른쪽 안쪽 여백을 없애서 아이콘이 본문 열의 오른쪽 끝에 닿게 한다. */
+#topbar-toggles > :last-child {
+  padding-right: 0;
 }
 
 /* 버튼은 바꿀 테마의 아이콘을 보여 준다. 라이트에서는 달, 다크에서는 해. */
