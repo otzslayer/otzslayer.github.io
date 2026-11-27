@@ -43,6 +43,15 @@ header {
   h1 + .post-meta {
     margin-top: 1.5rem;
   }
+
+  /* 제목은 가운데에, 작성일과 수정일은 오른쪽 끝에 둔다. 그 아래 작성자와 조회수 줄, 태그는 그대로 양쪽 정렬이다. */
+  h1 {
+    text-align: center;
+  }
+
+  .post-dates {
+    text-align: right;
+  }
 }
 
 .post-tail-wrapper {
