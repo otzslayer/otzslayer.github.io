@@ -242,6 +242,10 @@ body {
 .img-link {
   color: transparent;
   display: inline-flex;
+
+  /* inline-flex 폭은 안의 이미지 폭을 따른다. 상한이 없으면 img의 max-width: 100%가
+     이 링크 폭을 기준으로 계산돼 width 속성(예: 600px)이 본문 열보다 넓어도 줄지 않는다. */
+  max-width: 100%;
 }
 
 .shimmer {
