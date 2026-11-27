@@ -2,9 +2,6 @@
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/placeholders';
 
-/* 햄버거 메뉴로 접히는 기준. 이슈 #19가 768px로 정했다. */
-$collapse-bp: bp.get(md);
-
 #topbar-wrapper {
   position: fixed;
   top: 0;
@@ -57,7 +54,7 @@ $collapse-bp: bp.get(md);
   gap: 1.25rem;
   margin-left: auto;
 
-  @include bp.lt($collapse-bp) {
+  @include bp.lt(bp.$topbar-collapse) {
     display: none;
     position: absolute;
     top: v.$topbar-height;
@@ -83,7 +80,7 @@ $collapse-bp: bp.get(md);
   padding: 0;
   list-style: none;
 
-  @include bp.lt($collapse-bp) {
+  @include bp.lt(bp.$topbar-collapse) {
     flex-direction: column;
     gap: 0.25rem;
   }
@@ -93,7 +90,7 @@ $collapse-bp: bp.get(md);
     font-size: 0.95rem;
     color: var(--text-muted-color);
 
-    @include bp.lt($collapse-bp) {
+    @include bp.lt(bp.$topbar-collapse) {
       padding: 0.4rem 0;
     }
 
@@ -111,7 +108,7 @@ $collapse-bp: bp.get(md);
 #menu-trigger {
   display: none;
 
-  @include bp.lt($collapse-bp) {
+  @include bp.lt(bp.$topbar-collapse) {
     display: block;
     margin-left: auto;
   }

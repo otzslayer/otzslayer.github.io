@@ -33,7 +33,7 @@ search {
   }
 
   /* 햄버거 메뉴가 열려 있으면 그 높이만큼 결과를 내린다. 값은 topbar.html의 인라인 스크립트가 넣는다. */
-  @include bp.lt(bp.get(md)) {
+  @include bp.lt(bp.$topbar-collapse) {
     padding-top: var(--topbar-menu-height, 0);
   }
 
