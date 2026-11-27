@@ -73,7 +73,8 @@ header {
 
   /* 카테고리 링크는 태그 줄과 같은 monospace로 작게 쓴다. */
   .post-meta a {
-    font-family: v.$code-font-family;
+    @extend %code-text;
+
     font-size: 0.75rem;
   }
 
@@ -148,7 +149,8 @@ header {
   line-height: 2rem;
 
   .post-tag {
-    font-family: v.$code-font-family;
+    @extend %code-text;
+
     font-size: 0.75rem;
 
     &:hover {
@@ -368,7 +370,7 @@ header {
 
   @extend %btn-color;
 
-  @media all and (min-width: v.$panel-breakpoint) {
+  @include bp.gte(v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -391,7 +393,7 @@ header {
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
 
-  @media all and (min-width: v.$panel-breakpoint) {
+  @include bp.gte(v.$panel-breakpoint) {
     display: none !important;
   }
 
@@ -509,7 +511,7 @@ header {
 h2,
 h3,
 h4 {
-  @media all and (min-width: v.$panel-breakpoint) {
+  @include bp.gte(v.$panel-breakpoint) {
     scroll-margin-top: 2rem;
   }
 }

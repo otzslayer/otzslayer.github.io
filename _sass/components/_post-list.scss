@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/mixins' as mx;
+@use '../abstracts/placeholders';
 
 /* "날짜, 글 제목" 한 줄 목록. 날짜 열은 고정 폭, 제목과 요약은 넘치면 말줄임으로 자른다. */
 .post-list {
@@ -75,9 +76,9 @@
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   margin: 0 0 2.5rem;
+  @extend %code-text;
+
   padding: 0;
-  font-family: v.$code-font-family;
-  font-size: 0.85rem;
   list-style: none;
 
   a:not(.img-link) {

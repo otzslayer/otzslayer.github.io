@@ -121,6 +121,13 @@
   font-size: 0.8rem;
 }
 
+/* Tags 목록, 카테고리 링크, 태그 줄처럼 코드 블록과 같은 monospace로 작게 쓰는 글자.
+   더 작게 쓸 곳은 font-size만 덮어쓴다. */
+%code-text {
+  font-family: v.$code-font-family;
+  font-size: v.$code-font-size;
+}
+
 %sup-fn-target {
   &:target {
     background-color: var(--footnote-target-bg);

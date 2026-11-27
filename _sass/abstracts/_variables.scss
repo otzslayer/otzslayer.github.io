@@ -84,6 +84,7 @@ $panel-width: 260px !default;
 
 /* 본문 열(768px)과 양쪽 패널 폭(260px × 2)이 들어가는 화면 폭.
    이보다 좁으면 패널을 숨기고 ToC 팝업 버튼을 쓴다.
+   계산값은 1288px이지만 #28 티켓이 정한 "약 1290px"을 그대로 써서 2px 여유가 있다.
    _javascript/modules/components/toc.js와 assets/js/dist/post.min.js의 matchMedia 값과 같아야 한다. */
 $panel-breakpoint: 1290px !default;
 $radius-sm: 6px !default;

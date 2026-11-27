@@ -23,6 +23,13 @@ $-breakpoints: (
   }
 }
 
+/* Greater than or equal to the given width (the opposite of lt) */
+@mixin gte($width) {
+  @media all and (min-width: $width) {
+    @content;
+  }
+}
+
 /* Less than or equal to the given width */
 @mixin lte($width) {
   @media all and (max-width: $width) {
