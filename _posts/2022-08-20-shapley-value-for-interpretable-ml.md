@@ -3,6 +3,7 @@ title: Shapley Value란 무엇인가
 tags: [xai, shapley-value, shap]
 category: ML
 layout: post
+math: true
 ---
 
 

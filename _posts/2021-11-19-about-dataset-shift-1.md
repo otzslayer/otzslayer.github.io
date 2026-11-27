@@ -3,6 +3,7 @@ title: Dataset Shift에 대하여 (1)
 tags: [dataset-shift, covariate-shift, prior-probability-shift]
 category: ML
 layout: post
+math: true
 ---
 
 Dataset Shift는 무엇인지, 어떤 것들이 있는지 알아봅시다. 👀

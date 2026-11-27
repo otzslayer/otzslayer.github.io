@@ -3,6 +3,7 @@ title: Variational Autoencoder
 tags: [vae, autoencoder]
 category: ML
 layout: post
+math: true
 ---
 
 

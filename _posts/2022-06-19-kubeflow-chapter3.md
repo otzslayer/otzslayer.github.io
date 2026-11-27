@@ -3,6 +3,7 @@ title: Kubeflow for ML - Chapter 3
 tags: [kubeflow, mlops]
 category: Kubeflow
 layout: post
+math: true
 ---
 
 Chapter 3: Kubeflow Design: Beyond the Basics

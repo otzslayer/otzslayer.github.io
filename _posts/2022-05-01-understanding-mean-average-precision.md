@@ -3,6 +3,7 @@ title: Mean Average Precision 이해하기
 tags: [recsys, metric, map]
 category: ML
 layout: post
+math: true
 ---
 
 

@@ -3,6 +3,7 @@ title: Dataset Shift에 대하여 (2)
 tags: [dataset-shift, concept-drift]
 category: ML
 layout: post
+math: true
 ---
 
 Concept Drift는 무엇이고, Concept Drift 문제를 예방하는 법은 무엇일까요? 🤔

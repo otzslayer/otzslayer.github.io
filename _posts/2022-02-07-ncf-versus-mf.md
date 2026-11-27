@@ -3,6 +3,7 @@ title: Neural Collaborative Filtering vs. Matrix Factorization
 tags: [recsys, ncf, matrix-factorization]
 category: ML
 layout: post
+math: true
 ---
 
 Rendle, Steffen, et al. "Neural collaborative filtering vs. matrix factorization revisited." *Fourteenth ACM conference on recommender systems*. 2020.

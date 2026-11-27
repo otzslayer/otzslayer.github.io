@@ -3,6 +3,7 @@ title: Git Merge에서 Fast Forward 관계 이해하기
 tags: [git, fast-forward]
 category: Git
 layout: post
+math: true
 ---
 
 Git Merge에서 항상 헷갈리는 Fast Forward 관계에 대해 정리해보았습니다. 🙌

@@ -3,6 +3,7 @@ title: Multi-armed Bandit
 tags: [recsys, multi-armed-bandit, mab, ab-test]
 category: ML
 layout: post
+math: true
 ---
 
 A/B 테스트를 대체할 수 있는 Multi-armed Bandit에 대해서 알아봅시다. 🎰

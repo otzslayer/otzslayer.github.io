@@ -3,6 +3,7 @@ title: Learning to Rank
 tags: [ltr, learning-to-rank, recsys, map, ndcg]
 category: ML
 layout: post
+math: true
 ---
 
 

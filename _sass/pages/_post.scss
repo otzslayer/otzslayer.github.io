@@ -517,13 +517,6 @@ header {
   }
 }
 
-/* 블록 수식(MathJax CHTML)은 줄바꿈되지 않아 좁은 화면에서 페이지 전체에 가로 스크롤을 만든다.
-   수식 블록 안에서만 가로로 스크롤되게 한다. */
-/* stylelint-disable-next-line selector-class-pattern */
-.content .MJXc-display {
-  overflow: auto hidden;
-}
-
 /* 글에 붙여 넣은 YouTube 임베드는 width="560" height="315" 고정값이라 좁은 화면에서 넘친다.
    폭만 줄이면 높이가 그대로 남아서 16:9 비율로 높이를 다시 계산한다. */
 .content iframe[src*='youtube.com/embed'] {
