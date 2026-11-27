@@ -354,6 +354,12 @@ $serif-scale: 0.95;
     font-size: 1rem * $serif-scale;
   }
 
+  /* 각주와 각주 메모도 본문과 같은 비율로 줄인다. 둘 다 rem 단위라 본문 크기를 상속하지 않는다. */
+  .footnotes,
+  .footnote-popover {
+    font-size: 0.875rem * $serif-scale;
+  }
+
   @for $i from 1 through 6 {
     h#{$i}.reading-font,
     .reading-font h#{$i} {
