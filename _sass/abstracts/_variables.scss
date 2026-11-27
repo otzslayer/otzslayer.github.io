@@ -104,8 +104,9 @@ $code-icon-width: 1.75rem !default;
 $font-family-base: 'Pretendard', 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
 $font-family-heading: 'Pretendard', Lato, 'Microsoft Yahei', sans-serif;
 
-/* 글꼴 토글이 Serif일 때 포스트와 About의 본문과 제목에만 쓴다. */
-$font-family-serif: 'Noto Serif KR', 'Source Serif 4', Georgia, serif;
+/* 글꼴 토글이 Serif일 때 포스트와 About의 본문과 제목에만 쓴다.
+   라틴 글자는 Source Serif 4로 먼저 그리고, 그 글꼴에 없는 한글만 Noto Serif KR로 넘긴다. */
+$font-family-serif: 'Source Serif 4', 'Noto Serif KR', Georgia, serif;
 $code-font-family: 'JetBrains Mono', 'JetBrainsMono Nerd Font', monospace;
 
 /* Theme mode settings */

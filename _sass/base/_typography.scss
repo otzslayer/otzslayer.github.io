@@ -331,8 +331,25 @@ h6 code {
   --reading-font: #{meta.inspect(v.$font-family-base)};
 }
 
+/* 같은 글자 크기에서 Noto Serif KR의 한글은 Pretendard보다 높이가 약 8%, 폭이 약 4% 크다
+   (headless Chrome의 canvas measureText, 100px '가' 기준 85.3px 대 78.9px).
+   본문은 대부분 한글이라 Serif일 때만 본문과 제목을 함께 줄여 Sans와 눈에 보이는 크기를 맞춘다.
+   Source Serif 4의 라틴 x-height는 Pretendard보다 오히려 작아서 더 줄이면 영문이 작아 보인다. */
+$serif-scale: 0.95;
+
 :root[data-font='serif'] {
   --reading-font: #{meta.inspect(v.$font-family-serif)};
+
+  .content.reading-font {
+    font-size: 1rem * $serif-scale;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i}.reading-font,
+    .reading-font h#{$i} {
+      font-size: map.get($heading-sizes, $i) * $serif-scale;
+    }
+  }
 }
 
 .reading-font {
