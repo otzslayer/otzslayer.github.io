@@ -1,5 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as mx;
+@use '../themes/tint' as t;
 
 %heading {
   color: var(--heading-color);
@@ -92,7 +93,7 @@
     font-style: normal;
     font-size: 80%;
     padding: 0;
-    color: #6d6c6c;
+    color: var(--text-muted-color);
   }
 }
 
@@ -140,7 +141,7 @@
 
 %btn-color {
   button i {
-    color: #999999;
+    color: t.fg(50%);
   }
 }
 

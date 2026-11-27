@@ -1,6 +1,7 @@
 @use '../abstracts/breakpoints' as bp;
 @use '../abstracts/variables' as v;
 @use '../abstracts/placeholders';
+@use '../themes/tint' as t;
 
 search {
   display: flex;
@@ -102,7 +103,7 @@ search {
 
     /* icons */
     i {
-      color: #818182;
+      color: t.fg(55%);
       margin-right: 0.15rem;
       font-size: 80%;
     }

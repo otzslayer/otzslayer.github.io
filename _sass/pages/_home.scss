@@ -1,4 +1,5 @@
 @use '../abstracts/breakpoints' as bp;
+@use '../themes/tint' as t;
 
 /* 맨 위 카테고리 줄이 상단 메뉴바 아래 여백을 맡는다.
    글 목록보다 작고 흐린 글씨로 써서 목록이 먼저 읽히게 하고, 진한 구분선으로 둘을 나눈다. */
@@ -95,7 +96,7 @@
       cursor: not-allowed;
 
       .page-link {
-        color: rgb(108 117 125 / 57%);
+        color: t.fg(35%);
       }
     }
   } /* .page-item */
