@@ -22,7 +22,7 @@
 - [x] `_light.scss` 머리 주석이 기준색을 "배경, 글씨, 하이라이트"로 적지만 리터럴 이름은 `--link-color` (#29) → 라이트, 다크, tint 주석을 "배경, 글씨, 링크"로 고침 (bae2d98)
 - [x] Categories 목록 페이지를 지운 뒤 남은 JS: `_javascript/categories.js`, `rollup.config.js`의 `build('categories')`, `assets/js/dist/categories.min.js`, `_javascript/modules/components/category-collapse.js`. 지우려면 JS 번들을 다시 빌드해야 함 (#30) → 삭제하고 JS 번들 재빌드 (483b667)
 - [x] `_data/locales/*.yml`의 `tabs.categories`와 `categories:` 키를 더 쓰지 않음 (#30) → 삭제 (483b667)
-- [x] 클래식 15px 스크롤바(Windows)에서는 1290~약 1305px 폭에서 ToC 패널이 약 7px 넘쳐 가로 스크롤이 생길 수 있음. 계산값이고 측정하지 못함 (#28) → 측정 결과 최대 7px 넘침. 패널 폭 상한을 `cqw`로 계산함 (d513898)
+- [x] 클래식 15px 스크롤바(Windows)에서는 1290~약 1305px 폭에서 ToC 패널이 약 7px 넘쳐 가로 스크롤이 생길 수 있음. 계산값이고 측정하지 못함 (#28) → 측정 결과 최대 7px 넘침. 패널이 보이는 폭에서 컨테이너가 화면 폭을 다 쓰게 하고 패널 폭 상한을 오른쪽 열 폭으로 둠 (d513898, 90603b4)
 - [x] 1440px에서 맨 위로 버튼이 ToC 패널 열 안에 놓임. #28 이전부터 그랬음 → 패널이 보이는 폭에서 화면 오른쪽 끝으로 옮김 (4be0db1)
 - [x] `home`, `commons`, `page`, `categories`, `misc` 번들에 쓰지 않는 `(min-width: 1200px)` 복사본이 남음. 다음 JS 빌드 때 없어짐 (#28) → JS 재빌드로 없어짐 (483b667)
 - [x] 768px 바로 위 폭에서 메뉴바와 본문 정렬선이 어긋남. `#topbar`는 화면 전체 폭 기준이고 본문은 컨테이너 안쪽 여백 안에 놓이기 때문. #31 완료 조건은 1440px만 봄 → 992px 미만에서 컨테이너가 화면 폭을 다 쓰게 함 (2557d03)
