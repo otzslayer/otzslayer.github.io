@@ -23,14 +23,10 @@
     bottom: calc(v.$footer-height - v.$back2top-size / 2);
   }
 
-  @include bp.xxl {
-    right: calc((100vw - 1140px) / 2 + 3rem);
-  }
-
-  @include bp.xxxl {
-    right: calc(
-      (100vw - v.$main-content-max-width) / 2 + 2rem
-    );
+  /* ToC 패널이 보이는 폭에서는 패널이 본문 열 오른쪽 여백을 차지하므로 화면 오른쪽 끝에 둔다.
+     예전 xxl, xxxl 규칙은 버튼을 패널 영역 안에 놓았다. */
+  @include bp.gte(v.$panel-breakpoint) {
+    right: 1rem;
   }
 
   &:hover {
