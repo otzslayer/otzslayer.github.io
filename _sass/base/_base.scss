@@ -412,9 +412,6 @@ mjx-container {
 #main-wrapper {
   position: relative;
 
-  /* ToC 패널 폭 상한을 cqw로 계산하려고 둔다. 아래 #panel-wrapper 주석 참고. */
-  container-type: inline-size;
-
   /* 화면 위에 고정된 메뉴바 높이만큼 본문을 내린다. */
   padding-top: v.$topbar-height;
 
@@ -437,10 +434,11 @@ mjx-container {
       flex-wrap: nowrap;
     }
 
-    @include bp.xxxl {
-      max-width: v.$main-content-max-width;
-
-      @include mx.pl-pr(1.75rem, true);
+    /* ToC 패널이 보이는 폭에서도 화면 폭을 다 쓴다. 그래야 오른쪽 열 폭이 본문 열 오른쪽에 남은 폭과 같아져
+       패널 폭 상한을 max-width: 100%로 걸 수 있다. 아래 #panel-wrapper 주석 참고. */
+    @include bp.gte(v.$panel-breakpoint) {
+      @include mx.max-w-100;
+      @include mx.pl-pr(0);
     }
   }
 }
@@ -455,8 +453,7 @@ mjx-container {
 
 /* 본문과 꼬리 영역은 가운데 열에 놓고, ToC 패널은 오른쪽 열(본문 오른쪽 여백)에 놓는다.
    양쪽 열의 폭이 같아서 패널이 있든 없든 본문 열은 화면 가운데에 놓인다.
-   컨테이너 최대 폭 때문에 오른쪽 열이 패널보다 좁으면 패널은 열 밖으로 넘친다.
-   패널 오른쪽 끝이 화면 가운데에서 본문 열 절반과 패널 폭만큼 떨어지므로 $panel-breakpoint 이상에서는 화면 안에 들어온다. */
+   패널이 보이는 폭에서는 컨테이너가 화면 폭을 다 써서 오른쪽 열 폭이 본문 열 오른쪽 여백과 같다. */
 #main-wrapper > .container > .row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, v.$reading-column-width) minmax(0, 1fr);
@@ -484,12 +481,11 @@ mjx-container {
   }
 }
 
-/* 패널은 화면 가운데에서 본문 열 절반만큼 떨어진 곳에서 시작하므로 남은 폭은 50cqw - 본문 열 절반이다.
-   100vw는 클래식 스크롤바(15px)까지 포함해서 $panel-breakpoint 바로 위에서 패널이 최대 7px 넘쳤다.
-   cqw는 스크롤바를 뺀 #main-wrapper 폭을 기준으로 한다. */
+/* 미디어 쿼리 폭은 클래식 스크롤바(15px)까지 포함해서 $panel-breakpoint 바로 위에서는 오른쪽 열이 패널보다 좁아
+   패널이 최대 7px 넘쳤다. 오른쪽 열 폭을 상한으로 둔다. */
 #main-wrapper #panel-wrapper {
   width: v.$panel-width;
-  max-width: calc(50cqw - #{v.$reading-column-width} / 2);
+  max-width: 100%;
   padding: 0 0 0 1rem;
 }
 
