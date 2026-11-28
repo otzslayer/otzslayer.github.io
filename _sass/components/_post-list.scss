@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-/* "날짜, 글 제목" 한 줄 목록. 날짜 열은 고정 폭, 제목과 요약은 넘치면 말줄임으로 자른다. */
+/* "날짜, 글 제목" 목록. 날짜 열은 고정 폭이다. 제목은 길면 다음 줄로 넘기고, 요약만 넘치면 말줄임으로 자른다. */
 .post-list {
   margin: 0 0 2.5rem;
   padding: 0;
@@ -42,8 +42,11 @@
 
   /* 본문 링크 규칙(.content a:not(.img-link))과 같은 명시도로 맞춰 밑줄을 없앤다. */
   a:not(.img-link) {
-    @include mx.text-ellipsis;
+    min-width: 0;
 
+    /* 한국어는 어절 단위로 줄을 바꾸고, 한 줄보다 긴 단어만 중간에서 끊는다. */
+    word-break: keep-all;
+    overflow-wrap: anywhere;
     color: var(--text-color);
     font-size: 1.05rem;
     border-bottom: none;
@@ -52,6 +55,12 @@
       color: var(--link-color);
       border-bottom: none;
     }
+  }
+
+  /* 제목이 여러 줄이 돼도 박수 수는 줄지 않고 제목 오른쪽에 남는다. */
+  > span {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 }
 
