@@ -36,14 +36,12 @@
 }
 
 .post-list-title {
-  display: flex;
-  align-items: baseline;
+  /* flex로 두면 박수 수가 제목 덩어리 전체의 오른쪽에 붙는다.
+     일반 줄 흐름으로 두어 제목 마지막 줄 끝에 이어 붙인다. */
   min-width: 0;
 
   /* 본문 링크 규칙(.content a:not(.img-link))과 같은 명시도로 맞춰 밑줄을 없앤다. */
   a:not(.img-link) {
-    min-width: 0;
-
     /* 한국어는 어절 단위로 줄을 바꾸고, 한 줄보다 긴 단어만 중간에서 끊는다. */
     word-break: keep-all;
     overflow-wrap: anywhere;
@@ -57,9 +55,8 @@
     }
   }
 
-  /* 제목이 여러 줄이 돼도 박수 수는 줄지 않고 제목 오른쪽에 남는다. */
+  /* 아이콘과 숫자 사이에서 줄이 바뀌지 않게 한다. */
   > span {
-    flex: 0 0 auto;
     white-space: nowrap;
   }
 }
