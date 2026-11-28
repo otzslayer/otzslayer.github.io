@@ -9,9 +9,16 @@
                 나머지 페이지 코드는 clap-count-cat을 찾는다. 기본값은 clap-count-cat
 
   날짜는 번들의 locale-datetime이 다시 쓰지 않도록 data-ts 없이 고정 형식으로 둔다.
+
+  제목의 마지막 단어와 박수 수를 줄이 바뀌지 않는 span 하나로 묶는다. 마지막 줄에 박수 수가
+  들어갈 자리가 없으면 박수 수만 다음 줄로 내려가지 않고 마지막 단어와 함께 내려간다.
+  span을 링크 밖에 두면 링크가 둘로 쪼개지므로 링크 안에 둔다.
 {%- endcomment -%}
 
 {%- assign post = include.post -%}
+{%- assign title_words = post.title | strip | split: ' ' -%}
+{%- assign title_last = title_words | last -%}
+{%- assign title_head_size = title_words.size | minus: 1 -%}
 
 <li class="post-list-item">
   <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">
@@ -19,8 +26,12 @@
   </time>
   <div class="post-list-body">
     <div class="post-list-title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="{{ include.clap_class | default: 'clap-count-cat' }}" data-url="{{ post.url | absolute_url }}"></span>
+      <a href="{{ post.url | relative_url }}">
+        {%- for word in title_words limit: title_head_size -%}{{ word }} {% endfor -%}
+        <span class="post-list-title-tail">
+          {{- title_last }} <span class="{{ include.clap_class | default: 'clap-count-cat' }}" data-url="{{ post.url | absolute_url }}"></span>
+        {%- comment -%}박수 수 뒤에 공백이 남지 않게 닫는 태그를 붙여 쓴다.{%- endcomment -%}
+        </span></a>
     </div>
     {% if include.summary %}
       <p class="post-list-summary">{% include post-summary.html %}</p>

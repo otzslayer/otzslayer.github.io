@@ -55,9 +55,15 @@
     }
   }
 
-  /* 아이콘과 숫자 사이에서 줄이 바뀌지 않게 한다. */
-  > span {
+  /* 마지막 단어와 박수 수 사이에서 줄이 바뀌지 않게 한다. */
+  .post-list-title-tail {
     white-space: nowrap;
+  }
+
+  /* 박수 수는 링크 안에 있지만 제목의 굵기와 색을 따르지 않는다. */
+  .clap-count-home,
+  .clap-count-cat {
+    font-weight: 400;
   }
 }
 
